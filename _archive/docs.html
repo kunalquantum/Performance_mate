@@ -1,0 +1,1339 @@
+<title>Post Performance Matrix. Feature guide</title>
+
+<style>
+  :root {
+    --ink: #111318;
+    --ink-soft: #3B4046;
+    --muted: #6B7280;
+    --muted-strong: #4B5058;
+    --line: #E5E5E8;
+    --line-strong: #CFCFD3;
+    --paper: #FBFBFA;
+    --surface: #FFFFFF;
+    --accent: #0E6E68;
+    --accent-2: #34A79E;
+    --accent-soft: #E7F0EF;
+    --accent-strong: #0B5651;
+    --warn: #B4462F;
+    --warn-soft: #FBECE6;
+    --code-bg: #F6F6F5;
+    --gold: #C99A2E;
+    --gold-soft: #F5EAD1;
+    --shadow: 0 1px 2px rgba(17, 19, 24, 0.04);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --ink: #E9EAEC; --ink-soft: #C4C7CC; --muted: #8A8F98;
+      --muted-strong: #A6ABB3; --line: #262A2E; --line-strong: #3A3F45;
+      --paper: #0F1113; --surface: #17191C; --accent: #34A79E;
+      --accent-2: #4CB8AF; --accent-soft: #16302E; --accent-strong: #B9D8D5;
+      --warn: #E36C4F; --warn-soft: #2B1712; --code-bg: #1A1D21;
+      --gold: #E1B85A; --gold-soft: #2B2210;
+      --shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+    }
+  }
+  :root[data-theme="light"] {
+    --ink: #111318; --ink-soft: #3B4046; --muted: #6B7280;
+    --muted-strong: #4B5058; --line: #E5E5E8; --line-strong: #CFCFD3;
+    --paper: #FBFBFA; --surface: #FFFFFF; --accent: #0E6E68;
+    --accent-2: #34A79E; --accent-soft: #E7F0EF; --accent-strong: #0B5651;
+    --warn: #B4462F; --warn-soft: #FBECE6; --code-bg: #F6F6F5;
+    --gold: #C99A2E; --gold-soft: #F5EAD1;
+    --shadow: 0 1px 2px rgba(17, 19, 24, 0.04);
+  }
+  :root[data-theme="dark"] {
+    --ink: #E9EAEC; --ink-soft: #C4C7CC; --muted: #8A8F98;
+    --muted-strong: #A6ABB3; --line: #262A2E; --line-strong: #3A3F45;
+    --paper: #0F1113; --surface: #17191C; --accent: #34A79E;
+    --accent-2: #4CB8AF; --accent-soft: #16302E; --accent-strong: #B9D8D5;
+    --warn: #E36C4F; --warn-soft: #2B1712; --code-bg: #1A1D21;
+    --gold: #E1B85A; --gold-soft: #2B2210;
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+  }
+
+  html { background: var(--paper); }
+  body {
+    background: var(--paper); color: var(--ink);
+    font-family: -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size: 16px; line-height: 1.6; margin: 0;
+    -webkit-font-smoothing: antialiased;
+  }
+  * { box-sizing: border-box; }
+
+  .layout {
+    display: grid; grid-template-columns: 260px 1fr;
+    gap: 3.5rem; max-width: 1180px; margin: 0 auto;
+    padding: 3rem 2rem 6rem;
+  }
+  @media (max-width: 900px) {
+    .layout { grid-template-columns: 1fr; gap: 1rem; padding: 2rem 1.25rem; }
+    aside { position: static !important; max-height: none !important;
+             padding-right: 0 !important; border-right: none !important;
+             border-bottom: 1px solid var(--line); padding-bottom: 1rem;
+             margin-bottom: 1rem; }
+  }
+
+  aside {
+    position: sticky; top: 2.5rem; align-self: start;
+    padding-right: 1rem; border-right: 1px solid var(--line);
+    max-height: calc(100vh - 5rem); overflow-y: auto;
+  }
+  aside .brand { padding-bottom: 1.4rem; margin-bottom: 1rem;
+                  border-bottom: 1px solid var(--line); }
+  aside .brand .eyebrow { color: var(--muted); font-size: .68rem;
+                            font-weight: 600; letter-spacing: .18em;
+                            text-transform: uppercase; }
+  aside .brand .title {
+    font-family: Georgia, "Times New Roman", serif; font-size: 1.35rem;
+    font-weight: 600; color: var(--ink); letter-spacing: -.01em;
+    line-height: 1.2; margin: .35rem 0 .25rem; text-wrap: balance;
+  }
+  aside .brand .version {
+    display: inline-block; font-size: .72rem; padding: .12rem .55rem;
+    background: var(--accent-soft); color: var(--accent-strong);
+    border-radius: 999px; font-variant-numeric: tabular-nums;
+    letter-spacing: .04em;
+  }
+  aside nav { display: flex; flex-direction: column; gap: 0.05rem; }
+  aside nav a {
+    color: var(--muted); text-decoration: none; font-size: .84rem;
+    padding: .32rem 0; border-left: 2px solid transparent;
+    padding-left: .8rem; margin-left: -.8rem; transition: color .15s;
+    line-height: 1.4;
+  }
+  aside nav a:hover { color: var(--ink); }
+  aside nav a.active {
+    color: var(--accent); border-left-color: var(--accent);
+    font-weight: 500;
+  }
+  aside nav .toc-group {
+    font-size: .68rem; letter-spacing: .18em; text-transform: uppercase;
+    color: var(--muted-strong); margin: 1rem 0 .3rem; font-weight: 600;
+  }
+
+  main { max-width: 780px; }
+
+  header.doc-head { margin-bottom: 3rem; }
+  header.doc-head .eyebrow {
+    color: var(--muted); font-size: .72rem; letter-spacing: .18em;
+    text-transform: uppercase; font-weight: 600;
+  }
+  header.doc-head h1 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 2.6rem; font-weight: 600; letter-spacing: -.02em;
+    color: var(--ink); margin: .35rem 0 1rem; line-height: 1.1;
+    text-wrap: balance;
+  }
+  header.doc-head .lede {
+    color: var(--ink-soft); font-size: 1.08rem; line-height: 1.55;
+    max-width: 62ch; margin: 0 0 1.5rem;
+  }
+  header.doc-head .pills {
+    display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1.5rem;
+  }
+  header.doc-head .pill {
+    display: inline-block; font-size: .78rem; padding: .32rem .75rem;
+    background: var(--surface); border: 1px solid var(--line);
+    color: var(--ink-soft); border-radius: 999px;
+    font-variant-numeric: tabular-nums;
+  }
+  header.doc-head .pill.accent {
+    background: var(--accent-soft); border-color: transparent;
+    color: var(--accent-strong);
+  }
+
+  section { margin-bottom: 2.6rem; scroll-margin-top: 2rem; }
+  section > h2 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.65rem; font-weight: 600; letter-spacing: -.015em;
+    color: var(--ink); margin: 0 0 .3rem; line-height: 1.2;
+    padding-top: 1.5rem; border-top: 1px solid var(--line);
+    text-wrap: balance;
+  }
+  section > h2 .num {
+    color: var(--muted); font-family: -apple-system, sans-serif;
+    font-weight: 500; font-size: .78rem; letter-spacing: .04em;
+    font-variant-numeric: tabular-nums; display: block; margin-bottom: .35rem;
+  }
+  section > .kicker {
+    color: var(--muted-strong); font-size: .96rem; margin: .3rem 0 1.4rem;
+    line-height: 1.55; max-width: 62ch;
+  }
+
+  /* SVG mockup blocks */
+  .mock {
+    margin: 1.4rem 0 1.6rem; background: var(--surface);
+    border: 1px solid var(--line); border-radius: 10px;
+    padding: 1rem 1.2rem; box-shadow: var(--shadow);
+  }
+  .mock svg { display: block; width: 100%; height: auto; }
+  .mock .mock-caption {
+    font-size: .74rem; letter-spacing: .06em; text-transform: uppercase;
+    color: var(--muted); font-weight: 600;
+    margin-top: .6rem; text-align: center;
+  }
+
+  /* feature list */
+  .feature-list {
+    list-style: none; padding: 0; margin: 1.4rem 0;
+    display: flex; flex-direction: column; gap: 0;
+  }
+  .feature-list li {
+    padding: 1rem 0; border-top: 1px solid var(--line);
+    display: grid; grid-template-columns: 1.8rem 1fr; gap: .8rem;
+  }
+  .feature-list li:first-child { border-top: none; padding-top: .4rem; }
+  .feature-list .marker {
+    color: var(--accent); font-size: .85rem; padding-top: .1rem;
+    font-weight: 600;
+  }
+  .feature-list .feature-name {
+    color: var(--ink); font-weight: 600; font-size: 1rem;
+    margin-bottom: .18rem; line-height: 1.35;
+  }
+  .feature-list .feature-desc {
+    color: var(--ink-soft); font-size: .93rem; line-height: 1.55;
+    margin-bottom: .3rem;
+  }
+  .feature-list .feature-why {
+    color: var(--accent-strong); font-size: .82rem; line-height: 1.5;
+    padding: .35rem .7rem; background: var(--accent-soft);
+    border-radius: 4px; display: inline-block; margin-top: .1rem;
+  }
+  .feature-list .feature-why::before {
+    content: "Why it matters. "; font-weight: 600;
+  }
+
+  /* callout */
+  .callout {
+    border: 1px solid var(--line); background: var(--surface);
+    border-radius: 8px; padding: 1.1rem 1.3rem; margin: 1.4rem 0;
+    box-shadow: var(--shadow);
+  }
+  .callout.limits { border-left: 3px solid var(--warn);
+                     background: var(--warn-soft); }
+  .callout.limits .callout-label { color: var(--warn); }
+  .callout .callout-label {
+    display: block; font-size: .68rem; letter-spacing: .18em;
+    text-transform: uppercase; font-weight: 600; margin-bottom: .5rem;
+    color: var(--muted-strong);
+  }
+  .callout ul { margin: .2rem 0 0; padding-left: 1.2rem; }
+  .callout li { color: var(--ink-soft); margin-bottom: .4rem;
+                 line-height: 1.5; }
+  .callout li strong { color: var(--ink); font-weight: 600; }
+
+  /* mode strip on hero */
+  .mode-strip {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: .8rem;
+    margin: 2rem 0 0;
+  }
+  @media (max-width: 700px) {
+    .mode-strip { grid-template-columns: 1fr; }
+  }
+  .mode-card {
+    border: 1px solid var(--line); border-radius: 8px;
+    padding: 1rem 1.2rem; background: var(--surface);
+  }
+  .mode-card .mode-label {
+    font-size: .68rem; letter-spacing: .18em; text-transform: uppercase;
+    color: var(--accent-strong); font-weight: 600;
+  }
+  .mode-card .mode-title {
+    font-family: Georgia, serif; font-size: 1.1rem; font-weight: 600;
+    color: var(--ink); margin: .25rem 0 .3rem;
+  }
+  .mode-card .mode-desc {
+    font-size: .84rem; color: var(--muted-strong); line-height: 1.5;
+  }
+
+  /* stat tiles */
+  .stat-row {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem;
+    margin: 1.4rem 0 1rem;
+  }
+  @media (max-width: 700px) {
+    .stat-row { grid-template-columns: repeat(2, 1fr); }
+  }
+  .stat {
+    border: 1px solid var(--line); border-radius: 6px;
+    padding: .85rem 1.05rem; background: var(--surface);
+  }
+  .stat .stat-num {
+    font-family: Georgia, serif; font-size: 1.7rem; font-weight: 600;
+    color: var(--ink); letter-spacing: -.02em; line-height: 1;
+    font-variant-numeric: tabular-nums;
+  }
+  .stat .stat-label {
+    font-size: .72rem; letter-spacing: .12em; text-transform: uppercase;
+    color: var(--muted); font-weight: 600; margin-top: .35rem;
+  }
+
+  hr.section-rule {
+    border: none; height: 1px; background: var(--line); margin: 2.4rem 0;
+  }
+
+  footer.doc-foot {
+    margin-top: 3.5rem; padding-top: 1.6rem;
+    border-top: 1px solid var(--line);
+    color: var(--muted); font-size: .82rem; line-height: 1.5;
+  }
+  footer.doc-foot .sig {
+    font-family: Georgia, serif; color: var(--ink); font-size: .95rem;
+    margin-bottom: .3rem;
+  }
+
+  a { color: var(--accent); text-decoration: none;
+       border-bottom: 1px solid transparent; transition: border-color .15s; }
+  a:hover { border-bottom-color: var(--accent); }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; animation: none !important; }
+  }
+</style>
+
+<!-- SVG defs shared across mocks -->
+<svg xmlns="http://www.w3.org/2000/svg" style="width:0;height:0;position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="grad-teal" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="var(--accent)" stop-opacity=".9"/>
+      <stop offset="1" stop-color="var(--accent-2)" stop-opacity=".2"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<div class="layout">
+  <aside>
+    <div class="brand">
+      <div class="eyebrow">Feature guide</div>
+      <div class="title">Post Performance Matrix</div>
+      <div class="version">v1 &middot; Jul 2026</div>
+    </div>
+    <nav id="toc">
+      <div class="toc-group">Overview</div>
+      <a href="#for-who">Who this is for</a>
+      <a href="#three-modes">The three modes</a>
+      <div class="toc-group">Daily view</div>
+      <a href="#scatter">See the year at a glance</a>
+      <a href="#compare">Compare a post to the top</a>
+      <a href="#recipe">Read the ideal-post recipe</a>
+      <div class="toc-group">Draft view</div>
+      <a href="#photo-score">Score the photo</a>
+      <a href="#text-score">Score the caption</a>
+      <a href="#combined">Predict the whole draft</a>
+      <a href="#hashtags">Get hashtag suggestions</a>
+      <div class="toc-group">Analysis view</div>
+      <a href="#viz-tabs">Nine charts on nine tabs</a>
+      <a href="#matched">Find real A/B pairs</a>
+      <a href="#model-insights">See what drives the score</a>
+      <div class="toc-group">Controls</div>
+      <a href="#filters">Filters and refinement</a>
+      <a href="#dates">Date range and presets</a>
+      <a href="#weights">Signal weights</a>
+      <div class="toc-group">Reference</div>
+      <a href="#limits">Known limits</a>
+      <a href="#numbers">By the numbers</a>
+    </nav>
+  </aside>
+
+  <main>
+
+    <!-- =========================================================== -->
+    <header class="doc-head">
+      <div class="eyebrow">GrantsNow &middot; LinkedIn</div>
+      <h1>Every feature, one page</h1>
+      <p class="lede">
+        A crisp guide to everything the Post Performance Matrix does.
+        Written for the copywriter, the designer, and the marketing lead.
+        No setup, no code, no jargon. Every feature listed with what it is
+        and why it matters.
+      </p>
+      <div class="pills">
+        <span class="pill accent">125 posts scored</span>
+        <span class="pill">3 modes</span>
+        <span class="pill">25+ interactive charts</span>
+        <span class="pill">148 hashtags from the playbook</span>
+        <span class="pill">Predicts a draft before you publish</span>
+      </div>
+
+      <div class="mode-strip">
+        <div class="mode-card">
+          <div class="mode-label">Explore</div>
+          <div class="mode-title">Daily view</div>
+          <div class="mode-desc">
+            Which posts to copy. Which to stop. What to write next.
+          </div>
+        </div>
+        <div class="mode-card">
+          <div class="mode-label">Visualize</div>
+          <div class="mode-title">Analysis view</div>
+          <div class="mode-desc">
+            Nine tabs of charts. Present findings to a stakeholder.
+          </div>
+        </div>
+        <div class="mode-card">
+          <div class="mode-label">Recommend</div>
+          <div class="mode-title">Draft view</div>
+          <div class="mode-desc">
+            Score a draft photo and caption before you post it.
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- =========================================================== -->
+    <section id="for-who">
+      <h2><span class="num">01</span>Who this is for</h2>
+      <ul class="feature-list">
+        <li>
+          <span class="marker">01</span>
+          <div>
+            <div class="feature-name">The copywriter</div>
+            <div class="feature-desc">Deciding what caption to draft next.</div>
+          </div>
+        </li>
+        <li>
+          <span class="marker">02</span>
+          <div>
+            <div class="feature-name">The designer</div>
+            <div class="feature-desc">Deciding what image treatment to build next.</div>
+          </div>
+        </li>
+        <li>
+          <span class="marker">03</span>
+          <div>
+            <div class="feature-name">The marketing lead</div>
+            <div class="feature-desc">Reviewing what worked over the last quarter.</div>
+          </div>
+        </li>
+        <li>
+          <span class="marker">04</span>
+          <div>
+            <div class="feature-name">The business owner</div>
+            <div class="feature-desc">Wanting a picture of the page in under a minute.</div>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <hr class="section-rule">
+
+    <!-- =========================================================== -->
+    <section id="scatter">
+      <h2><span class="num">02</span>See the year at a glance</h2>
+      <p class="kicker">
+        A single scatter chart puts every post in one view. Score on the
+        vertical, date on the horizontal. Higher and to the right is more
+        recent and better.
+      </p>
+      <div class="mock" aria-hidden="true">
+        <svg viewBox="0 0 500 180">
+          <!-- axes -->
+          <line x1="35" y1="15" x2="35" y2="150" stroke="var(--line-strong)" stroke-width="1"/>
+          <line x1="35" y1="150" x2="490" y2="150" stroke="var(--line-strong)" stroke-width="1"/>
+          <!-- median rule -->
+          <line x1="35" y1="90" x2="490" y2="90" stroke="var(--muted)" stroke-width="1" stroke-dasharray="3 3" opacity=".6"/>
+          <text x="27" y="145" fill="var(--muted)" font-size="8" text-anchor="end">0</text>
+          <text x="27" y="93" fill="var(--muted)" font-size="8" text-anchor="end">50</text>
+          <text x="27" y="20" fill="var(--muted)" font-size="8" text-anchor="end">100</text>
+          <text x="60" y="165" fill="var(--muted)" font-size="8">Jul 25</text>
+          <text x="240" y="165" fill="var(--muted)" font-size="8">Jan 26</text>
+          <text x="440" y="165" fill="var(--muted)" font-size="8">Jul 26</text>
+          <!-- dots below median (muted) -->
+          <g fill="var(--muted)" opacity=".7">
+            <circle cx="70" cy="120" r="4"/>
+            <circle cx="90" cy="115" r="4"/>
+            <circle cx="110" cy="140" r="4"/>
+            <circle cx="140" cy="105" r="4"/>
+            <circle cx="175" cy="130" r="4"/>
+            <circle cx="200" cy="125" r="4"/>
+            <circle cx="235" cy="112" r="4"/>
+            <circle cx="270" cy="135" r="4"/>
+            <circle cx="315" cy="118" r="4"/>
+            <circle cx="345" cy="128" r="4"/>
+            <circle cx="380" cy="115" r="4"/>
+            <circle cx="420" cy="122" r="4"/>
+            <circle cx="455" cy="105" r="4"/>
+          </g>
+          <!-- dots above median (teal) -->
+          <g fill="var(--accent)">
+            <circle cx="80" cy="55" r="4"/>
+            <circle cx="120" cy="75" r="4"/>
+            <circle cx="155" cy="45" r="4"/>
+            <circle cx="185" cy="65" r="4"/>
+            <circle cx="220" cy="35" r="4"/>
+            <circle cx="255" cy="70" r="4"/>
+            <circle cx="290" cy="50" r="4"/>
+            <circle cx="330" cy="60" r="4"/>
+            <circle cx="365" cy="30" r="4"/>
+            <circle cx="400" cy="70" r="4"/>
+            <circle cx="440" cy="55" r="4"/>
+            <circle cx="475" cy="80" r="4"/>
+          </g>
+          <!-- selected dot highlighted -->
+          <circle cx="365" cy="30" r="8" fill="none" stroke="var(--accent)" stroke-width="2"/>
+        </svg>
+        <div class="mock-caption">Scatter view. Click a dot to inspect it.</div>
+      </div>
+      <ul class="feature-list">
+        <li>
+          <span class="marker">A.</span>
+          <div>
+            <div class="feature-name">Full-year scatter with clickable dots</div>
+            <div class="feature-desc">Each post is one dot. Teal dots beat a normal post. Muted dots did not. Hover shows first line, date, score. Click to compare it against the top performer.</div>
+            <div class="feature-why">Spot outliers, streaks, and slumps in three seconds without opening a spreadsheet.</div>
+          </div>
+        </li>
+        <li>
+          <span class="marker">B.</span>
+          <div>
+            <div class="feature-name">Median line across the year</div>
+            <div class="feature-desc">A dotted horizontal line marks the median score for the current filter. Everything above it is worth studying, everything below is worth questioning.</div>
+            <div class="feature-why">Give the reader a fair baseline without doing the maths in their head.</div>
+          </div>
+        </li>
+        <li>
+          <span class="marker">C.</span>
+          <div>
+            <div class="feature-name">Five KPI tiles above the chart</div>
+            <div class="feature-desc">Posts in view, total views, views vs a normal post, reactions vs a normal post, top score. Recomputes as filters change.</div>
+            <div class="feature-why">A pocket dashboard for the exec who has 20 seconds.</div>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- =========================================================== -->
+    <section id="compare">
+      <h2><span class="num">03</span>Compare a post to the top performer</h2>
+      <p class="kicker">
+        Two cards, side by side. The one you picked on the left. The
+        top-scoring post on the right. Every attribute lined up so
+        differences are obvious.
+      </p>
+      <div class="mock" aria-hidden="true">
+        <svg viewBox="0 0 500 200">
+          <!-- left card -->
+          <rect x="10" y="10" width="235" height="180" rx="8" fill="var(--surface)" stroke="var(--accent)" stroke-width="2"/>
+          <rect x="20" y="20" width="80" height="12" rx="2" fill="var(--accent-soft)"/>
+          <text x="60" y="29" fill="var(--accent-strong)" font-size="7" text-anchor="middle" font-weight="600">YOUR SELECTION</text>
+          <rect x="20" y="42" width="180" height="10" rx="1" fill="var(--ink)" opacity=".85"/>
+          <rect x="20" y="56" width="140" height="8" rx="1" fill="var(--muted)" opacity=".7"/>
+          <text x="20" y="90" fill="var(--ink)" font-family="Georgia" font-size="28" font-weight="600">58</text>
+          <text x="55" y="88" fill="var(--muted)" font-size="7">SCORE</text>
+          <line x1="20" y1="105" x2="225" y2="105" stroke="var(--line)"/>
+          <text x="20" y="120" fill="var(--muted)" font-size="8">Topic</text>
+          <text x="222" y="120" fill="var(--ink)" font-size="8" text-anchor="end" font-weight="600">pain_point</text>
+          <line x1="20" y1="128" x2="225" y2="128" stroke="var(--line)"/>
+          <text x="20" y="143" fill="var(--muted)" font-size="8">Publish day</text>
+          <text x="222" y="143" fill="var(--ink)" font-size="8" text-anchor="end" font-weight="600">Wednesday</text>
+          <line x1="20" y1="151" x2="225" y2="151" stroke="var(--line)"/>
+          <text x="20" y="166" fill="var(--muted)" font-size="8">Face in image</text>
+          <text x="222" y="166" fill="var(--ink)" font-size="8" text-anchor="end" font-weight="600">no</text>
+          <line x1="20" y1="174" x2="225" y2="174" stroke="var(--line)"/>
+          <text x="20" y="188" fill="var(--muted)" font-size="8">Image colour</text>
+          <text x="222" y="188" fill="var(--ink)" font-size="8" text-anchor="end" font-weight="600">teal + navy</text>
+          <!-- right card -->
+          <rect x="255" y="10" width="235" height="180" rx="8" fill="var(--surface)" stroke="var(--line-strong)"/>
+          <rect x="265" y="20" width="110" height="12" rx="2" fill="var(--paper)" stroke="var(--line-strong)"/>
+          <text x="320" y="29" fill="var(--muted-strong)" font-size="7" text-anchor="middle" font-weight="600">TOP IN THIS TOPIC</text>
+          <rect x="265" y="42" width="200" height="10" rx="1" fill="var(--ink)" opacity=".85"/>
+          <rect x="265" y="56" width="150" height="8" rx="1" fill="var(--muted)" opacity=".7"/>
+          <text x="265" y="90" fill="var(--accent)" font-family="Georgia" font-size="28" font-weight="600">88</text>
+          <text x="303" y="88" fill="var(--muted)" font-size="7">SCORE</text>
+          <line x1="265" y1="105" x2="470" y2="105" stroke="var(--line)"/>
+          <text x="265" y="120" fill="var(--muted)" font-size="8">Topic</text>
+          <text x="467" y="120" fill="var(--ink)" font-size="8" text-anchor="end" font-weight="600">pain_point</text>
+          <line x1="265" y1="128" x2="470" y2="128" stroke="var(--line)"/>
+          <text x="265" y="143" fill="var(--muted)" font-size="8">Publish day</text>
+          <text x="467" y="143" fill="var(--accent)" font-size="8" text-anchor="end" font-weight="600">Friday</text>
+          <line x1="265" y1="151" x2="470" y2="151" stroke="var(--line)"/>
+          <text x="265" y="166" fill="var(--muted)" font-size="8">Face in image</text>
+          <text x="467" y="166" fill="var(--accent)" font-size="8" text-anchor="end" font-weight="600">yes</text>
+          <line x1="265" y1="174" x2="470" y2="174" stroke="var(--line)"/>
+          <text x="265" y="188" fill="var(--muted)" font-size="8">Image colour</text>
+          <text x="467" y="188" fill="var(--accent)" font-size="8" text-anchor="end" font-weight="600">teal + gold</text>
+        </svg>
+        <div class="mock-caption">Compare view. Teal values on the right are where the top post differs from your pick.</div>
+      </div>
+      <ul class="feature-list">
+        <li>
+          <span class="marker">A.</span>
+          <div>
+            <div class="feature-name">Side-by-side post cards</div>
+            <div class="feature-desc">Each card shows hook, date, views, likes, comments, and the eight attributes that matter most. Same layout on both sides so nothing is hidden.</div>
+            <div class="feature-why">The reader can see the difference between winner and average without translating anything.</div>
+          </div>
+        </li>
+        <li>
+          <span class="marker">B.</span>
+          <div>
+            <div class="feature-name">Same-topic-only toggle</div>
+            <div class="feature-desc">Restricts the right card to posts on the same topic as the left. A whitepaper stops being compared to an event post.</div>
+            <div class="feature-why">Comparisons stay fair. Beating a normal whitepaper is a real signal, beating an ARMA week is not.</div>
+          </div>
+        </li>
+        <li>
+          <span class="marker">C.</span>
+          <div>
+            <div class="feature-name">Prev and Next under each card</div>
+            <div class="feature-desc">Walk through the ranking one post at a time. Left card walks all posts, right card walks the topic-locked list.</div>
+            <div class="feature-why">Quick way to sanity-check whether the top score is a one-off or the start of a pattern.</div>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- =========================================================== -->
+    <section id="recipe">
+      <h2><span class="num">04</span>Read the ideal-post recipe</h2>
+      <p class="kicker">
+        Averaged from the top quartile of posts in the current filter. Not
+        a prediction, a description of what has actually worked.
+      </p>
+      <div class="mock" aria-hidden="true">
+        <svg viewBox="0 0 500 220">
+          <rect x="10" y="10" width="480" height="200" rx="8" fill="var(--surface)" stroke="var(--line-strong)"/>
+          <rect x="20" y="20" width="80" height="12" rx="2" fill="var(--gold-soft)"/>
+          <text x="60" y="29" fill="var(--gold)" font-size="7" text-anchor="middle" font-weight="700">THE RECIPE</text>
+          <text x="20" y="52" fill="var(--ink)" font-family="Georgia" font-size="16" font-weight="600">Write the next post like this</text>
+          <g font-size="9">
+            <text x="20" y="80" fill="var(--muted)">TOPIC</text>
+            <text x="480" y="80" fill="var(--ink)" text-anchor="end" font-weight="600">pain_point</text>
+            <line x1="20" y1="86" x2="480" y2="86" stroke="var(--line)"/>
+            <text x="20" y="103" fill="var(--muted)">ASK</text>
+            <text x="480" y="103" fill="var(--ink)" text-anchor="end" font-weight="600">download</text>
+            <line x1="20" y1="109" x2="480" y2="109" stroke="var(--line)"/>
+            <text x="20" y="126" fill="var(--muted)">LENGTH</text>
+            <text x="480" y="126" fill="var(--ink)" text-anchor="end" font-weight="600">Short (25 to 60w)</text>
+            <line x1="20" y1="132" x2="480" y2="132" stroke="var(--line)"/>
+            <text x="20" y="149" fill="var(--muted)">PUBLISH DAY</text>
+            <text x="480" y="149" fill="var(--ink)" text-anchor="end" font-weight="600">Friday</text>
+            <line x1="20" y1="155" x2="480" y2="155" stroke="var(--line)"/>
+            <text x="20" y="172" fill="var(--muted)">FACE IN IMAGE</text>
+            <text x="480" y="172" fill="var(--ink)" text-anchor="end" font-weight="600">yes</text>
+            <line x1="20" y1="178" x2="480" y2="178" stroke="var(--line)"/>
+            <text x="20" y="195" fill="var(--muted)">IMAGE COLOUR</text>
+            <text x="480" y="195" fill="var(--ink)" text-anchor="end" font-weight="600">brand-teal + gold + photographic</text>
+          </g>
+        </svg>
+        <div class="mock-caption">The recipe. Copy the whole block as text and paste it into a brief.</div>
+      </div>
+      <ul class="feature-list">
+        <li>
+          <span class="marker">A.</span>
+          <div>
+            <div class="feature-name">A one-glance recipe card</div>
+            <div class="feature-desc">Topic, ask, length, publish day, format, media type, image subject, palette, face in image, target region, word count, first-line length, hashtag count, hashtag set.</div>
+            <div class="feature-why">One card the creative team can act on. No pivot tables, no data terminology.</div>
+          </div>
+        </li>
+        <li>
+          <span class="marker">B.</span>
+          <div>
+            <div class="feature-name">Copy as text and download as .txt</div>
+            <div class="feature-desc">Every recipe is copyable in a plain-text version formatted as a proper brief. Paste directly into a copywriter ticket or a designer brief.</div>
+            <div class="feature-why">Removes the manual step of retyping. The recipe travels with the ticket.</div>
+          </div>
+        </li>
+        <li>
+          <span class="marker">C.</span>
+          <div>
+            <div class="feature-name">Warning when the recipe is not repeatable</div>
+            <div class="feature-desc">If more than 40 percent of the top-scoring posts are event posts, a yellow warning appears telling you the recipe cannot be built on a normal week.</div>
+            <div class="feature-why">Prevents chasing a signal you cannot execute on. ARMA works because it is ARMA.</div>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <hr class="section-rule">
+
+    <!-- =========================================================== -->
+    <section id="photo-score">
+      <h2><span class="num">05</span>Score the photo before you publish</h2>
+      <p class="kicker">
+        Upload the image. The tool detects palette, face presence, and
+        whether the image has text overlay. It scores the visual side on
+        its own contribution to the predicted post score.
+      </p>
+      <div class="mock" aria-hidden="true">
+        <svg viewBox="0 0 500 200">
+          <!-- image preview placeholder -->
+          <rect x="10" y="10" width="180" height="180" rx="8" fill="var(--paper)" stroke="var(--line-strong)"/>
+          <circle cx="55" cy="60" r="10" fill="var(--muted)" opacity=".3"/>
+          <path d="M20 160 L60 110 L100 140 L140 90 L180 130" stroke="var(--muted)" stroke-width="1.5" fill="none" opacity=".4"/>
+          <text x="100" y="185" fill="var(--muted)" font-size="7" text-anchor="middle">IMAGE PREVIEW</text>
+          <!-- scorecard on the right -->
+          <rect x="200" y="10" width="290" height="180" rx="8" fill="var(--surface)" stroke="var(--accent)"/>
+          <rect x="210" y="20" width="60" height="12" rx="2" fill="var(--accent-soft)"/>
+          <text x="240" y="29" fill="var(--accent-strong)" font-size="7" text-anchor="middle" font-weight="600">PHOTO SCORE</text>
+          <text x="210" y="72" fill="var(--accent)" font-family="Georgia" font-size="32" font-weight="600">+7.4</text>
+          <text x="270" y="72" fill="var(--muted)" font-size="8">points added to the combined score</text>
+          <text x="210" y="88" fill="var(--muted-strong)" font-size="8">Takes the post from baseline 47 to 54 on its own.</text>
+          <line x1="210" y1="98" x2="480" y2="98" stroke="var(--line)"/>
+          <g font-size="8">
+            <text x="210" y="113" fill="var(--muted)">Face detected</text>
+            <text x="480" y="113" fill="var(--ink)" text-anchor="end" font-weight="600">yes</text>
+            <line x1="210" y1="119" x2="480" y2="119" stroke="var(--line)"/>
+            <text x="210" y="134" fill="var(--muted)">Text on image</text>
+            <text x="480" y="134" fill="var(--ink)" text-anchor="end" font-weight="600">yes</text>
+            <line x1="210" y1="140" x2="480" y2="140" stroke="var(--line)"/>
+            <text x="210" y="155" fill="var(--muted)">Palette</text>
+            <text x="480" y="155" fill="var(--ink)" text-anchor="end" font-weight="600">brand-teal + gold</text>
+            <line x1="210" y1="161" x2="480" y2="161" stroke="var(--line)"/>
+            <text x="210" y="176" fill="var(--accent-strong)" font-weight="600">Try format: image &rarr; video</text>
+            <text x="480" y="176" fill="var(--accent)" text-anchor="end" font-weight="600">+14.3 pts</text>
+          </g>
+        </svg>
+        <div class="mock-caption">Photo scorecard. Auto-detected details on top, the biggest single change to lift the score at the bottom.</div>
+      </div>
+      <ul class="feature-list">
+        <li>
+          <span class="marker">A.</span>
+          <div>
+            <div class="feature-name">Auto-detected palette, face, and text overlay</div>
+            <div class="feature-desc">Uploads run through K-means clustering for palette, an OpenCV face detector, and an edge-density check for text overlays. All three fill the dropdowns for you.</div>
+            <div class="feature-why">The designer does not have to manually classify the image. Fifteen seconds instead of two minutes per draft.</div>
+          </div>
+        </li>
+        <li>
+          <span class="marker">B.</span>
+          <div>
+            <div class="feature-name">Photo contribution as a signed score</div>
+            <div class="feature-desc">Shows the exact points this photo adds to (or subtracts from) the baseline. Not a mystery number. Photo contribution plus text contribution equals the combined score, exactly.</div>
+            <div class="feature-why">The designer sees whether their image is helping or hurting before the post ships.</div>
+          </div>
+        </li>
+        <li>
+          <span class="marker">C.</span>
+          <div>
+            <div class="feature-name">The single change that would lift it most</div>
+            <div class="feature-desc">The top visual swap that would raise the score, ranked. For example: image or text becomes video or document, +14.3 points.</div>
+            <div class="feature-why">Turns the score from a verdict into an action.</div>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- =========================================================== -->
+    <section id="text-score">
+      <h2><span class="num">06</span>Score the caption at the same time</h2>
+      <p class="kicker">
+        Paste the caption. Word count, hashtag count, question and link
+        presence, length band are all derived automatically. Topic, ask,
+        and publish day are the only manual picks.
+      </p>
+      <div class="mock" aria-hidden="true">
+        <svg viewBox="0 0 500 200">
+          <!-- caption box on left -->
+          <rect x="10" y="10" width="200" height="180" rx="8" fill="var(--paper)" stroke="var(--line-strong)"/>
+          <text x="20" y="30" fill="var(--muted)" font-size="7" letter-spacing="1">CAPTION</text>
+          <g fill="var(--ink-soft)" font-size="8">
+            <rect x="20" y="40" width="170" height="6" rx="1" opacity=".7"/>
+            <rect x="20" y="52" width="180" height="6" rx="1" opacity=".7"/>
+            <rect x="20" y="64" width="150" height="6" rx="1" opacity=".7"/>
+            <rect x="20" y="80" width="170" height="6" rx="1" opacity=".55"/>
+            <rect x="20" y="92" width="160" height="6" rx="1" opacity=".55"/>
+            <rect x="20" y="104" width="180" height="6" rx="1" opacity=".55"/>
+          </g>
+          <g font-size="7">
+            <text x="20" y="130" fill="var(--accent-strong)" font-weight="600">#GrantsNow</text>
+            <text x="80" y="130" fill="var(--accent-strong)" font-weight="600">#PreAwards</text>
+            <text x="20" y="145" fill="var(--accent-strong)" font-weight="600">#ARMA2026</text>
+          </g>
+          <!-- text scorecard right -->
+          <rect x="220" y="10" width="270" height="180" rx="8" fill="var(--surface)" stroke="var(--accent)"/>
+          <rect x="230" y="20" width="55" height="12" rx="2" fill="var(--accent-soft)"/>
+          <text x="257" y="29" fill="var(--accent-strong)" font-size="7" text-anchor="middle" font-weight="600">TEXT SCORE</text>
+          <text x="230" y="72" fill="var(--accent)" font-family="Georgia" font-size="32" font-weight="600">+12.1</text>
+          <text x="295" y="72" fill="var(--muted)" font-size="8">points added</text>
+          <text x="230" y="88" fill="var(--muted-strong)" font-size="8">Takes the post from 47 to 59 on its own.</text>
+          <line x1="230" y1="98" x2="480" y2="98" stroke="var(--line)"/>
+          <g font-size="8">
+            <text x="230" y="113" fill="var(--muted)">Word count</text>
+            <text x="480" y="113" fill="var(--ink)" text-anchor="end" font-weight="600">42</text>
+            <line x1="230" y1="119" x2="480" y2="119" stroke="var(--line)"/>
+            <text x="230" y="134" fill="var(--muted)">Hashtags</text>
+            <text x="480" y="134" fill="var(--ink)" text-anchor="end" font-weight="600">4</text>
+            <line x1="230" y1="140" x2="480" y2="140" stroke="var(--line)"/>
+            <text x="230" y="155" fill="var(--muted)">Question in caption</text>
+            <text x="480" y="155" fill="var(--ink)" text-anchor="end" font-weight="600">yes</text>
+            <line x1="230" y1="161" x2="480" y2="161" stroke="var(--line)"/>
+            <text x="230" y="176" fill="var(--accent-strong)" font-weight="600">Try day: Mon &rarr; Fri</text>
+            <text x="480" y="176" fill="var(--accent)" text-anchor="end" font-weight="600">+6.4 pts</text>
+          </g>
+        </svg>
+        <div class="mock-caption">Text scorecard. Every metric on the right is derived from the caption on the left.</div>
+      </div>
+      <ul class="feature-list">
+        <li>
+          <span class="marker">A.</span>
+          <div>
+            <div class="feature-name">Auto-derived text metrics</div>
+            <div class="feature-desc">Word count, first-line length, hashtag count, hashtags themselves, question presence, link presence, and length band come from the pasted caption.</div>
+            <div class="feature-why">The copywriter never has to count. The tool watches the caption and reacts.</div>
+          </div>
+        </li>
+        <li>
+          <span class="marker">B.</span>
+          <div>
+            <div class="feature-name">Text contribution as a signed score</div>
+            <div class="feature-desc">The exact points the caption adds to (or subtracts from) the baseline. Contribution and photo add up to the combined prediction, no gap.</div>
+            <div class="feature-why">The copywriter sees whether the caption is doing the work, or the photo is carrying it.</div>
+          </div>
+        </li>
+        <li>
+          <span class="marker">C.</span>
+          <div>
+            <div class="feature-name">Top single change to lift the caption</div>
+            <div class="feature-desc">Ranked improvements limited to text-side features. Moves like publish-day, ask, or topic switches.</div>
+            <div class="feature-why">A specific action instead of vague advice like "try harder".</div>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- =========================================================== -->
+    <section id="combined">
+      <h2><span class="num">07</span>Predict the whole draft together</h2>
+      <p class="kicker">
+        Combines photo and text into one prediction. Three tiles for score,
+        views, reaction rate. The three past posts closest to your draft
+        for a sanity-check.
+      </p>
+      <div class="mock" aria-hidden="true">
+        <svg viewBox="0 0 500 220">
+          <text x="10" y="18" fill="var(--muted)" font-size="8" letter-spacing="1.4">COMBINED PREDICTION</text>
+          <text x="10" y="34" fill="var(--ink)" font-size="9">Baseline <tspan font-weight="700">47</tspan> + Photo <tspan fill="var(--accent)" font-weight="700">+7.4</tspan> + Text <tspan fill="var(--accent)" font-weight="700">+12.1</tspan> = Predicted <tspan fill="var(--accent)" font-weight="700">58</tspan></text>
+          <!-- 3 tiles -->
+          <rect x="10" y="46" width="155" height="70" rx="6" fill="var(--surface)" stroke="var(--line-strong)"/>
+          <text x="20" y="62" fill="var(--muted)" font-size="7" letter-spacing="1">PREDICTED SCORE</text>
+          <text x="20" y="98" fill="var(--accent)" font-family="Georgia" font-size="30" font-weight="600">58</text>
+          <text x="60" y="98" fill="var(--muted)" font-size="8">out of 100</text>
+          <rect x="172" y="46" width="155" height="70" rx="6" fill="var(--surface)" stroke="var(--line-strong)"/>
+          <text x="182" y="62" fill="var(--muted)" font-size="7" letter-spacing="1">PREDICTED VIEWS</text>
+          <text x="182" y="98" fill="var(--accent)" font-family="Georgia" font-size="24" font-weight="600">154</text>
+          <text x="228" y="98" fill="var(--muted)" font-size="8">impressions</text>
+          <rect x="334" y="46" width="155" height="70" rx="6" fill="var(--surface)" stroke="var(--line-strong)"/>
+          <text x="344" y="62" fill="var(--muted)" font-size="7" letter-spacing="1">REACTION RATE</text>
+          <text x="344" y="98" fill="var(--accent)" font-family="Georgia" font-size="24" font-weight="600">13.2%</text>
+          <!-- similar posts -->
+          <text x="10" y="140" fill="var(--muted)" font-size="8" letter-spacing="1.4">3 CLOSEST PAST POSTS</text>
+          <g>
+            <rect x="10" y="148" width="480" height="20" rx="4" fill="var(--surface)" stroke="var(--line)"/>
+            <rect x="18" y="153" width="200" height="4" rx="1" fill="var(--ink)" opacity=".8"/>
+            <rect x="18" y="160" width="80" height="3" rx="1" fill="var(--muted)"/>
+            <text x="480" y="163" fill="var(--accent)" font-family="Georgia" font-size="12" font-weight="600" text-anchor="end">65</text>
+            <rect x="10" y="172" width="480" height="20" rx="4" fill="var(--surface)" stroke="var(--line)"/>
+            <rect x="18" y="177" width="220" height="4" rx="1" fill="var(--ink)" opacity=".8"/>
+            <rect x="18" y="184" width="90" height="3" rx="1" fill="var(--muted)"/>
+            <text x="480" y="187" fill="var(--accent)" font-family="Georgia" font-size="12" font-weight="600" text-anchor="end">58</text>
+            <rect x="10" y="196" width="480" height="20" rx="4" fill="var(--surface)" stroke="var(--line)"/>
+            <rect x="18" y="201" width="180" height="4" rx="1" fill="var(--ink)" opacity=".8"/>
+            <rect x="18" y="208" width="70" height="3" rx="1" fill="var(--muted)"/>
+            <text x="480" y="211" fill="var(--accent)" font-family="Georgia" font-size="12" font-weight="600" text-anchor="end">51</text>
+          </g>
+        </svg>
+        <div class="mock-caption">Combined prediction. The equation on top shows the exact split between photo and text.</div>
+      </div>
+      <ul class="feature-list">
+        <li>
+          <span class="marker">A.</span>
+          <div>
+            <div class="feature-name">Additive scorecard equation</div>
+            <div class="feature-desc">Baseline plus photo plus text equals the combined prediction, exactly. Uses a Shapley decomposition, honest at the maths level.</div>
+            <div class="feature-why">The reader can trace exactly where the number came from. No black box.</div>
+          </div>
+        </li>
+        <li>
+          <span class="marker">B.</span>
+          <div>
+            <div class="feature-name">Three prediction tiles</div>
+            <div class="feature-desc">Predicted score, predicted views, predicted reaction rate. Trained on the current filter.</div>
+            <div class="feature-why">Not just a rank. A concrete expectation on the three numbers stakeholders ask about.</div>
+          </div>
+        </li>
+        <li>
+          <span class="marker">C.</span>
+          <div>
+            <div class="feature-name">Three most similar past posts</div>
+            <div class="feature-desc">The nearest past posts by attribute overlap. Shows each with its real score, views, and interactions.</div>
+            <div class="feature-why">Sanity-check the prediction against posts you can actually go read.</div>
+          </div>
+        </li>
+        <li>
+          <span class="marker">D.</span>
+          <div>
+            <div class="feature-name">Top overall single-change suggestions</div>
+            <div class="feature-desc">Across photo and text combined, ranked by predicted lift.</div>
+            <div class="feature-why">One list of the biggest levers. No prioritising by hand.</div>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- =========================================================== -->
+    <section id="hashtags">
+      <h2><span class="num">08</span>Get playbook-mixed hashtags</h2>
+      <p class="kicker">
+        Upload the GrantsNow hashtag workbook. The Recommend page then
+        follows the playbook rule: one Broad + two Mid-tier + one Targeted
+        + #GrantsNow. Every suggestion carries its role and past
+        performance.
+      </p>
+      <div class="mock" aria-hidden="true">
+        <svg viewBox="0 0 500 220">
+          <rect x="10" y="10" width="480" height="200" rx="8" fill="var(--surface)" stroke="var(--line-strong)"/>
+          <text x="20" y="30" fill="var(--muted)" font-size="7" letter-spacing="1">HASHTAG PLAYBOOK &middot; TOPIC = PAIN_POINT</text>
+          <!-- entries -->
+          <g font-size="8">
+            <text x="20" y="55" fill="var(--accent)" font-weight="700">#HigherEd</text>
+            <text x="20" y="66" fill="var(--muted)"><tspan font-weight="600">Broad reach</tspan> &middot; Large &middot; used 1x, avg 89</text>
+            <line x1="20" y1="75" x2="480" y2="75" stroke="var(--line)"/>
+            <text x="20" y="93" fill="var(--accent)" font-weight="700">#GrantLifecycle</text>
+            <text x="20" y="104" fill="var(--muted)"><tspan font-weight="600">Mid-tier niche</tspan> &middot; Small &middot; used 2x, avg 64</text>
+            <line x1="20" y1="113" x2="480" y2="113" stroke="var(--line)"/>
+            <text x="20" y="131" fill="var(--accent)" font-weight="700">#ResearchOffice</text>
+            <text x="20" y="142" fill="var(--muted)"><tspan font-weight="600">Mid-tier niche</tspan> &middot; Small &middot; used 6x, avg 57</text>
+            <line x1="20" y1="151" x2="480" y2="151" stroke="var(--line)"/>
+            <text x="20" y="169" fill="var(--accent)" font-weight="700">#ARMA2026</text>
+            <text x="20" y="180" fill="var(--muted)"><tspan font-weight="600">Highly targeted</tspan> &middot; Small &middot; used 9x, avg 65</text>
+            <line x1="20" y1="189" x2="480" y2="189" stroke="var(--line)"/>
+            <text x="20" y="204" fill="var(--gold)" font-weight="700">#GrantsNow</text>
+            <text x="140" y="204" fill="var(--muted)"><tspan font-weight="600">Brand anchor</tspan></text>
+          </g>
+          <rect x="380" y="45" width="90" height="16" rx="4" fill="var(--accent)"/>
+          <text x="425" y="56" fill="var(--surface)" font-size="8" text-anchor="middle" font-weight="600">Append to caption</text>
+        </svg>
+        <div class="mock-caption">Playbook recipe. Each pick shows role, tier, source category, and past performance.</div>
+      </div>
+      <ul class="feature-list">
+        <li>
+          <span class="marker">A.</span>
+          <div>
+            <div class="feature-name">Full library import</div>
+            <div class="feature-desc">The GrantsNow workbook loads all 148 hashtags across 10 categories in one drop. Category structure is auto-detected.</div>
+            <div class="feature-why">The playbook the team already agreed on now drives the recommender. No re-typing.</div>
+          </div>
+        </li>
+        <li>
+          <span class="marker">B.</span>
+          <div>
+            <div class="feature-name">Mix rule enforced</div>
+            <div class="feature-desc">Exactly one Broad + two Mid-tier + one Targeted + #GrantsNow. Total: 4 to 5 tags per post, matching the workbook's own guidance.</div>
+            <div class="feature-why">The team's own playbook is honoured every time. No ad-hoc lists that drift from the strategy.</div>
+          </div>
+        </li>
+        <li>
+          <span class="marker">C.</span>
+          <div>
+            <div class="feature-name">Ranked by past performance</div>
+            <div class="feature-desc">Within each segment, hashtags used in higher-scoring past posts float up. Unproven tags default to the topic's own median, not an arbitrary number, and are tiebroken by the workbook's tier.</div>
+            <div class="feature-why">Fresh hashtags still surface. Proven ones do not lose their spot to made-up numbers.</div>
+          </div>
+        </li>
+        <li>
+          <span class="marker">D.</span>
+          <div>
+            <div class="feature-name">Editable topic to category mapping</div>
+            <div class="feature-desc">Every topic has a multiselect of the loaded categories. Change what pain_point pulls from, and the recipe re-ranks live.</div>
+            <div class="feature-why">The default mapping is opinionated. Now the team can argue with it without opening a file.</div>
+          </div>
+        </li>
+        <li>
+          <span class="marker">E.</span>
+          <div>
+            <div class="feature-name">Append to caption in one click</div>
+            <div class="feature-desc">The whole recipe drops into the caption box. Text metrics and hashtag count refresh automatically.</div>
+            <div class="feature-why">The recipe becomes part of the draft in a click, not a copy-paste dance.</div>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <hr class="section-rule">
+
+    <!-- =========================================================== -->
+    <section id="viz-tabs">
+      <h2><span class="num">09</span>Nine charts on nine tabs</h2>
+      <p class="kicker">
+        The Visualize screen. Every chart is filter-aware. Use for weekly
+        review, stakeholder presentations, or deep-dives.
+      </p>
+      <div class="mock" aria-hidden="true">
+        <svg viewBox="0 0 500 60">
+          <g font-size="7" text-anchor="middle" font-weight="600" letter-spacing=".08em">
+            <rect x="4" y="10" width="50" height="26" rx="4" fill="var(--accent)"/>
+            <text x="29" y="26" fill="var(--surface)">OVERVIEW</text>
+            <rect x="60" y="10" width="42" height="26" rx="4" fill="var(--surface)" stroke="var(--line-strong)"/>
+            <text x="81" y="26" fill="var(--muted)">TIME</text>
+            <rect x="108" y="10" width="72" height="26" rx="4" fill="var(--surface)" stroke="var(--line-strong)"/>
+            <text x="144" y="26" fill="var(--muted)">CONTENT STRAT</text>
+            <rect x="186" y="10" width="70" height="26" rx="4" fill="var(--surface)" stroke="var(--line-strong)"/>
+            <text x="221" y="26" fill="var(--muted)">REACH &amp; ENGAGE</text>
+            <rect x="262" y="10" width="66" height="26" rx="4" fill="var(--surface)" stroke="var(--line-strong)"/>
+            <text x="295" y="26" fill="var(--muted)">SIGNALS</text>
+            <rect x="334" y="10" width="60" height="26" rx="4" fill="var(--surface)" stroke="var(--line-strong)"/>
+            <text x="364" y="26" fill="var(--muted)">WHAT WINS</text>
+            <rect x="400" y="10" width="46" height="26" rx="4" fill="var(--surface)" stroke="var(--line-strong)"/>
+            <text x="423" y="26" fill="var(--muted)">A/B</text>
+            <rect x="452" y="10" width="42" height="26" rx="4" fill="var(--surface)" stroke="var(--line-strong)"/>
+            <text x="473" y="26" fill="var(--muted)">MODEL</text>
+          </g>
+        </svg>
+        <div class="mock-caption">The tab strip. Nine categories of chart in one screen.</div>
+      </div>
+      <ul class="feature-list">
+        <li>
+          <span class="marker">01</span>
+          <div>
+            <div class="feature-name">Overview</div>
+            <div class="feature-desc">KPIs, score distribution, and weekly cadence with median-score line overlay.</div>
+            <div class="feature-why">Where the year sits at a single glance.</div>
+          </div>
+        </li>
+        <li>
+          <span class="marker">02</span>
+          <div>
+            <div class="feature-name">Time</div>
+            <div class="feature-desc">Calendar heatmap, rolling 4-week average, monthly volume, score distribution by publish day.</div>
+            <div class="feature-why">Reveals seasonality and identifies dead weeks.</div>
+          </div>
+        </li>
+        <li>
+          <span class="marker">03</span>
+          <div>
+            <div class="feature-name">Content strategy</div>
+            <div class="feature-desc">Day-by-format matrix with in-cell values, six median-score bar charts (topic, ask, publish day, length, palette, face), topic-by-outcome heatmap.</div>
+            <div class="feature-why">Says which content shape is doing the winning.</div>
+          </div>
+        </li>
+        <li>
+          <span class="marker">04</span>
+          <div>
+            <div class="feature-name">Reach &amp; engagement</div>
+            <div class="feature-desc">Reach against engagement scatter with topic colour and click size. 2D post density. Pareto curve of cumulative views.</div>
+            <div class="feature-why">Distinguishes distribution problems from writing problems.</div>
+          </div>
+        </li>
+        <li>
+          <span class="marker">05</span>
+          <div>
+            <div class="feature-name">Caption signals</div>
+            <div class="feature-desc">Word count vs score with smoothed trend, hashtag count vs reactions, box plots for question and link presence, emoji count.</div>
+            <div class="feature-why">Answers "does length hurt?" and "do emojis help?" with real data, not opinion.</div>
+          </div>
+        </li>
+        <li>
+          <span class="marker">06</span>
+          <div>
+            <div class="feature-name">What wins</div>
+            <div class="feature-desc">Attribute lift with confidence opacity, distinctive words, distinctive hashtags, top-versus-bottom side-by-side table.</div>
+            <div class="feature-why">One glance shows the specific attribute values that beat a normal post.</div>
+          </div>
+        </li>
+        <li>
+          <span class="marker">07</span>
+          <div>
+            <div class="feature-name">Matched pairs (A/B)</div>
+            <div class="feature-desc">Posts sharing the same first line clustered as pairs. Shows what varied and what stayed the same.</div>
+            <div class="feature-why">Real A/B pairs are the cleanest cause-and-effect evidence in the dataset.</div>
+          </div>
+        </li>
+        <li>
+          <span class="marker">08</span>
+          <div>
+            <div class="feature-name">Model insights</div>
+            <div class="feature-desc">Feature importance chart from the trained predictor plus per-post contribution table for any post you pick.</div>
+            <div class="feature-why">Makes the recommender's reasoning legible instead of opaque.</div>
+          </div>
+        </li>
+        <li>
+          <span class="marker">09</span>
+          <div>
+            <div class="feature-name">Correlations</div>
+            <div class="feature-desc">Full correlation matrix of every numeric feature, plus parallel coordinates showing winners as teal polylines.</div>
+            <div class="feature-why">Spot the pairs of variables that move together, and the shape a winning post traces.</div>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- =========================================================== -->
+    <section id="matched">
+      <h2><span class="num">10</span>Find real A/B evidence in the archive</h2>
+      <p class="kicker">
+        Some posts share the exact same first line. When that happens, the
+        tool clusters them and shows the score gap. This is the cleanest
+        causal evidence the archive contains.
+      </p>
+      <ul class="feature-list">
+        <li>
+          <span class="marker">A.</span>
+          <div>
+            <div class="feature-name">Automatic cluster detection</div>
+            <div class="feature-desc">Any post with a shared 80-character prefix in the first line gets clustered. In the current archive, 21 clusters cover 47 posts.</div>
+            <div class="feature-why">Repost and A/B behaviour surfaces without human review.</div>
+          </div>
+        </li>
+        <li>
+          <span class="marker">B.</span>
+          <div>
+            <div class="feature-name">Cluster-level score comparison</div>
+            <div class="feature-desc">Every cluster gets a dot chart with the two or three variants ranked side by side, plus a table showing dates, scores, views, likes and comments.</div>
+            <div class="feature-why">The team sees which visual variant, timing, or format actually did better within a fair comparison.</div>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- =========================================================== -->
+    <section id="model-insights">
+      <h2><span class="num">11</span>See what drives the score</h2>
+      <p class="kicker">
+        The Model insights tab opens up the recommender. Feature importance
+        globally, plus a per-post breakdown for any specific post.
+      </p>
+      <ul class="feature-list">
+        <li>
+          <span class="marker">A.</span>
+          <div>
+            <div class="feature-name">Feature importance chart</div>
+            <div class="feature-desc">Ranks every model input by weight. Currently word count and day of week lead the ranking, meaning length and timing carry most of the signal.</div>
+            <div class="feature-why">The team can prioritise the levers that actually move the score.</div>
+          </div>
+        </li>
+        <li>
+          <span class="marker">B.</span>
+          <div>
+            <div class="feature-name">Per-post feature contribution</div>
+            <div class="feature-desc">Pick any post from a dropdown. See how each of its features individually pushed the predicted score up or down.</div>
+            <div class="feature-why">Every prediction gets an explanation. No number appears without a why.</div>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <hr class="section-rule">
+
+    <!-- =========================================================== -->
+    <section id="filters">
+      <h2><span class="num">12</span>Filters that cascade through every screen</h2>
+      <p class="kicker">
+        Every filter is a "remove" filter, not a "keep" filter. Trim
+        specific distortions rather than opting in from scratch.
+      </p>
+      <div class="mock" aria-hidden="true">
+        <svg viewBox="0 0 500 130">
+          <g font-family="-apple-system" font-size="8">
+            <rect x="10" y="10" width="480" height="30" rx="6" fill="var(--surface)" stroke="var(--line-strong)"/>
+            <text x="20" y="24" fill="var(--muted)" letter-spacing="1">CONTENT FILTERS</text>
+            <rect x="140" y="18" width="76" height="15" rx="8" fill="var(--accent-soft)" stroke="var(--accent)"/>
+            <text x="178" y="28" fill="var(--accent-strong)" text-anchor="middle" font-weight="600">Remove topics</text>
+            <rect x="222" y="18" width="65" height="15" rx="8" fill="var(--surface)" stroke="var(--line-strong)"/>
+            <text x="254" y="28" fill="var(--muted-strong)" text-anchor="middle" font-weight="600">Remove asks</text>
+            <rect x="293" y="18" width="65" height="15" rx="8" fill="var(--surface)" stroke="var(--line-strong)"/>
+            <text x="325" y="28" fill="var(--muted-strong)" text-anchor="middle" font-weight="600">Remove days</text>
+            <rect x="364" y="18" width="70" height="15" rx="8" fill="var(--surface)" stroke="var(--line-strong)"/>
+            <text x="399" y="28" fill="var(--muted-strong)" text-anchor="middle" font-weight="600">Remove length</text>
+
+            <rect x="10" y="50" width="480" height="30" rx="6" fill="var(--surface)" stroke="var(--line-strong)"/>
+            <text x="20" y="64" fill="var(--muted)" letter-spacing="1">VISUAL FILTERS</text>
+            <rect x="130" y="58" width="66" height="15" rx="8" fill="var(--surface)" stroke="var(--line-strong)"/>
+            <text x="163" y="68" fill="var(--muted-strong)" text-anchor="middle" font-weight="600">Palettes</text>
+            <rect x="202" y="58" width="50" height="15" rx="8" fill="var(--surface)" stroke="var(--line-strong)"/>
+            <text x="227" y="68" fill="var(--muted-strong)" text-anchor="middle" font-weight="600">Face</text>
+            <rect x="258" y="58" width="80" height="15" rx="8" fill="var(--surface)" stroke="var(--line-strong)"/>
+            <text x="298" y="68" fill="var(--muted-strong)" text-anchor="middle" font-weight="600">Text on image</text>
+            <rect x="344" y="58" width="72" height="15" rx="8" fill="var(--surface)" stroke="var(--line-strong)"/>
+            <text x="380" y="68" fill="var(--muted-strong)" text-anchor="middle" font-weight="600">Media type</text>
+
+            <rect x="10" y="90" width="480" height="30" rx="6" fill="var(--surface)" stroke="var(--line-strong)"/>
+            <text x="20" y="104" fill="var(--muted)" letter-spacing="1">CAMPAIGN &amp; RESET</text>
+            <rect x="130" y="98" width="90" height="15" rx="8" fill="var(--surface)" stroke="var(--line-strong)"/>
+            <text x="175" y="108" fill="var(--muted-strong)" text-anchor="middle" font-weight="600">Remove campaigns</text>
+            <rect x="380" y="98" width="80" height="15" rx="8" fill="var(--warn-soft)" stroke="var(--warn)"/>
+            <text x="420" y="108" fill="var(--warn)" text-anchor="middle" font-weight="600">Clear all filters</text>
+          </g>
+        </svg>
+        <div class="mock-caption">Filter groups. Each group collapses under an expander in the sidebar.</div>
+      </div>
+      <ul class="feature-list">
+        <li>
+          <span class="marker">A.</span>
+          <div>
+            <div class="feature-name">Skip event posts checkbox</div>
+            <div class="feature-desc">One click removes anything tagged as event_presence, since event weeks distort the ranking.</div>
+            <div class="feature-why">See what the page does on a normal week, not on ARMA.</div>
+          </div>
+        </li>
+        <li>
+          <span class="marker">B.</span>
+          <div>
+            <div class="feature-name">Content filters</div>
+            <div class="feature-desc">Remove topics, remove asks, remove publish days, remove length bands. Each is a multiselect.</div>
+            <div class="feature-why">Focus the analysis on the content mix that matches this week's decision.</div>
+          </div>
+        </li>
+        <li>
+          <span class="marker">C.</span>
+          <div>
+            <div class="feature-name">Visual filters</div>
+            <div class="feature-desc">Remove specific palettes, remove face y/n, remove text-on-image y/n, remove media types. Only appears when the tagging is loaded.</div>
+            <div class="feature-why">Isolate visual patterns. Answer "how do posts without a face perform?" in one click.</div>
+          </div>
+        </li>
+        <li>
+          <span class="marker">D.</span>
+          <div>
+            <div class="feature-name">Campaign filter</div>
+            <div class="feature-desc">Drop entire campaigns (whitepaper - proposal reviews, demo - AI integration, and so on).</div>
+            <div class="feature-why">Compare campaign performance without the noise of the others.</div>
+          </div>
+        </li>
+        <li>
+          <span class="marker">E.</span>
+          <div>
+            <div class="feature-name">Clear all filters button</div>
+            <div class="feature-desc">Appears whenever any filter is active. Resets everything to the full-year view in one click.</div>
+            <div class="feature-why">No hunt-and-peck to undo a set of filters that turned out unhelpful.</div>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- =========================================================== -->
+    <section id="dates">
+      <h2><span class="num">13</span>Date range with four presets</h2>
+      <p class="kicker">
+        The most-used filter lives on the main view, not tucked in the
+        sidebar.
+      </p>
+      <ul class="feature-list">
+        <li>
+          <span class="marker">A.</span>
+          <div>
+            <div class="feature-name">Two date pickers</div>
+            <div class="feature-desc">Custom start and end. If you invert them, the tool swaps.</div>
+            <div class="feature-why">The reader picks the exact window that matches the decision on the table.</div>
+          </div>
+        </li>
+        <li>
+          <span class="marker">B.</span>
+          <div>
+            <div class="feature-name">Four preset buttons</div>
+            <div class="feature-desc">30 days. 90 days. 6 months. Full year. One click each.</div>
+            <div class="feature-why">Weekly reviews, quarterly reviews, and annual reviews all reachable in a single click.</div>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- =========================================================== -->
+    <section id="weights">
+      <h2><span class="num">14</span>Signal weights the team can argue with</h2>
+      <p class="kicker">
+        The score is a judgement. Four sliders make it editable so nobody
+        has to accept a black box.
+      </p>
+      <ul class="feature-list">
+        <li>
+          <span class="marker">A.</span>
+          <div>
+            <div class="feature-name">Comments, reposts, clicks, likes sliders</div>
+            <div class="feature-desc">Default weights: 6 for comments, 4 for reposts, 2 for clicks, 1 for likes. Move any slider, the whole ranking updates.</div>
+            <div class="feature-why">If the team disagrees with the default, they can adjust it in seconds, not through a code change.</div>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <hr class="section-rule">
+
+    <!-- =========================================================== -->
+    <section id="limits">
+      <h2><span class="num">15</span>Known limits</h2>
+      <div class="callout limits">
+        <span class="callout-label">Honest gotchas</span>
+        <ul>
+          <li><strong>LinkedIn export has no time of day.</strong> Best-time-to-post is impossible to answer. The tool does not draw a chart it cannot honestly fill.</li>
+          <li><strong>Dwell time is not in the export.</strong> A post read slowly and a post scrolled past look the same. Comment weight is higher than like weight partly to compensate.</li>
+          <li><strong>The recommender trains on 125 posts.</strong> Predictions are directional, not oracular. The three most similar past posts sit next to every prediction so you can sanity-check.</li>
+          <li><strong>Face detection needs OpenCV 4.x.</strong> When unavailable, palette and text-on-image still work. A red note tells you when face detection is off.</li>
+          <li><strong>Layer 3 tagging covers 66 of 125 posts.</strong> Visual filters apply cleanly to that 66. Growing the coverage is the highest-value hour of manual work available.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- =========================================================== -->
+    <section id="numbers">
+      <h2><span class="num">16</span>By the numbers</h2>
+      <div class="stat-row">
+        <div class="stat">
+          <div class="stat-num">125</div>
+          <div class="stat-label">Posts scored</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">66</div>
+          <div class="stat-label">Layer 3 tagged</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">148</div>
+          <div class="stat-label">Hashtags in playbook</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">3</div>
+          <div class="stat-label">Trained models</div>
+        </div>
+      </div>
+      <div class="stat-row">
+        <div class="stat">
+          <div class="stat-num">9</div>
+          <div class="stat-label">Chart tabs</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">25+</div>
+          <div class="stat-label">Interactive charts</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">10</div>
+          <div class="stat-label">Playbook categories</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">21</div>
+          <div class="stat-label">A/B clusters found</div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="doc-foot">
+      <div class="sig">Post Performance Matrix &middot; feature guide</div>
+      <div>Version 1. Every feature listed on this page is live in the tool.</div>
+    </footer>
+
+  </main>
+</div>
+
+<script>
+  (function () {
+    var links = document.querySelectorAll("#toc a");
+    var sections = Array.prototype.map.call(links, function (l) {
+      var id = l.getAttribute("href").slice(1);
+      return { id: id, el: document.getElementById(id), link: l };
+    }).filter(function (x) { return x.el; });
+
+    function setActive() {
+      var y = window.scrollY + 120;
+      var active = sections[0];
+      for (var i = 0; i < sections.length; i++) {
+        if (sections[i].el.offsetTop <= y) active = sections[i];
+      }
+      links.forEach(function (l) { l.classList.remove("active"); });
+      if (active) active.link.classList.add("active");
+    }
+    setActive();
+    window.addEventListener("scroll", setActive, { passive: true });
+  })();
+</script>
