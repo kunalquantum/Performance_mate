@@ -147,7 +147,7 @@ if app == "LinkedIn Post Matrix":
         if any([drop_topics, drop_asks, drop_days, drop_lengths, drop_palettes,
                 drop_faces, drop_textimg, drop_media, drop_campaigns, drop_event,
                 scope != "Every format"]):
-            if st.button("Clear all filters", use_container_width=True):
+            if st.button("Clear all filters", width='stretch'):
                 for key in ["range_start_input", "range_end_input"]:
                     st.session_state.pop(key, None)
                 st.rerun()
@@ -285,16 +285,16 @@ if app == "LinkedIn Post Matrix":
             unsafe_allow_html=True)
         p1, p2, p3, p4 = st.columns(4)
         with p1:
-            if st.button("30 days", key="pr_30d", use_container_width=True):
+            if st.button("30 days", key="pr_30d", width='stretch'):
                 _set_range(days=30); st.rerun()
         with p2:
-            if st.button("90 days", key="pr_90d", use_container_width=True):
+            if st.button("90 days", key="pr_90d", width='stretch'):
                 _set_range(days=90); st.rerun()
         with p3:
-            if st.button("6 months", key="pr_6m", use_container_width=True):
+            if st.button("6 months", key="pr_6m", width='stretch'):
                 _set_range(days=182); st.rerun()
         with p4:
-            if st.button("Full year", key="pr_full", use_container_width=True):
+            if st.button("Full year", key="pr_full", width='stretch'):
                 _set_range(full=True); st.rerun()
     with dr1:
         st.markdown(f'<div class="eyebrow" style="margin-bottom:.2rem">From</div>',
@@ -400,7 +400,7 @@ if app == "LinkedIn Post Matrix":
 
     tcol1, tcol2 = st.columns([1, 3])
     with tcol1:
-        train_click = st.button("Retrain model", use_container_width=True,
+        train_click = st.button("Retrain model", width='stretch',
                                 type="primary")
     with tcol2:
         st.caption("Learns from the posts in the current date range and "
@@ -438,7 +438,7 @@ if app == "LinkedIn Post Matrix":
             "Image", type=["png", "jpg", "jpeg", "webp"],
             key="draft_image", label_visibility="collapsed")
         if draft_image:
-            st.image(draft_image, use_container_width=True)
+            st.image(draft_image, width='stretch')
 
     # auto-analyse the image and pre-fill the visual tags
     auto_detected = None
@@ -603,7 +603,7 @@ if app == "LinkedIn Post Matrix":
                               value=all_tags, key="tag_row_display",
                               label_visibility="collapsed")
             with cc2:
-                st.button("Append to caption", use_container_width=True,
+                st.button("Append to caption", width='stretch',
                           key="append_playbook_btn",
                           on_click=_append_pending_tags)
     else:
@@ -642,7 +642,7 @@ if app == "LinkedIn Post Matrix":
                               label_visibility="collapsed")
             with cc2:
                 st.button("Append to caption",
-                          use_container_width=True,
+                          width='stretch',
                           key="append_history_btn",
                           on_click=_append_pending_tags)
 
@@ -954,7 +954,7 @@ if app == "LinkedIn Post Matrix":
             tooltip=[alt.Tooltip("post_score:Q", bin=True, title="Score bin"),
                      alt.Tooltip("count():Q", title="Posts")],
         ).properties(height=220)
-        st.altair_chart(hist, use_container_width=True)
+        st.altair_chart(hist, width='stretch')
 
         # weekly cadence + median score
         st.markdown('<h3 style="margin-top:2rem">Post cadence and score, '
@@ -981,7 +981,7 @@ if app == "LinkedIn Post Matrix":
             y=alt.Y("median_score:Q", title="Median score",
                     axis=alt.Axis(labelColor=ACCENT, titleColor=ACCENT)))
         st.altair_chart(alt.layer(_bars, _line).resolve_scale(y="independent"
-                        ).properties(height=250), use_container_width=True)
+                        ).properties(height=250), width='stretch')
 
     # =======================================================================
     # TIME
@@ -1004,7 +1004,7 @@ if app == "LinkedIn Post Matrix":
                      alt.Tooltip("post_score:Q", format=".0f", title="Score"),
                      alt.Tooltip("hook_short:N", title="First line")],
         ).properties(height=200)
-        st.altair_chart(heat, use_container_width=True)
+        st.altair_chart(heat, width='stretch')
 
         # 4-week rolling average score
         st.markdown('<h3 style="margin-top:2rem">Rolling 4-week average '
@@ -1021,7 +1021,7 @@ if app == "LinkedIn Post Matrix":
         rl = base.mark_line(color=ACCENT, strokeWidth=2.4).encode(
             y="rolling:Q")
         st.altair_chart((raw + rl).properties(height=260),
-                        use_container_width=True)
+                        width='stretch')
 
         # posts per month volume + views per month
         st.markdown('<h3 style="margin-top:2rem">Volume by month</h3>',
@@ -1041,7 +1041,7 @@ if app == "LinkedIn Post Matrix":
                 y=alt.Y("posts:Q", title="Posts"),
                 tooltip=[alt.Tooltip("month:T", format="%b %Y"),
                          alt.Tooltip("posts:Q")]).properties(height=240),
-                use_container_width=True)
+                width='stretch')
         with mv2:
             st.altair_chart(alt.Chart(month_agg).mark_bar(
                 color=INK_SOFT).encode(
@@ -1050,7 +1050,7 @@ if app == "LinkedIn Post Matrix":
                 tooltip=[alt.Tooltip("month:T", format="%b %Y"),
                          alt.Tooltip("views:Q", format=",")]).properties(
                     height=240),
-                use_container_width=True)
+                width='stretch')
 
         # day-of-week ridgeline (small multiples of density)
         st.markdown('<h3 style="margin-top:2rem">Score distribution by '
@@ -1069,7 +1069,7 @@ if app == "LinkedIn Post Matrix":
                         header=alt.Header(labelFontSize=11,
                                           labelAlign="right", labelAngle=0)),
         ).properties(width="container", height=45),
-                        use_container_width=True)
+                        width='stretch')
 
     # =======================================================================
     # CONTENT STRATEGY
@@ -1097,7 +1097,7 @@ if app == "LinkedIn Post Matrix":
             x="format_inferred:N",
             y=alt.Y("day_of_week:N", sort=dow_order),
             text=alt.Text("med:Q", format=".0f"))
-        st.altair_chart(_rect + _lbl, use_container_width=True)
+        st.altair_chart(_rect + _lbl, width='stretch')
 
         st.markdown('<h3 style="margin-top:2rem">Median score by category</h3>',
                     unsafe_allow_html=True)
@@ -1126,31 +1126,31 @@ if app == "LinkedIn Post Matrix":
         with c1:
             st.markdown("**Topic**")
             st.altair_chart(cat_bars("theme", "Topic"),
-                            use_container_width=True)
+                            width='stretch')
         with c2:
             st.markdown("**Ask (CTA)**")
             st.altair_chart(cat_bars("cta_type", "Ask"),
-                            use_container_width=True)
+                            width='stretch')
         c3, c4 = st.columns(2, gap="large")
         with c3:
             st.markdown("**Publish day**")
             st.altair_chart(cat_bars("day_of_week", "Day"),
-                            use_container_width=True)
+                            width='stretch')
         with c4:
             st.markdown("**Length band**")
             st.altair_chart(cat_bars("length_band", "Length"),
-                            use_container_width=True)
+                            width='stretch')
         if "image_colour_theme" in scored.columns:
             c5, c6 = st.columns(2, gap="large")
             with c5:
                 st.markdown("**Image palette**")
                 st.altair_chart(cat_bars("image_colour_theme", "Palette"),
-                                use_container_width=True)
+                                width='stretch')
             with c6:
                 if "has_face_in_image" in scored.columns:
                     st.markdown("**Face in image**")
                     st.altair_chart(cat_bars("has_face_in_image", "Face"),
-                                    use_container_width=True)
+                                    width='stretch')
 
         # topic x outcome heatmap
         st.markdown('<h3 style="margin-top:2rem">Topic × outcome</h3>',
@@ -1173,7 +1173,7 @@ if app == "LinkedIn Post Matrix":
             x=alt.X("failure_mode:N",
                     sort=list(scoring.DIAGNOSES.keys())),
             y="theme:N",
-            text="n:Q"), use_container_width=True)
+            text="n:Q"), width='stretch')
 
     # =======================================================================
     # REACH & ENGAGEMENT
@@ -1210,7 +1210,7 @@ if app == "LinkedIn Post Matrix":
         par_y = alt.Chart(pd.DataFrame({"v": [1.0]})).mark_rule(
             color=MUTED, strokeDash=[3, 3]).encode(y="v:Q")
         st.altair_chart(re_scatter + par_x + par_y,
-                        use_container_width=True)
+                        width='stretch')
 
         # 2D density
         st.markdown('<h3 style="margin-top:2rem">Where posts cluster</h3>',
@@ -1227,7 +1227,7 @@ if app == "LinkedIn Post Matrix":
             color=alt.Color("count():Q",
                             scale=alt.Scale(scheme="teals"),
                             title="Posts"),
-        ).properties(height=340), use_container_width=True)
+        ).properties(height=340), width='stretch')
 
         # pareto
         st.markdown('<h3 style="margin-top:2rem">Where does the reach '
@@ -1250,7 +1250,7 @@ if app == "LinkedIn Post Matrix":
         ref = alt.Chart(pd.DataFrame({"x": [0, 100], "y": [0, 100]})
         ).mark_line(color=MUTED, strokeDash=[3, 3]).encode(
             x="x:Q", y="y:Q")
-        st.altair_chart(p_line + ref, use_container_width=True)
+        st.altair_chart(p_line + ref, width='stretch')
 
     # =======================================================================
     # CAPTION SIGNALS
@@ -1271,7 +1271,7 @@ if app == "LinkedIn Post Matrix":
         ).mark_line(color=ACCENT, strokeWidth=2).encode(
             x="word_count:Q", y="post_score:Q")
         st.altair_chart((wc_scatter + wc_smooth).properties(height=280),
-                        use_container_width=True)
+                        width='stretch')
 
         st.markdown('<h3 style="margin-top:2rem">Hashtag count vs reactions</h3>',
                     unsafe_allow_html=True)
@@ -1290,7 +1290,7 @@ if app == "LinkedIn Post Matrix":
         ).mark_line(color=ACCENT, strokeWidth=2).encode(
             x="hashtag_count:Q", y="engagement_index:Q")
         st.altair_chart((ht_scatter + ht_smooth).properties(height=260),
-                        use_container_width=True)
+                        width='stretch')
 
         st.markdown('<h3 style="margin-top:2rem">Small text triggers</h3>',
                     unsafe_allow_html=True)
@@ -1317,10 +1317,10 @@ if app == "LinkedIn Post Matrix":
 
         with b1:
             st.altair_chart(bool_box("has_question", "Question in caption"),
-                            use_container_width=True)
+                            width='stretch')
         with b2:
             st.altair_chart(bool_box("has_link", "Link in caption"),
-                            use_container_width=True)
+                            width='stretch')
 
         # emoji count vs score
         if "emoji_count" in scored.columns:
@@ -1338,7 +1338,7 @@ if app == "LinkedIn Post Matrix":
             ).mark_line(color=ACCENT, strokeWidth=2).encode(
                 x="emoji_count:Q", y="post_score:Q")
             st.altair_chart((_es + _esm).properties(height=260),
-                            use_container_width=True)
+                            width='stretch')
 
     # =======================================================================
     # WHAT WINS
@@ -1373,7 +1373,7 @@ if app == "LinkedIn Post Matrix":
                          alt.Tooltip("posts:Q", title="Posts"),
                          alt.Tooltip("lift:Q", format="+.0%")],
             ).properties(height=alt.Step(19))
-            st.altair_chart(lift_chart, use_container_width=True)
+            st.altair_chart(lift_chart, width='stretch')
         else:
             st.info("Not enough posts at solid or worth-a-test confidence "
                     "yet.")
@@ -1398,7 +1398,7 @@ if app == "LinkedIn Post Matrix":
                              alt.Tooltip("distinctiveness:Q",
                                          format="+.0%")]
                 ).properties(height=max(200, 24 * len(kw))),
-                use_container_width=True)
+                width='stretch')
         ht_tbl = scoring.top_hashtags(scored, n=15)
         with wcol2:
             st.markdown("**Hashtags**")
@@ -1415,13 +1415,13 @@ if app == "LinkedIn Post Matrix":
                              alt.Tooltip("distinctiveness:Q",
                                          format="+.0%")]
                 ).properties(height=max(200, 24 * len(ht_tbl))),
-                use_container_width=True)
+                width='stretch')
 
         st.markdown('<h3 style="margin-top:2rem">Top vs bottom, side by '
                     'side</h3>', unsafe_allow_html=True)
         st.caption("Every micro-detail. Rows where columns differ = recipe.")
         micro = scoring.micro_attribute_table(scored)
-        st.dataframe(micro, use_container_width=True, hide_index=True)
+        st.dataframe(micro, width='stretch', hide_index=True)
 
     # =======================================================================
     # MATCHED PAIRS (A/B)
@@ -1467,7 +1467,7 @@ if app == "LinkedIn Post Matrix":
                                      title="Score"),
                          alt.Tooltip("Impressions:Q", title="Views",
                                      format=",")],
-            ).properties(height=340), use_container_width=True)
+            ).properties(height=340), width='stretch')
 
             st.markdown("**Every cluster, side by side**")
             preview = (grouped.sort_values(["hook_key", "created_date"])
@@ -1480,7 +1480,7 @@ if app == "LinkedIn Post Matrix":
                                               "Impressions": "Views",
                                               "created_date": "Date",
                                               "theme": "Topic"})
-            st.dataframe(preview, use_container_width=True,
+            st.dataframe(preview, width='stretch',
                          hide_index=True)
 
     # =======================================================================
@@ -1507,7 +1507,7 @@ if app == "LinkedIn Post Matrix":
                     tooltip=["nice", alt.Tooltip("importance:Q",
                                                  format=".3f")]
                 ).properties(height=max(220, 24 * min(15, len(imp)))),
-                use_container_width=True)
+                width='stretch')
 
             # per-post breakdown
             st.markdown('<h3 style="margin-top:2rem">Per-post feature '
@@ -1554,7 +1554,7 @@ if app == "LinkedIn Post Matrix":
                 tooltip=["feature", "current_value",
                          alt.Tooltip("contribution:Q", format="+.2f")],
             ).properties(height=max(220, 24 * len(cdf))),
-                            use_container_width=True)
+                            width='stretch')
         else:
             st.warning("Not enough posts to train (need at least 15). "
                        "Widen the date range.")
@@ -1589,7 +1589,7 @@ if app == "LinkedIn Post Matrix":
             fontSize=10, color=INK).encode(
             x="col:N", y="row:N",
             text=alt.Text("corr:Q", format=".2f")),
-                        use_container_width=True)
+                        width='stretch')
 
         st.markdown('<h3 style="margin-top:2rem">Parallel coordinates</h3>',
                     unsafe_allow_html=True)
@@ -1613,7 +1613,7 @@ if app == "LinkedIn Post Matrix":
             color=alt.condition("datum.post_score > 0.6",
                                  alt.value(ACCENT), alt.value(MUTED)),
             tooltip=["idx"],
-        ).properties(height=340), use_container_width=True)
+        ).properties(height=340), width='stretch')
 
     # tiny footnote
     st.markdown(
@@ -1702,7 +1702,7 @@ st.caption(f"Median post score in this window: {_median_score:.0f}. "
            "Click any dot to select it for the comparison below.")
 
 event = st.altair_chart(chart,
-                        use_container_width=True,
+                        width='stretch',
                         on_select="rerun", key="scatter")
 
 # build the score-ranked view once - prev/next buttons walk through this
@@ -1840,7 +1840,7 @@ def render_nav(side_key, rank_state_key, total, scope_label=""):
     b1, b2, b3 = st.columns([1, 2, 1])
     with b1:
         if st.button("← Previous", key=f"{side_key}_prev",
-                     use_container_width=True,
+                     width='stretch',
                      disabled=(rank_now <= 0),
                      help="Move to the next-higher-ranked post"):
             st.session_state[rank_state_key] = max(0, rank_now - 1)
@@ -1856,7 +1856,7 @@ def render_nav(side_key, rank_state_key, total, scope_label=""):
             f'{cap}</div>', unsafe_allow_html=True)
     with b3:
         if st.button("Next →", key=f"{side_key}_next",
-                     use_container_width=True,
+                     width='stretch',
                      disabled=(rank_now >= total - 1),
                      help="Move to the next-lower-ranked post"):
             st.session_state[rank_state_key] = min(total - 1, rank_now + 1)

@@ -119,7 +119,7 @@ st.caption(f"Median post score in this window: {_median_score:.0f}. "
            "Click any dot to select it for the comparison below.")
 
 event = st.altair_chart(chart,
-                        use_container_width=True,
+                        width='stretch',
                         on_select="rerun", key="scatter")
 
 # build the score-ranked view once - prev/next buttons walk through this
@@ -257,7 +257,7 @@ def render_nav(side_key, rank_state_key, total, scope_label=""):
     b1, b2, b3 = st.columns([1, 2, 1])
     with b1:
         if st.button("← Previous", key=f"{side_key}_prev",
-                     use_container_width=True,
+                     width='stretch',
                      disabled=(rank_now <= 0),
                      help="Move to the next-higher-ranked post"):
             st.session_state[rank_state_key] = max(0, rank_now - 1)
@@ -273,7 +273,7 @@ def render_nav(side_key, rank_state_key, total, scope_label=""):
             f'{cap}</div>', unsafe_allow_html=True)
     with b3:
         if st.button("Next →", key=f"{side_key}_next",
-                     use_container_width=True,
+                     width='stretch',
                      disabled=(rank_now >= total - 1),
                      help="Move to the next-lower-ranked post"):
             st.session_state[rank_state_key] = min(total - 1, rank_now + 1)
