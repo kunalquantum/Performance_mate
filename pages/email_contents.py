@@ -322,7 +322,7 @@ else:
     inv.columns = ["Campaign", "Stage", "Type", "Reads for",
                     "Words", "House", "Challenge", "Result",
                     "Weak"]
-    st.dataframe(inv, use_container_width=True, hide_index=True)
+    st.dataframe(inv, width='stretch', hide_index=True)
 
     # ---- Content-type mix chart ----
     st.markdown('<h3 style="margin-top:2rem">Content-type mix</h3>',
@@ -334,7 +334,7 @@ else:
         y=alt.Y("Content type:N", sort="-x", title=None),
         tooltip=["Content type:N", "Emails:Q"],
     ).properties(height=180)
-    st.altair_chart(mix_chart, use_container_width=True)
+    st.altair_chart(mix_chart, width='stretch')
 
     # =============== SCORE ANALYSIS ===============
     # Performance-graph analogue: distributions, rankings, coverage.
@@ -418,7 +418,7 @@ else:
     })).mark_rect(color=ACCENT, opacity=0.08).encode(
         x="x1:Q", x2="x2:Q", y="y1:Q", y2="y2:Q")
     st.altair_chart((zone + base).properties(height=340),
-                     use_container_width=True)
+                     width='stretch')
 
     # ---- House-score ranking ----
     st.markdown('<div class="eyebrow" style="margin-top:1.5rem">'
@@ -442,7 +442,7 @@ else:
             alt.Tooltip("result_score:Q", title="Result"),
         ],
     ).properties(height=max(220, 22 * len(rank_df)))
-    st.altair_chart(rank_chart, use_container_width=True)
+    st.altair_chart(rank_chart, width='stretch')
 
     # ---- Slot hit-rate ----
     st.markdown('<div class="eyebrow" style="margin-top:1.5rem">'
@@ -473,7 +473,7 @@ else:
                   alt.Tooltip("Hit rate:Q", format=".0f"),
                   "Emails hitting:Q"],
     ).properties(height=240)
-    st.altair_chart(slot_chart, use_container_width=True)
+    st.altair_chart(slot_chart, width='stretch')
 
     # ---- Scores by content type ----
     st.markdown('<div class="eyebrow" style="margin-top:1.5rem">'
@@ -499,7 +499,7 @@ else:
         tooltip=["content_type:N", "Axis:N",
                   alt.Tooltip("Score:Q", format=".0f")],
     ).properties(height=260)
-    st.altair_chart(grp_chart, use_container_width=True)
+    st.altair_chart(grp_chart, width='stretch')
 
     # ---- Named-customer frequency across all emails ----
     all_named = []
@@ -522,7 +522,7 @@ else:
             y=alt.Y("Customer:N", sort="-x", title=None),
             tooltip=["Customer:N", "Mentions:Q"],
         ).properties(height=max(200, 22 * len(nc_df)))
-        st.altair_chart(nc_chart, use_container_width=True)
+        st.altair_chart(nc_chart, width='stretch')
 
     # ---- Word count vs house score ----
     st.markdown('<div class="eyebrow" style="margin-top:1.5rem">'
@@ -549,7 +549,7 @@ else:
     ).mark_line(color=GOLD, strokeWidth=2, strokeDash=[4, 4]).encode(
         x="words:Q", y="house_score:Q")
     st.altair_chart(len_chart + _trend,
-                     use_container_width=True)
+                     width='stretch')
 
     st.markdown('<div style="margin:2.5rem 0 0;border-top:1px '
                 'solid ' + LINE + '"></div>', unsafe_allow_html=True)
@@ -691,7 +691,7 @@ else:
         tooltip=["Persona:N",
                   alt.Tooltip("Density:Q", format=".2f")],
     ).properties(height=140)
-    st.altair_chart(pf_chart, use_container_width=True)
+    st.altair_chart(pf_chart, width='stretch')
     dominant = row["persona_dominant"]
     if dominant == "Research":
         st.caption("Reads Research-first. Matches the dominant "
@@ -721,14 +721,14 @@ else:
     with ac1:
         st.markdown('<div class="eyebrow">Most used phrases</div>',
                     unsafe_allow_html=True)
-        st.dataframe(agg_df.head(10), use_container_width=True,
+        st.dataframe(agg_df.head(10), width='stretch',
                       hide_index=True)
     with ac2:
         st.markdown('<div class="eyebrow">Least used phrases</div>',
                     unsafe_allow_html=True)
         unused = agg_df[agg_df["Emails using it"] == 0]
         if not unused.empty:
-            st.dataframe(unused, use_container_width=True,
+            st.dataframe(unused, width='stretch',
                           hide_index=True)
             st.caption("These pain-shape phrases are missing from "
                        "every current campaign. Each is a candidate "

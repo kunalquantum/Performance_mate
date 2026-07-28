@@ -72,17 +72,17 @@ else:
         ep1, ep2, ep3 = st.columns(3)
         with ep1:
             if st.button("Last 8 weeks", key="ep_8w",
-                         use_container_width=True):
+                         width='stretch'):
                 _set_email_range(weeks=8)
                 st.rerun()
         with ep2:
             if st.button("Last quarter", key="ep_q",
-                         use_container_width=True):
+                         width='stretch'):
                 _set_email_range(weeks=13)
                 st.rerun()
         with ep3:
             if st.button("All weeks", key="ep_all",
-                         use_container_width=True):
+                         width='stretch'):
                 _set_email_range(full=True)
                 st.rerun()
     with er1:
@@ -270,7 +270,7 @@ else:
         y="y:Q")
 
     st.altair_chart((raw_line + smoothed + benchmarks
-    ).properties(height=300), use_container_width=True)
+    ).properties(height=300), width='stretch')
 
     # ---- CLICK-TO-OPEN RATE (CTOR) ----
     st.markdown('<h3 style="margin-top:2rem">Click-to-open rate</h3>',
@@ -303,7 +303,7 @@ else:
         })).mark_rule(color=MUTED, strokeDash=[3, 4], opacity=0.6).encode(
             y="y:Q")
         st.altair_chart((ctor_line + ctor_bench).properties(height=240),
-                        use_container_width=True)
+                        width='stretch')
     else:
         st.info("Not enough data to compute CTOR in this window.")
 
@@ -375,7 +375,7 @@ else:
                 axis=alt.Axis(labelColor=ACCENT, titleColor=ACCENT)))
     st.altair_chart(
         alt.layer(_bars, _cline).resolve_scale(y="independent"
-        ).properties(height=260), use_container_width=True)
+        ).properties(height=260), width='stretch')
 
     # ---- BATCH SIZE VS OPEN RATE ----
     st.markdown('<h3 style="margin-top:2rem">Batch size vs open rate</h3>',
@@ -405,7 +405,7 @@ else:
             alt.Tooltip("clicks:Q", title="Clicks"),
         ],
     ).properties(height=320)
-    st.altair_chart(scat, use_container_width=True)
+    st.altair_chart(scat, width='stretch')
 
     # ---- DELIVERY HEALTH ----
     st.markdown('<h3 style="margin-top:2rem">Delivery health</h3>',
@@ -430,7 +430,7 @@ else:
         pd.DataFrame({"y": [0.03]})
     ).mark_rule(color=MUTED, strokeDash=[3, 3]).encode(y="y:Q")
     st.altair_chart(health.properties(height=200),
-                    use_container_width=True)
+                    width='stretch')
 
     # ---- BEST AND WORST WEEKS ----
     st.markdown('<h3 style="margin-top:2rem">Best and worst weeks</h3>',
@@ -464,12 +464,12 @@ else:
     with top_bot[0]:
         st.dataframe(
             table_df.nlargest(5, "open_rate")[rank_cols],
-            use_container_width=True, hide_index=True,
+            width='stretch', hide_index=True,
             column_config=col_config)
     with top_bot[1]:
         st.dataframe(
             table_df.nsmallest(5, "open_rate")[rank_cols],
-            use_container_width=True, hide_index=True,
+            width='stretch', hide_index=True,
             column_config=col_config)
 
 # ================================================================
@@ -564,7 +564,7 @@ if not emails_all.empty and not emails_df.empty:
                                  title="Open rate"),
                      alt.Tooltip("delivered:Q", title="Sample size")])
         st.altair_chart((band + centre).properties(height=280),
-                        use_container_width=True)
+                        width='stretch')
 
         # percentile of latest week vs own history
         st.markdown('<h3 style="margin-top:2rem">Percentile against '
@@ -677,7 +677,7 @@ if not emails_all.empty and not emails_df.empty:
                                 title="Median contacts", format=",.0f"),
                     alt.Tooltip("rate:Q", format=".2%",
                                 title="Median rate")])
-            st.altair_chart(bs_chart, use_container_width=True)
+            st.altair_chart(bs_chart, width='stretch')
         else:
             st.info("Need at least 4 weeks in the window.")
 
@@ -712,7 +712,7 @@ if not emails_all.empty and not emails_df.empty:
                 "send_2w", "next_open").mark_line(
                 color=WARN, strokeDash=[4, 3], strokeWidth=2)
             st.altair_chart((pts + trend).properties(height=280),
-                            use_container_width=True)
+                            width='stretch')
             # correlation
             r_val = fatigue[["send_2w", "next_open"]].corr().iloc[0, 1]
             verdict = ("suggests fatigue" if r_val < -0.2
@@ -755,7 +755,7 @@ if not emails_all.empty and not emails_df.empty:
                      alt.Tooltip("metric_lbl:N", title="Metric"),
                      alt.Tooltip("rate:Q", format=".2%")])
         st.altair_chart(mch.properties(height=260),
-                        use_container_width=True)
+                        width='stretch')
 
         st.markdown('<h3 style="margin-top:2rem">Quarterly rollup</h3>',
                     unsafe_allow_html=True)
@@ -776,7 +776,7 @@ if not emails_all.empty and not emails_df.empty:
             lambda x: f"{x*100:.1f}%" if pd.notna(x) else "")
         q_disp["click_rate"] = q_disp["click_rate"].apply(
             lambda x: f"{x*100:.2f}%" if pd.notna(x) else "")
-        st.dataframe(q_disp, use_container_width=True, hide_index=True,
+        st.dataframe(q_disp, width='stretch', hide_index=True,
                      column_config={
                          "quarter": st.column_config.TextColumn(
                              "Quarter"),
@@ -825,7 +825,7 @@ if not emails_all.empty and not emails_df.empty:
                 alt.Tooltip("opens_per_email:Q", format=".1f",
                             title="Opens / email")])
         st.altair_chart(oe.properties(height=240),
-                        use_container_width=True)
+                        width='stretch')
 
         st.markdown('<h3 style="margin-top:2rem">Effort scatter</h3>',
                     unsafe_allow_html=True)
@@ -847,7 +847,7 @@ if not emails_all.empty and not emails_df.empty:
                 alt.Tooltip("opened:Q", title="Opens"),
                 alt.Tooltip("contacts:Q", title="Contacts")])
         st.altair_chart(eff_scatter.properties(height=340),
-                        use_container_width=True)
+                        width='stretch')
 
         st.markdown('<h3 style="margin-top:2rem">Waste tracker</h3>',
                     unsafe_allow_html=True)
@@ -871,7 +871,7 @@ if not emails_all.empty and not emails_df.empty:
             color=WARN, strokeWidth=1.5).encode(
             x="week_start:T", y="waste:Q")
         st.altair_chart(waste_chart.properties(height=220),
-                        use_container_width=True)
+                        width='stretch')
 
     # ------------------------------------------------------------
     # TAB 4. FORECAST & DIAGNOSTICS
@@ -913,7 +913,7 @@ if not emails_all.empty and not emails_df.empty:
                                                 range=[[1, 0],
                                                         [4, 3]])))
             st.altair_chart(fc_chart.properties(height=280),
-                            use_container_width=True)
+                            width='stretch')
         else:
             st.info("Need at least 4 weeks with data to forecast.")
 
@@ -948,7 +948,7 @@ if not emails_all.empty and not emails_df.empty:
                                  title="Z-score")])
         st.altair_chart(
             (base_line + normal_pts + anom_pts).properties(height=280),
-            use_container_width=True)
+            width='stretch')
         n_anom = int(e_anom["anomaly"].sum())
         st.caption(f"{n_anom} anomalous week(s) detected in this "
                     f"window.")
@@ -979,7 +979,7 @@ if not emails_all.empty and not emails_df.empty:
             x="col:N", y="row:N",
             text=alt.Text("corr:Q", format=".2f"))
         st.altair_chart((cm + labels_cm).properties(height=440),
-                        use_container_width=True)
+                        width='stretch')
 
         st.markdown('<h3 style="margin-top:2rem">Trend decomposition</h3>',
                     unsafe_allow_html=True)
@@ -1002,7 +1002,7 @@ if not emails_all.empty and not emails_df.empty:
             y="open_rate:Q")
         st.altair_chart((_pts + _sm).resolve_scale(
             x="independent").properties(height=260),
-                         use_container_width=True)
+                         width='stretch')
 
 # ================== INTEREST & ENGAGEMENT ==================
 # Rows 10-12 of the source sheet: Replies (numeric), Most interested
@@ -1083,7 +1083,7 @@ if not emails_df.empty and {"interested_companies_count",
                              title="Names"),
             ],
         ).properties(height=220)
-        st.altair_chart(int_bar, use_container_width=True)
+        st.altair_chart(int_bar, width='stretch')
 
     # ---- Top interested universities across the window ----
     all_names = []
@@ -1107,7 +1107,7 @@ if not emails_df.empty and {"interested_companies_count",
                         'style="margin-top:1.5rem">Top interested '
                         'universities</div>',
                         unsafe_allow_html=True)
-            st.dataframe(_top_df, use_container_width=True,
+            st.dataframe(_top_df, width='stretch',
                           hide_index=True)
         with cB:
             st.markdown('<div class="eyebrow" '
@@ -1145,7 +1145,7 @@ if not emails_df.empty and {"interested_companies_count",
                 alt.Tooltip("newsletter_subs:Q", title="Subs"),
             ],
         ).properties(height=220)
-        st.altair_chart(sub_chart, use_container_width=True)
+        st.altair_chart(sub_chart, width='stretch')
 
     # ---- Qualitative notes (from row 12 free text) ----
     _notes_df = emails_df[emails_df["newsletter_note"].astype(str)

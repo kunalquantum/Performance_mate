@@ -312,7 +312,7 @@ else:
                              "seniority_tier"]
             preview_cols = [c for c in preview_cols if c in batch.columns]
             st.dataframe(batch[preview_cols].head(25),
-                          use_container_width=True, hide_index=True)
+                          width='stretch', hide_index=True)
 
         export_cols = ["contact_id", "email_clean", "first_name",
                         "last_name", "job_title", "institution",

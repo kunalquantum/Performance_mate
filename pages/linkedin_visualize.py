@@ -89,7 +89,7 @@ with tab_overview:
         tooltip=[alt.Tooltip("post_score:Q", bin=True, title="Score bin"),
                  alt.Tooltip("count():Q", title="Posts")],
     ).properties(height=220)
-    st.altair_chart(hist, use_container_width=True)
+    st.altair_chart(hist, width='stretch')
 
     # weekly cadence + median score
     st.markdown('<h3 style="margin-top:2rem">Post cadence and score, '
@@ -116,7 +116,7 @@ with tab_overview:
         y=alt.Y("median_score:Q", title="Median score",
                 axis=alt.Axis(labelColor=ACCENT, titleColor=ACCENT)))
     st.altair_chart(alt.layer(_bars, _line).resolve_scale(y="independent"
-                    ).properties(height=250), use_container_width=True)
+                    ).properties(height=250), width='stretch')
 
 # =======================================================================
 # TIME
@@ -139,7 +139,7 @@ with tab_time:
                  alt.Tooltip("post_score:Q", format=".0f", title="Score"),
                  alt.Tooltip("hook_short:N", title="First line")],
     ).properties(height=200)
-    st.altair_chart(heat, use_container_width=True)
+    st.altair_chart(heat, width='stretch')
 
     # 4-week rolling average score
     st.markdown('<h3 style="margin-top:2rem">Rolling 4-week average '
@@ -156,7 +156,7 @@ with tab_time:
     rl = base.mark_line(color=ACCENT, strokeWidth=2.4).encode(
         y="rolling:Q")
     st.altair_chart((raw + rl).properties(height=260),
-                    use_container_width=True)
+                    width='stretch')
 
     # posts per month volume + views per month
     st.markdown('<h3 style="margin-top:2rem">Volume by month</h3>',
@@ -176,7 +176,7 @@ with tab_time:
             y=alt.Y("posts:Q", title="Posts"),
             tooltip=[alt.Tooltip("month:T", format="%b %Y"),
                      alt.Tooltip("posts:Q")]).properties(height=240),
-            use_container_width=True)
+            width='stretch')
     with mv2:
         st.altair_chart(alt.Chart(month_agg).mark_bar(
             color=INK_SOFT).encode(
@@ -185,7 +185,7 @@ with tab_time:
             tooltip=[alt.Tooltip("month:T", format="%b %Y"),
                      alt.Tooltip("views:Q", format=",")]).properties(
                 height=240),
-            use_container_width=True)
+            width='stretch')
 
     # day-of-week ridgeline (small multiples of density)
     st.markdown('<h3 style="margin-top:2rem">Score distribution by '
@@ -204,7 +204,7 @@ with tab_time:
                     header=alt.Header(labelFontSize=11,
                                       labelAlign="right", labelAngle=0)),
     ).properties(width="container", height=45),
-                    use_container_width=True)
+                    width='stretch')
 
 # =======================================================================
 # CONTENT STRATEGY
@@ -232,7 +232,7 @@ with tab_content:
         x="format_inferred:N",
         y=alt.Y("day_of_week:N", sort=dow_order),
         text=alt.Text("med:Q", format=".0f"))
-    st.altair_chart(_rect + _lbl, use_container_width=True)
+    st.altair_chart(_rect + _lbl, width='stretch')
 
     st.markdown('<h3 style="margin-top:2rem">Median score by category</h3>',
                 unsafe_allow_html=True)
@@ -261,31 +261,31 @@ with tab_content:
     with c1:
         st.markdown("**Topic**")
         st.altair_chart(cat_bars("theme", "Topic"),
-                        use_container_width=True)
+                        width='stretch')
     with c2:
         st.markdown("**Ask (CTA)**")
         st.altair_chart(cat_bars("cta_type", "Ask"),
-                        use_container_width=True)
+                        width='stretch')
     c3, c4 = st.columns(2, gap="large")
     with c3:
         st.markdown("**Publish day**")
         st.altair_chart(cat_bars("day_of_week", "Day"),
-                        use_container_width=True)
+                        width='stretch')
     with c4:
         st.markdown("**Length band**")
         st.altair_chart(cat_bars("length_band", "Length"),
-                        use_container_width=True)
+                        width='stretch')
     if "image_colour_theme" in scored.columns:
         c5, c6 = st.columns(2, gap="large")
         with c5:
             st.markdown("**Image palette**")
             st.altair_chart(cat_bars("image_colour_theme", "Palette"),
-                            use_container_width=True)
+                            width='stretch')
         with c6:
             if "has_face_in_image" in scored.columns:
                 st.markdown("**Face in image**")
                 st.altair_chart(cat_bars("has_face_in_image", "Face"),
-                                use_container_width=True)
+                                width='stretch')
 
     # topic x outcome heatmap
     st.markdown('<h3 style="margin-top:2rem">Topic × outcome</h3>',
@@ -308,7 +308,7 @@ with tab_content:
         x=alt.X("failure_mode:N",
                 sort=list(scoring.DIAGNOSES.keys())),
         y="theme:N",
-        text="n:Q"), use_container_width=True)
+        text="n:Q"), width='stretch')
 
 # =======================================================================
 # REACH & ENGAGEMENT
@@ -345,7 +345,7 @@ with tab_reach:
     par_y = alt.Chart(pd.DataFrame({"v": [1.0]})).mark_rule(
         color=MUTED, strokeDash=[3, 3]).encode(y="v:Q")
     st.altair_chart(re_scatter + par_x + par_y,
-                    use_container_width=True)
+                    width='stretch')
 
     # 2D density
     st.markdown('<h3 style="margin-top:2rem">Where posts cluster</h3>',
@@ -362,7 +362,7 @@ with tab_reach:
         color=alt.Color("count():Q",
                         scale=alt.Scale(scheme="teals"),
                         title="Posts"),
-    ).properties(height=340), use_container_width=True)
+    ).properties(height=340), width='stretch')
 
     # pareto
     st.markdown('<h3 style="margin-top:2rem">Where does the reach '
@@ -385,7 +385,7 @@ with tab_reach:
     ref = alt.Chart(pd.DataFrame({"x": [0, 100], "y": [0, 100]})
     ).mark_line(color=MUTED, strokeDash=[3, 3]).encode(
         x="x:Q", y="y:Q")
-    st.altair_chart(p_line + ref, use_container_width=True)
+    st.altair_chart(p_line + ref, width='stretch')
 
 # =======================================================================
 # CAPTION SIGNALS
@@ -406,7 +406,7 @@ with tab_signals:
     ).mark_line(color=ACCENT, strokeWidth=2).encode(
         x="word_count:Q", y="post_score:Q")
     st.altair_chart((wc_scatter + wc_smooth).properties(height=280),
-                    use_container_width=True)
+                    width='stretch')
 
     st.markdown('<h3 style="margin-top:2rem">Hashtag count vs reactions</h3>',
                 unsafe_allow_html=True)
@@ -425,7 +425,7 @@ with tab_signals:
     ).mark_line(color=ACCENT, strokeWidth=2).encode(
         x="hashtag_count:Q", y="engagement_index:Q")
     st.altair_chart((ht_scatter + ht_smooth).properties(height=260),
-                    use_container_width=True)
+                    width='stretch')
 
     st.markdown('<h3 style="margin-top:2rem">Small text triggers</h3>',
                 unsafe_allow_html=True)
@@ -452,10 +452,10 @@ with tab_signals:
 
     with b1:
         st.altair_chart(bool_box("has_question", "Question in caption"),
-                        use_container_width=True)
+                        width='stretch')
     with b2:
         st.altair_chart(bool_box("has_link", "Link in caption"),
-                        use_container_width=True)
+                        width='stretch')
 
     # emoji count vs score
     if "emoji_count" in scored.columns:
@@ -473,7 +473,7 @@ with tab_signals:
         ).mark_line(color=ACCENT, strokeWidth=2).encode(
             x="emoji_count:Q", y="post_score:Q")
         st.altair_chart((_es + _esm).properties(height=260),
-                        use_container_width=True)
+                        width='stretch')
 
 # =======================================================================
 # WHAT WINS
@@ -508,7 +508,7 @@ with tab_winners:
                      alt.Tooltip("posts:Q", title="Posts"),
                      alt.Tooltip("lift:Q", format="+.0%")],
         ).properties(height=alt.Step(19))
-        st.altair_chart(lift_chart, use_container_width=True)
+        st.altair_chart(lift_chart, width='stretch')
     else:
         st.info("Not enough posts at solid or worth-a-test confidence "
                 "yet.")
@@ -533,7 +533,7 @@ with tab_winners:
                          alt.Tooltip("distinctiveness:Q",
                                      format="+.0%")]
             ).properties(height=max(200, 24 * len(kw))),
-            use_container_width=True)
+            width='stretch')
     ht_tbl = scoring.top_hashtags(scored, n=15)
     with wcol2:
         st.markdown("**Hashtags**")
@@ -550,13 +550,13 @@ with tab_winners:
                          alt.Tooltip("distinctiveness:Q",
                                      format="+.0%")]
             ).properties(height=max(200, 24 * len(ht_tbl))),
-            use_container_width=True)
+            width='stretch')
 
     st.markdown('<h3 style="margin-top:2rem">Top vs bottom, side by '
                 'side</h3>', unsafe_allow_html=True)
     st.caption("Every micro-detail. Rows where columns differ = recipe.")
     micro = scoring.micro_attribute_table(scored)
-    st.dataframe(micro, use_container_width=True, hide_index=True)
+    st.dataframe(micro, width='stretch', hide_index=True)
 
 # =======================================================================
 # MATCHED PAIRS (A/B)
@@ -602,7 +602,7 @@ with tab_ab:
                                  title="Score"),
                      alt.Tooltip("Impressions:Q", title="Views",
                                  format=",")],
-        ).properties(height=340), use_container_width=True)
+        ).properties(height=340), width='stretch')
 
         st.markdown("**Every cluster, side by side**")
         preview = (grouped.sort_values(["hook_key", "created_date"])
@@ -615,7 +615,7 @@ with tab_ab:
                                           "Impressions": "Views",
                                           "created_date": "Date",
                                           "theme": "Topic"})
-        st.dataframe(preview, use_container_width=True,
+        st.dataframe(preview, width='stretch',
                      hide_index=True)
 
 # =======================================================================
@@ -642,7 +642,7 @@ with tab_model:
                 tooltip=["nice", alt.Tooltip("importance:Q",
                                              format=".3f")]
             ).properties(height=max(220, 24 * min(15, len(imp)))),
-            use_container_width=True)
+            width='stretch')
 
         # per-post breakdown
         st.markdown('<h3 style="margin-top:2rem">Per-post feature '
@@ -689,7 +689,7 @@ with tab_model:
             tooltip=["feature", "current_value",
                      alt.Tooltip("contribution:Q", format="+.2f")],
         ).properties(height=max(220, 24 * len(cdf))),
-                        use_container_width=True)
+                        width='stretch')
     else:
         st.warning("Not enough posts to train (need at least 15). "
                    "Widen the date range.")
@@ -724,7 +724,7 @@ with tab_corr:
         fontSize=10, color=INK).encode(
         x="col:N", y="row:N",
         text=alt.Text("corr:Q", format=".2f")),
-                    use_container_width=True)
+                    width='stretch')
 
     st.markdown('<h3 style="margin-top:2rem">Parallel coordinates</h3>',
                 unsafe_allow_html=True)
@@ -748,7 +748,7 @@ with tab_corr:
         color=alt.condition("datum.post_score > 0.6",
                              alt.value(ACCENT), alt.value(MUTED)),
         tooltip=["idx"],
-    ).properties(height=340), use_container_width=True)
+    ).properties(height=340), width='stretch')
 
 # tiny footnote
 st.markdown(

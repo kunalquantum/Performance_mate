@@ -191,7 +191,7 @@ with tabs[0]:
             line = base.mark_line(color=GOLD, strokeWidth=2).encode(
                 y=alt.Y("Engagement rate:Q", title="Engagement rate", axis=alt.Axis(format="%")))
             st.altair_chart(alt.layer(bar, line).resolve_scale(y="independent").properties(height=280),
-                            use_container_width=True)
+                            width='stretch')
 
     with right:
         st.subheader("Where the reach came from")
@@ -205,7 +205,7 @@ with tabs[0]:
                 x=alt.X("impressions:Q", title="Impressions"),
                 tooltip=["theme", "posts", "impressions",
                          alt.Tooltip("median_er:Q", format=".2%")],
-            ).properties(height=280), use_container_width=True)
+            ).properties(height=280), width='stretch')
 
     st.markdown('<div class="card">', unsafe_allow_html=True)
     st.markdown("**Read this first.** Every median above is pulled upward by the conference "
@@ -239,7 +239,7 @@ with tabs[1]:
         color=GREY, strokeDash=[4, 4]).encode(x="x:Q")
     hline = alt.Chart(pd.DataFrame({"y": [BENCHMARKS["engagement_rate_median"]]})).mark_rule(
         color=GOLD, strokeDash=[4, 4]).encode(y="y:Q")
-    st.altair_chart((scatter + vline + hline).properties(height=420), use_container_width=True)
+    st.altair_chart((scatter + vline + hline).properties(height=420), width='stretch')
 
     st.subheader("Post league table")
     show = p[["created_date", "day_of_week", "hook", "theme", "format_inferred", "cta_type",
@@ -247,7 +247,7 @@ with tabs[1]:
               "engagement_rate", "ctr", "Likes", "Comments", "Reposts"]].sort_values(
         "engagement_rate", ascending=False)
     st.dataframe(
-        show, use_container_width=True, hide_index=True,
+        show, width='stretch', hide_index=True,
         column_config={
             "created_date": st.column_config.DateColumn("Date", format="DD MMM"),
             "hook": st.column_config.TextColumn("Opening line", width="large"),
@@ -294,7 +294,7 @@ with tabs[2]:
         st.info("Pick at least one attribute.")
     else:
         fmt = "%.2f%%" if metric != "Impressions" else "%.0f"
-        st.dataframe(lift, use_container_width=True, hide_index=True,
+        st.dataframe(lift, width='stretch', hide_index=True,
                      column_config={
                          "Median": st.column_config.NumberColumn(format=fmt),
                          "Lift vs page median": st.column_config.NumberColumn(format="%.0f%%"),
@@ -311,7 +311,7 @@ with tabs[2]:
                                                                         labelAlign="left")),
                 tooltip=["Attribute", "Value", "Posts",
                          alt.Tooltip("Median:Q", format=".4f")],
-            ).properties(height=alt.Step(20)), use_container_width=True)
+            ).properties(height=alt.Step(20)), width='stretch')
 
     st.divider()
     st.subheader("Numeric levers")
@@ -329,7 +329,7 @@ with tabs[2]:
     cdf = pd.DataFrame(corr)
     if not cdf.empty:
         st.dataframe(cdf.sort_values("vs engagement rate", ascending=False),
-                     use_container_width=True, hide_index=True,
+                     width='stretch', hide_index=True,
                      column_config={"vs engagement rate": st.column_config.NumberColumn(format="%.2f"),
                                     "vs impressions": st.column_config.NumberColumn(format="%.2f")})
         st.caption(f"Spearman rank correlation on {len(posts)} posts. Anything between "
@@ -346,7 +346,7 @@ with tabs[2]:
                                            median_er=("engagement_rate", "median"),
                                            median_imp=("Impressions", "median"))
                    .reset_index().sort_values("posts", ascending=False))
-        st.dataframe(tagroll, use_container_width=True, hide_index=True,
+        st.dataframe(tagroll, width='stretch', hide_index=True,
                      column_config={"median_er": st.column_config.NumberColumn("Median ER",
                                                                                format="%.2f%%"),
                                     "median_imp": st.column_config.NumberColumn("Median impressions",
@@ -373,16 +373,16 @@ with tabs[3]:
                                                            range=[TEAL, GREY]),
                                 title="Published benchmark prime day"),
                 tooltip=["day_of_week", "posts", alt.Tooltip("median_er:Q", format=".2%")],
-            ).properties(height=300), use_container_width=True)
+            ).properties(height=300), width='stretch')
     with c2:
         st.altair_chart(
             alt.Chart(dow.dropna(subset=["posts"])).mark_bar(cornerRadiusEnd=3, color=TEAL_LT).encode(
                 x=alt.X("day_of_week:N", sort=order, title=None),
                 y=alt.Y("median_imp:Q", title="Median impressions"),
                 tooltip=["day_of_week", "posts", "median_imp"],
-            ).properties(height=300), use_container_width=True)
+            ).properties(height=300), width='stretch')
 
-    st.dataframe(dow, use_container_width=True, hide_index=True)
+    st.dataframe(dow, width='stretch', hide_index=True)
 
     st.divider()
     st.subheader("Time of day")
@@ -402,7 +402,7 @@ with tabs[3]:
                                 title="Median ER"),
                 tooltip=["day_of_week", "hour", "posts",
                          alt.Tooltip("median_er:Q", format=".2%")],
-            ).properties(height=260), use_container_width=True)
+            ).properties(height=260), width='stretch')
     else:
         st.info("LinkedIn exports the post date but not the post time. Fill "
                 "`post_time_local` and `timezone` in the enrichment template, upload it in "
@@ -454,7 +454,7 @@ with tabs[4]:
                         y=alt.Y("dimension:N", sort="-x", title=None),
                         x=alt.X("share:Q", title="Share", axis=alt.Axis(format="%")),
                         tooltip=["dimension", val, alt.Tooltip("share:Q", format=".1%")],
-                    ).properties(height=320), use_container_width=True)
+                    ).properties(height=320), width='stretch')
 
         if not f.empty and not v.empty:
             m = f.merge(v, on="dimension", how="outer").fillna(0)
@@ -466,7 +466,7 @@ with tabs[4]:
             st.dataframe(
                 m.sort_values("gap", ascending=False)[
                     ["dimension", "followers", "views", "follower_share", "visitor_share", "gap"]],
-                use_container_width=True, hide_index=True,
+                width='stretch', hide_index=True,
                 column_config={
                     "follower_share": st.column_config.NumberColumn(format="%.1f%%"),
                     "visitor_share": st.column_config.NumberColumn(format="%.1f%%"),
@@ -482,7 +482,7 @@ with tabs[4]:
             alt.Chart(fd).mark_area(color=TEAL, opacity=0.25, line={"color": TEAL}).encode(
                 x=alt.X("Date:T", title=None), y=alt.Y("cumulative:Q", title="Net new followers"),
                 tooltip=["Date:T", "Total followers", "Organic followers", "cumulative"],
-            ).properties(height=240), use_container_width=True)
+            ).properties(height=240), width='stretch')
 
 # ---------------------------------------------------------------------------
 # 6. Competitors
@@ -505,7 +505,7 @@ with tabs[5]:
                                         alt.value(GOLD), alt.value(TEAL)),
                     tooltip=["Page", "Posts", "Reactions", "Comments",
                              alt.Tooltip("share_of_engagement:Q", format=".1%")],
-                ).properties(height=280), use_container_width=True)
+                ).properties(height=280), width='stretch')
         with c2:
             st.altair_chart(
                 alt.Chart(cdf).mark_circle(size=260).encode(
@@ -514,8 +514,8 @@ with tabs[5]:
                     color=alt.condition(alt.datum.Page == "GrantsNow",
                                         alt.value(GOLD), alt.value(TEAL)),
                     tooltip=["Page", "Posts", "engagements_per_post", "New Followers"],
-                ).properties(height=280), use_container_width=True)
-        st.dataframe(cdf, use_container_width=True, hide_index=True)
+                ).properties(height=280), width='stretch')
+        st.dataframe(cdf, width='stretch', hide_index=True)
         st.caption("Volume and efficiency are different games. A page above the pack on "
                    "engagements per post with fewer posts has the stronger content and the "
                    "weaker cadence.")

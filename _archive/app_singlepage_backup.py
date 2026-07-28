@@ -239,7 +239,7 @@ if app == "LinkedIn Post Matrix":
         if any([drop_topics, drop_asks, drop_days, drop_lengths, drop_palettes,
                 drop_faces, drop_textimg, drop_media, drop_campaigns, drop_event,
                 scope != "Every format"]):
-            if st.button("Clear all filters", use_container_width=True):
+            if st.button("Clear all filters", width='stretch'):
                 for key in ["range_start_input", "range_end_input"]:
                     st.session_state.pop(key, None)
                 st.rerun()
@@ -377,16 +377,16 @@ if app == "LinkedIn Post Matrix":
             unsafe_allow_html=True)
         p1, p2, p3, p4 = st.columns(4)
         with p1:
-            if st.button("30 days", key="pr_30d", use_container_width=True):
+            if st.button("30 days", key="pr_30d", width='stretch'):
                 _set_range(days=30); st.rerun()
         with p2:
-            if st.button("90 days", key="pr_90d", use_container_width=True):
+            if st.button("90 days", key="pr_90d", width='stretch'):
                 _set_range(days=90); st.rerun()
         with p3:
-            if st.button("6 months", key="pr_6m", use_container_width=True):
+            if st.button("6 months", key="pr_6m", width='stretch'):
                 _set_range(days=182); st.rerun()
         with p4:
-            if st.button("Full year", key="pr_full", use_container_width=True):
+            if st.button("Full year", key="pr_full", width='stretch'):
                 _set_range(full=True); st.rerun()
     with dr1:
         st.markdown(f'<div class="eyebrow" style="margin-bottom:.2rem">From</div>',
@@ -524,17 +524,17 @@ if mode == "Email Matrix":
                 ep1, ep2, ep3 = st.columns(3)
                 with ep1:
                     if st.button("Last 8 weeks", key="ep_8w",
-                                 use_container_width=True):
+                                 width='stretch'):
                         _set_email_range(weeks=8)
                         st.rerun()
                 with ep2:
                     if st.button("Last quarter", key="ep_q",
-                                 use_container_width=True):
+                                 width='stretch'):
                         _set_email_range(weeks=13)
                         st.rerun()
                 with ep3:
                     if st.button("All weeks", key="ep_all",
-                                 use_container_width=True):
+                                 width='stretch'):
                         _set_email_range(full=True)
                         st.rerun()
             with er1:
@@ -722,7 +722,7 @@ if mode == "Email Matrix":
                 y="y:Q")
 
             st.altair_chart((raw_line + smoothed + benchmarks
-            ).properties(height=300), use_container_width=True)
+            ).properties(height=300), width='stretch')
 
             # ---- CLICK-TO-OPEN RATE (CTOR) ----
             st.markdown('<h3 style="margin-top:2rem">Click-to-open rate</h3>',
@@ -755,7 +755,7 @@ if mode == "Email Matrix":
                 })).mark_rule(color=MUTED, strokeDash=[3, 4], opacity=0.6).encode(
                     y="y:Q")
                 st.altair_chart((ctor_line + ctor_bench).properties(height=240),
-                                use_container_width=True)
+                                width='stretch')
             else:
                 st.info("Not enough data to compute CTOR in this window.")
 
@@ -827,7 +827,7 @@ if mode == "Email Matrix":
                         axis=alt.Axis(labelColor=ACCENT, titleColor=ACCENT)))
             st.altair_chart(
                 alt.layer(_bars, _cline).resolve_scale(y="independent"
-                ).properties(height=260), use_container_width=True)
+                ).properties(height=260), width='stretch')
 
             # ---- BATCH SIZE VS OPEN RATE ----
             st.markdown('<h3 style="margin-top:2rem">Batch size vs open rate</h3>',
@@ -857,7 +857,7 @@ if mode == "Email Matrix":
                     alt.Tooltip("clicks:Q", title="Clicks"),
                 ],
             ).properties(height=320)
-            st.altair_chart(scat, use_container_width=True)
+            st.altair_chart(scat, width='stretch')
 
             # ---- DELIVERY HEALTH ----
             st.markdown('<h3 style="margin-top:2rem">Delivery health</h3>',
@@ -882,7 +882,7 @@ if mode == "Email Matrix":
                 pd.DataFrame({"y": [0.03]})
             ).mark_rule(color=MUTED, strokeDash=[3, 3]).encode(y="y:Q")
             st.altair_chart(health.properties(height=200),
-                            use_container_width=True)
+                            width='stretch')
 
             # ---- BEST AND WORST WEEKS ----
             st.markdown('<h3 style="margin-top:2rem">Best and worst weeks</h3>',
@@ -916,12 +916,12 @@ if mode == "Email Matrix":
             with top_bot[0]:
                 st.dataframe(
                     table_df.nlargest(5, "open_rate")[rank_cols],
-                    use_container_width=True, hide_index=True,
+                    width='stretch', hide_index=True,
                     column_config=col_config)
             with top_bot[1]:
                 st.dataframe(
                     table_df.nsmallest(5, "open_rate")[rank_cols],
-                    use_container_width=True, hide_index=True,
+                    width='stretch', hide_index=True,
                     column_config=col_config)
 
         # ================================================================
@@ -1016,7 +1016,7 @@ if mode == "Email Matrix":
                                          title="Open rate"),
                              alt.Tooltip("delivered:Q", title="Sample size")])
                 st.altair_chart((band + centre).properties(height=280),
-                                use_container_width=True)
+                                width='stretch')
 
                 # percentile of latest week vs own history
                 st.markdown('<h3 style="margin-top:2rem">Percentile against '
@@ -1129,7 +1129,7 @@ if mode == "Email Matrix":
                                         title="Median contacts", format=",.0f"),
                             alt.Tooltip("rate:Q", format=".2%",
                                         title="Median rate")])
-                    st.altair_chart(bs_chart, use_container_width=True)
+                    st.altair_chart(bs_chart, width='stretch')
                 else:
                     st.info("Need at least 4 weeks in the window.")
 
@@ -1164,7 +1164,7 @@ if mode == "Email Matrix":
                         "send_2w", "next_open").mark_line(
                         color=WARN, strokeDash=[4, 3], strokeWidth=2)
                     st.altair_chart((pts + trend).properties(height=280),
-                                    use_container_width=True)
+                                    width='stretch')
                     # correlation
                     r_val = fatigue[["send_2w", "next_open"]].corr().iloc[0, 1]
                     verdict = ("suggests fatigue" if r_val < -0.2
@@ -1207,7 +1207,7 @@ if mode == "Email Matrix":
                              alt.Tooltip("metric_lbl:N", title="Metric"),
                              alt.Tooltip("rate:Q", format=".2%")])
                 st.altair_chart(mch.properties(height=260),
-                                use_container_width=True)
+                                width='stretch')
 
                 st.markdown('<h3 style="margin-top:2rem">Quarterly rollup</h3>',
                             unsafe_allow_html=True)
@@ -1228,7 +1228,7 @@ if mode == "Email Matrix":
                     lambda x: f"{x*100:.1f}%" if pd.notna(x) else "")
                 q_disp["click_rate"] = q_disp["click_rate"].apply(
                     lambda x: f"{x*100:.2f}%" if pd.notna(x) else "")
-                st.dataframe(q_disp, use_container_width=True, hide_index=True,
+                st.dataframe(q_disp, width='stretch', hide_index=True,
                              column_config={
                                  "quarter": st.column_config.TextColumn(
                                      "Quarter"),
@@ -1277,7 +1277,7 @@ if mode == "Email Matrix":
                         alt.Tooltip("opens_per_email:Q", format=".1f",
                                     title="Opens / email")])
                 st.altair_chart(oe.properties(height=240),
-                                use_container_width=True)
+                                width='stretch')
 
                 st.markdown('<h3 style="margin-top:2rem">Effort scatter</h3>',
                             unsafe_allow_html=True)
@@ -1299,7 +1299,7 @@ if mode == "Email Matrix":
                         alt.Tooltip("opened:Q", title="Opens"),
                         alt.Tooltip("contacts:Q", title="Contacts")])
                 st.altair_chart(eff_scatter.properties(height=340),
-                                use_container_width=True)
+                                width='stretch')
 
                 st.markdown('<h3 style="margin-top:2rem">Waste tracker</h3>',
                             unsafe_allow_html=True)
@@ -1323,7 +1323,7 @@ if mode == "Email Matrix":
                     color=WARN, strokeWidth=1.5).encode(
                     x="week_start:T", y="waste:Q")
                 st.altair_chart(waste_chart.properties(height=220),
-                                use_container_width=True)
+                                width='stretch')
 
             # ------------------------------------------------------------
             # TAB 4. FORECAST & DIAGNOSTICS
@@ -1365,7 +1365,7 @@ if mode == "Email Matrix":
                                                         range=[[1, 0],
                                                                 [4, 3]])))
                     st.altair_chart(fc_chart.properties(height=280),
-                                    use_container_width=True)
+                                    width='stretch')
                 else:
                     st.info("Need at least 4 weeks with data to forecast.")
 
@@ -1400,7 +1400,7 @@ if mode == "Email Matrix":
                                          title="Z-score")])
                 st.altair_chart(
                     (base_line + normal_pts + anom_pts).properties(height=280),
-                    use_container_width=True)
+                    width='stretch')
                 n_anom = int(e_anom["anomaly"].sum())
                 st.caption(f"{n_anom} anomalous week(s) detected in this "
                             f"window.")
@@ -1431,7 +1431,7 @@ if mode == "Email Matrix":
                     x="col:N", y="row:N",
                     text=alt.Text("corr:Q", format=".2f"))
                 st.altair_chart((cm + labels_cm).properties(height=440),
-                                use_container_width=True)
+                                width='stretch')
 
                 st.markdown('<h3 style="margin-top:2rem">Trend decomposition</h3>',
                             unsafe_allow_html=True)
@@ -1454,7 +1454,7 @@ if mode == "Email Matrix":
                     y="open_rate:Q")
                 st.altair_chart((_pts + _sm).resolve_scale(
                     x="independent").properties(height=260),
-                                 use_container_width=True)
+                                 width='stretch')
 
         # ================== INTEREST & ENGAGEMENT ==================
         # Rows 10-12 of the source sheet: Replies (numeric), Most interested
@@ -1535,7 +1535,7 @@ if mode == "Email Matrix":
                                      title="Names"),
                     ],
                 ).properties(height=220)
-                st.altair_chart(int_bar, use_container_width=True)
+                st.altair_chart(int_bar, width='stretch')
 
             # ---- Top interested universities across the window ----
             all_names = []
@@ -1559,7 +1559,7 @@ if mode == "Email Matrix":
                                 'style="margin-top:1.5rem">Top interested '
                                 'universities</div>',
                                 unsafe_allow_html=True)
-                    st.dataframe(_top_df, use_container_width=True,
+                    st.dataframe(_top_df, width='stretch',
                                   hide_index=True)
                 with cB:
                     st.markdown('<div class="eyebrow" '
@@ -1597,7 +1597,7 @@ if mode == "Email Matrix":
                         alt.Tooltip("newsletter_subs:Q", title="Subs"),
                     ],
                 ).properties(height=220)
-                st.altair_chart(sub_chart, use_container_width=True)
+                st.altair_chart(sub_chart, width='stretch')
 
             # ---- Qualitative notes (from row 12 free text) ----
             _notes_df = emails_df[emails_df["newsletter_note"].astype(str)
@@ -1910,7 +1910,7 @@ if mode == "Email Matrix":
                                      "seniority_tier"]
                     preview_cols = [c for c in preview_cols if c in batch.columns]
                     st.dataframe(batch[preview_cols].head(25),
-                                  use_container_width=True, hide_index=True)
+                                  width='stretch', hide_index=True)
 
                 export_cols = ["contact_id", "email_clean", "first_name",
                                 "last_name", "job_title", "institution",
@@ -2499,7 +2499,7 @@ if mode == "Email Matrix":
             inv.columns = ["Campaign", "Stage", "Type", "Reads for",
                             "Words", "House", "Challenge", "Result",
                             "Weak"]
-            st.dataframe(inv, use_container_width=True, hide_index=True)
+            st.dataframe(inv, width='stretch', hide_index=True)
 
             # ---- Content-type mix chart ----
             st.markdown('<h3 style="margin-top:2rem">Content-type mix</h3>',
@@ -2511,7 +2511,7 @@ if mode == "Email Matrix":
                 y=alt.Y("Content type:N", sort="-x", title=None),
                 tooltip=["Content type:N", "Emails:Q"],
             ).properties(height=180)
-            st.altair_chart(mix_chart, use_container_width=True)
+            st.altair_chart(mix_chart, width='stretch')
 
             # =============== SCORE ANALYSIS ===============
             # Performance-graph analogue: distributions, rankings, coverage.
@@ -2595,7 +2595,7 @@ if mode == "Email Matrix":
             })).mark_rect(color=ACCENT, opacity=0.08).encode(
                 x="x1:Q", x2="x2:Q", y="y1:Q", y2="y2:Q")
             st.altair_chart((zone + base).properties(height=340),
-                             use_container_width=True)
+                             width='stretch')
 
             # ---- House-score ranking ----
             st.markdown('<div class="eyebrow" style="margin-top:1.5rem">'
@@ -2619,7 +2619,7 @@ if mode == "Email Matrix":
                     alt.Tooltip("result_score:Q", title="Result"),
                 ],
             ).properties(height=max(220, 22 * len(rank_df)))
-            st.altair_chart(rank_chart, use_container_width=True)
+            st.altair_chart(rank_chart, width='stretch')
 
             # ---- Slot hit-rate ----
             st.markdown('<div class="eyebrow" style="margin-top:1.5rem">'
@@ -2650,7 +2650,7 @@ if mode == "Email Matrix":
                           alt.Tooltip("Hit rate:Q", format=".0f"),
                           "Emails hitting:Q"],
             ).properties(height=240)
-            st.altair_chart(slot_chart, use_container_width=True)
+            st.altair_chart(slot_chart, width='stretch')
 
             # ---- Scores by content type ----
             st.markdown('<div class="eyebrow" style="margin-top:1.5rem">'
@@ -2676,7 +2676,7 @@ if mode == "Email Matrix":
                 tooltip=["content_type:N", "Axis:N",
                           alt.Tooltip("Score:Q", format=".0f")],
             ).properties(height=260)
-            st.altair_chart(grp_chart, use_container_width=True)
+            st.altair_chart(grp_chart, width='stretch')
 
             # ---- Named-customer frequency across all emails ----
             all_named = []
@@ -2699,7 +2699,7 @@ if mode == "Email Matrix":
                     y=alt.Y("Customer:N", sort="-x", title=None),
                     tooltip=["Customer:N", "Mentions:Q"],
                 ).properties(height=max(200, 22 * len(nc_df)))
-                st.altair_chart(nc_chart, use_container_width=True)
+                st.altair_chart(nc_chart, width='stretch')
 
             # ---- Word count vs house score ----
             st.markdown('<div class="eyebrow" style="margin-top:1.5rem">'
@@ -2726,7 +2726,7 @@ if mode == "Email Matrix":
             ).mark_line(color=GOLD, strokeWidth=2, strokeDash=[4, 4]).encode(
                 x="words:Q", y="house_score:Q")
             st.altair_chart(len_chart + _trend,
-                             use_container_width=True)
+                             width='stretch')
 
             st.markdown('<div style="margin:2.5rem 0 0;border-top:1px '
                         'solid ' + LINE + '"></div>', unsafe_allow_html=True)
@@ -2868,7 +2868,7 @@ if mode == "Email Matrix":
                 tooltip=["Persona:N",
                           alt.Tooltip("Density:Q", format=".2f")],
             ).properties(height=140)
-            st.altair_chart(pf_chart, use_container_width=True)
+            st.altair_chart(pf_chart, width='stretch')
             dominant = row["persona_dominant"]
             if dominant == "Research":
                 st.caption("Reads Research-first. Matches the dominant "
@@ -2898,14 +2898,14 @@ if mode == "Email Matrix":
             with ac1:
                 st.markdown('<div class="eyebrow">Most used phrases</div>',
                             unsafe_allow_html=True)
-                st.dataframe(agg_df.head(10), use_container_width=True,
+                st.dataframe(agg_df.head(10), width='stretch',
                               hide_index=True)
             with ac2:
                 st.markdown('<div class="eyebrow">Least used phrases</div>',
                             unsafe_allow_html=True)
                 unused = agg_df[agg_df["Emails using it"] == 0]
                 if not unused.empty:
-                    st.dataframe(unused, use_container_width=True,
+                    st.dataframe(unused, width='stretch',
                                   hide_index=True)
                     st.caption("These pain-shape phrases are missing from "
                                "every current campaign. Each is a candidate "
@@ -2980,7 +2980,7 @@ if mode == "Recommend":
 
     tcol1, tcol2 = st.columns([1, 3])
     with tcol1:
-        train_click = st.button("Retrain model", use_container_width=True,
+        train_click = st.button("Retrain model", width='stretch',
                                 type="primary")
     with tcol2:
         st.caption("Learns from the posts in the current date range and "
@@ -3018,7 +3018,7 @@ if mode == "Recommend":
             "Image", type=["png", "jpg", "jpeg", "webp"],
             key="draft_image", label_visibility="collapsed")
         if draft_image:
-            st.image(draft_image, use_container_width=True)
+            st.image(draft_image, width='stretch')
 
     # auto-analyse the image and pre-fill the visual tags
     auto_detected = None
@@ -3183,7 +3183,7 @@ if mode == "Recommend":
                               value=all_tags, key="tag_row_display",
                               label_visibility="collapsed")
             with cc2:
-                st.button("Append to caption", use_container_width=True,
+                st.button("Append to caption", width='stretch',
                           key="append_playbook_btn",
                           on_click=_append_pending_tags)
     else:
@@ -3222,7 +3222,7 @@ if mode == "Recommend":
                               label_visibility="collapsed")
             with cc2:
                 st.button("Append to caption",
-                          use_container_width=True,
+                          width='stretch',
                           key="append_history_btn",
                           on_click=_append_pending_tags)
 
@@ -3533,7 +3533,7 @@ if mode == "Visualize":
             tooltip=[alt.Tooltip("post_score:Q", bin=True, title="Score bin"),
                      alt.Tooltip("count():Q", title="Posts")],
         ).properties(height=220)
-        st.altair_chart(hist, use_container_width=True)
+        st.altair_chart(hist, width='stretch')
 
         # weekly cadence + median score
         st.markdown('<h3 style="margin-top:2rem">Post cadence and score, '
@@ -3560,7 +3560,7 @@ if mode == "Visualize":
             y=alt.Y("median_score:Q", title="Median score",
                     axis=alt.Axis(labelColor=ACCENT, titleColor=ACCENT)))
         st.altair_chart(alt.layer(_bars, _line).resolve_scale(y="independent"
-                        ).properties(height=250), use_container_width=True)
+                        ).properties(height=250), width='stretch')
 
     # =======================================================================
     # TIME
@@ -3583,7 +3583,7 @@ if mode == "Visualize":
                      alt.Tooltip("post_score:Q", format=".0f", title="Score"),
                      alt.Tooltip("hook_short:N", title="First line")],
         ).properties(height=200)
-        st.altair_chart(heat, use_container_width=True)
+        st.altair_chart(heat, width='stretch')
 
         # 4-week rolling average score
         st.markdown('<h3 style="margin-top:2rem">Rolling 4-week average '
@@ -3600,7 +3600,7 @@ if mode == "Visualize":
         rl = base.mark_line(color=ACCENT, strokeWidth=2.4).encode(
             y="rolling:Q")
         st.altair_chart((raw + rl).properties(height=260),
-                        use_container_width=True)
+                        width='stretch')
 
         # posts per month volume + views per month
         st.markdown('<h3 style="margin-top:2rem">Volume by month</h3>',
@@ -3620,7 +3620,7 @@ if mode == "Visualize":
                 y=alt.Y("posts:Q", title="Posts"),
                 tooltip=[alt.Tooltip("month:T", format="%b %Y"),
                          alt.Tooltip("posts:Q")]).properties(height=240),
-                use_container_width=True)
+                width='stretch')
         with mv2:
             st.altair_chart(alt.Chart(month_agg).mark_bar(
                 color=INK_SOFT).encode(
@@ -3629,7 +3629,7 @@ if mode == "Visualize":
                 tooltip=[alt.Tooltip("month:T", format="%b %Y"),
                          alt.Tooltip("views:Q", format=",")]).properties(
                     height=240),
-                use_container_width=True)
+                width='stretch')
 
         # day-of-week ridgeline (small multiples of density)
         st.markdown('<h3 style="margin-top:2rem">Score distribution by '
@@ -3648,7 +3648,7 @@ if mode == "Visualize":
                         header=alt.Header(labelFontSize=11,
                                           labelAlign="right", labelAngle=0)),
         ).properties(width="container", height=45),
-                        use_container_width=True)
+                        width='stretch')
 
     # =======================================================================
     # CONTENT STRATEGY
@@ -3676,7 +3676,7 @@ if mode == "Visualize":
             x="format_inferred:N",
             y=alt.Y("day_of_week:N", sort=dow_order),
             text=alt.Text("med:Q", format=".0f"))
-        st.altair_chart(_rect + _lbl, use_container_width=True)
+        st.altair_chart(_rect + _lbl, width='stretch')
 
         st.markdown('<h3 style="margin-top:2rem">Median score by category</h3>',
                     unsafe_allow_html=True)
@@ -3705,31 +3705,31 @@ if mode == "Visualize":
         with c1:
             st.markdown("**Topic**")
             st.altair_chart(cat_bars("theme", "Topic"),
-                            use_container_width=True)
+                            width='stretch')
         with c2:
             st.markdown("**Ask (CTA)**")
             st.altair_chart(cat_bars("cta_type", "Ask"),
-                            use_container_width=True)
+                            width='stretch')
         c3, c4 = st.columns(2, gap="large")
         with c3:
             st.markdown("**Publish day**")
             st.altair_chart(cat_bars("day_of_week", "Day"),
-                            use_container_width=True)
+                            width='stretch')
         with c4:
             st.markdown("**Length band**")
             st.altair_chart(cat_bars("length_band", "Length"),
-                            use_container_width=True)
+                            width='stretch')
         if "image_colour_theme" in scored.columns:
             c5, c6 = st.columns(2, gap="large")
             with c5:
                 st.markdown("**Image palette**")
                 st.altair_chart(cat_bars("image_colour_theme", "Palette"),
-                                use_container_width=True)
+                                width='stretch')
             with c6:
                 if "has_face_in_image" in scored.columns:
                     st.markdown("**Face in image**")
                     st.altair_chart(cat_bars("has_face_in_image", "Face"),
-                                    use_container_width=True)
+                                    width='stretch')
 
         # topic x outcome heatmap
         st.markdown('<h3 style="margin-top:2rem">Topic × outcome</h3>',
@@ -3752,7 +3752,7 @@ if mode == "Visualize":
             x=alt.X("failure_mode:N",
                     sort=list(scoring.DIAGNOSES.keys())),
             y="theme:N",
-            text="n:Q"), use_container_width=True)
+            text="n:Q"), width='stretch')
 
     # =======================================================================
     # REACH & ENGAGEMENT
@@ -3789,7 +3789,7 @@ if mode == "Visualize":
         par_y = alt.Chart(pd.DataFrame({"v": [1.0]})).mark_rule(
             color=MUTED, strokeDash=[3, 3]).encode(y="v:Q")
         st.altair_chart(re_scatter + par_x + par_y,
-                        use_container_width=True)
+                        width='stretch')
 
         # 2D density
         st.markdown('<h3 style="margin-top:2rem">Where posts cluster</h3>',
@@ -3806,7 +3806,7 @@ if mode == "Visualize":
             color=alt.Color("count():Q",
                             scale=alt.Scale(scheme="teals"),
                             title="Posts"),
-        ).properties(height=340), use_container_width=True)
+        ).properties(height=340), width='stretch')
 
         # pareto
         st.markdown('<h3 style="margin-top:2rem">Where does the reach '
@@ -3829,7 +3829,7 @@ if mode == "Visualize":
         ref = alt.Chart(pd.DataFrame({"x": [0, 100], "y": [0, 100]})
         ).mark_line(color=MUTED, strokeDash=[3, 3]).encode(
             x="x:Q", y="y:Q")
-        st.altair_chart(p_line + ref, use_container_width=True)
+        st.altair_chart(p_line + ref, width='stretch')
 
     # =======================================================================
     # CAPTION SIGNALS
@@ -3850,7 +3850,7 @@ if mode == "Visualize":
         ).mark_line(color=ACCENT, strokeWidth=2).encode(
             x="word_count:Q", y="post_score:Q")
         st.altair_chart((wc_scatter + wc_smooth).properties(height=280),
-                        use_container_width=True)
+                        width='stretch')
 
         st.markdown('<h3 style="margin-top:2rem">Hashtag count vs reactions</h3>',
                     unsafe_allow_html=True)
@@ -3869,7 +3869,7 @@ if mode == "Visualize":
         ).mark_line(color=ACCENT, strokeWidth=2).encode(
             x="hashtag_count:Q", y="engagement_index:Q")
         st.altair_chart((ht_scatter + ht_smooth).properties(height=260),
-                        use_container_width=True)
+                        width='stretch')
 
         st.markdown('<h3 style="margin-top:2rem">Small text triggers</h3>',
                     unsafe_allow_html=True)
@@ -3896,10 +3896,10 @@ if mode == "Visualize":
 
         with b1:
             st.altair_chart(bool_box("has_question", "Question in caption"),
-                            use_container_width=True)
+                            width='stretch')
         with b2:
             st.altair_chart(bool_box("has_link", "Link in caption"),
-                            use_container_width=True)
+                            width='stretch')
 
         # emoji count vs score
         if "emoji_count" in scored.columns:
@@ -3917,7 +3917,7 @@ if mode == "Visualize":
             ).mark_line(color=ACCENT, strokeWidth=2).encode(
                 x="emoji_count:Q", y="post_score:Q")
             st.altair_chart((_es + _esm).properties(height=260),
-                            use_container_width=True)
+                            width='stretch')
 
     # =======================================================================
     # WHAT WINS
@@ -3952,7 +3952,7 @@ if mode == "Visualize":
                          alt.Tooltip("posts:Q", title="Posts"),
                          alt.Tooltip("lift:Q", format="+.0%")],
             ).properties(height=alt.Step(19))
-            st.altair_chart(lift_chart, use_container_width=True)
+            st.altair_chart(lift_chart, width='stretch')
         else:
             st.info("Not enough posts at solid or worth-a-test confidence "
                     "yet.")
@@ -3977,7 +3977,7 @@ if mode == "Visualize":
                              alt.Tooltip("distinctiveness:Q",
                                          format="+.0%")]
                 ).properties(height=max(200, 24 * len(kw))),
-                use_container_width=True)
+                width='stretch')
         ht_tbl = scoring.top_hashtags(scored, n=15)
         with wcol2:
             st.markdown("**Hashtags**")
@@ -3994,13 +3994,13 @@ if mode == "Visualize":
                              alt.Tooltip("distinctiveness:Q",
                                          format="+.0%")]
                 ).properties(height=max(200, 24 * len(ht_tbl))),
-                use_container_width=True)
+                width='stretch')
 
         st.markdown('<h3 style="margin-top:2rem">Top vs bottom, side by '
                     'side</h3>', unsafe_allow_html=True)
         st.caption("Every micro-detail. Rows where columns differ = recipe.")
         micro = scoring.micro_attribute_table(scored)
-        st.dataframe(micro, use_container_width=True, hide_index=True)
+        st.dataframe(micro, width='stretch', hide_index=True)
 
     # =======================================================================
     # MATCHED PAIRS (A/B)
@@ -4046,7 +4046,7 @@ if mode == "Visualize":
                                      title="Score"),
                          alt.Tooltip("Impressions:Q", title="Views",
                                      format=",")],
-            ).properties(height=340), use_container_width=True)
+            ).properties(height=340), width='stretch')
 
             st.markdown("**Every cluster, side by side**")
             preview = (grouped.sort_values(["hook_key", "created_date"])
@@ -4059,7 +4059,7 @@ if mode == "Visualize":
                                               "Impressions": "Views",
                                               "created_date": "Date",
                                               "theme": "Topic"})
-            st.dataframe(preview, use_container_width=True,
+            st.dataframe(preview, width='stretch',
                          hide_index=True)
 
     # =======================================================================
@@ -4086,7 +4086,7 @@ if mode == "Visualize":
                     tooltip=["nice", alt.Tooltip("importance:Q",
                                                  format=".3f")]
                 ).properties(height=max(220, 24 * min(15, len(imp)))),
-                use_container_width=True)
+                width='stretch')
 
             # per-post breakdown
             st.markdown('<h3 style="margin-top:2rem">Per-post feature '
@@ -4133,7 +4133,7 @@ if mode == "Visualize":
                 tooltip=["feature", "current_value",
                          alt.Tooltip("contribution:Q", format="+.2f")],
             ).properties(height=max(220, 24 * len(cdf))),
-                            use_container_width=True)
+                            width='stretch')
         else:
             st.warning("Not enough posts to train (need at least 15). "
                        "Widen the date range.")
@@ -4168,7 +4168,7 @@ if mode == "Visualize":
             fontSize=10, color=INK).encode(
             x="col:N", y="row:N",
             text=alt.Text("corr:Q", format=".2f")),
-                        use_container_width=True)
+                        width='stretch')
 
         st.markdown('<h3 style="margin-top:2rem">Parallel coordinates</h3>',
                     unsafe_allow_html=True)
@@ -4192,7 +4192,7 @@ if mode == "Visualize":
             color=alt.condition("datum.post_score > 0.6",
                                  alt.value(ACCENT), alt.value(MUTED)),
             tooltip=["idx"],
-        ).properties(height=340), use_container_width=True)
+        ).properties(height=340), width='stretch')
 
     # tiny footnote
     st.markdown(
@@ -4281,7 +4281,7 @@ st.caption(f"Median post score in this window: {_median_score:.0f}. "
            "Click any dot to select it for the comparison below.")
 
 event = st.altair_chart(chart,
-                        use_container_width=True,
+                        width='stretch',
                         on_select="rerun", key="scatter")
 
 # build the score-ranked view once - prev/next buttons walk through this
@@ -4419,7 +4419,7 @@ def render_nav(side_key, rank_state_key, total, scope_label=""):
     b1, b2, b3 = st.columns([1, 2, 1])
     with b1:
         if st.button("← Previous", key=f"{side_key}_prev",
-                     use_container_width=True,
+                     width='stretch',
                      disabled=(rank_now <= 0),
                      help="Move to the next-higher-ranked post"):
             st.session_state[rank_state_key] = max(0, rank_now - 1)
@@ -4435,7 +4435,7 @@ def render_nav(side_key, rank_state_key, total, scope_label=""):
             f'{cap}</div>', unsafe_allow_html=True)
     with b3:
         if st.button("Next →", key=f"{side_key}_next",
-                     use_container_width=True,
+                     width='stretch',
                      disabled=(rank_now >= total - 1),
                      help="Move to the next-lower-ranked post"):
             st.session_state[rank_state_key] = min(total - 1, rank_now + 1)

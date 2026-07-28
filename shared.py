@@ -249,7 +249,7 @@ def linkedin_setup(mode):
         if any([drop_topics, drop_asks, drop_days, drop_lengths,
                 drop_palettes, drop_faces, drop_textimg, drop_media,
                 drop_campaigns, drop_event, scope != "Every format"]):
-            if st.button("Clear all filters", use_container_width=True):
+            if st.button("Clear all filters", width='stretch'):
                 for key in ["range_start_input", "range_end_input"]:
                     st.session_state.pop(key, None)
                 st.rerun()
@@ -329,19 +329,19 @@ def linkedin_setup(mode):
         p1, p2, p3, p4 = st.columns(4)
         with p1:
             if st.button("30 days", key="pr_30d",
-                          use_container_width=True):
+                          width='stretch'):
                 _set_range(days=30); st.rerun()
         with p2:
             if st.button("90 days", key="pr_90d",
-                          use_container_width=True):
+                          width='stretch'):
                 _set_range(days=90); st.rerun()
         with p3:
             if st.button("6 months", key="pr_6m",
-                          use_container_width=True):
+                          width='stretch'):
                 _set_range(days=182); st.rerun()
         with p4:
             if st.button("Full year", key="pr_full",
-                          use_container_width=True):
+                          width='stretch'):
                 _set_range(full=True); st.rerun()
     with dr1:
         st.markdown('<div class="eyebrow" '

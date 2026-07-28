@@ -61,7 +61,7 @@ st.markdown('<h2>Recommender</h2>', unsafe_allow_html=True)
 
 tcol1, tcol2 = st.columns([1, 3])
 with tcol1:
-    train_click = st.button("Retrain model", use_container_width=True,
+    train_click = st.button("Retrain model", width='stretch',
                             type="primary")
 with tcol2:
     st.caption("Learns from the posts in the current date range and "
@@ -99,7 +99,7 @@ with ph_col1:
         "Image", type=["png", "jpg", "jpeg", "webp"],
         key="draft_image", label_visibility="collapsed")
     if draft_image:
-        st.image(draft_image, use_container_width=True)
+        st.image(draft_image, width='stretch')
 
 # auto-analyse the image and pre-fill the visual tags
 auto_detected = None
@@ -264,7 +264,7 @@ if hashtag_library:
                           value=all_tags, key="tag_row_display",
                           label_visibility="collapsed")
         with cc2:
-            st.button("Append to caption", use_container_width=True,
+            st.button("Append to caption", width='stretch',
                       key="append_playbook_btn",
                       on_click=_append_pending_tags)
 else:
@@ -303,7 +303,7 @@ else:
                           label_visibility="collapsed")
         with cc2:
             st.button("Append to caption",
-                      use_container_width=True,
+                      width='stretch',
                       key="append_history_btn",
                       on_click=_append_pending_tags)
 
