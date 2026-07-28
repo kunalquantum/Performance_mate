@@ -37,6 +37,9 @@ pg = st.navigation({
         st.Page("pages/email_contents.py",
                 title="Contents analysis",
                 icon=":material/rate_review:"),
+        st.Page("pages/email_sequence.py",
+                title="Sequence matrix",
+                icon=":material/view_column:"),
     ],
 })
 pg.run()
