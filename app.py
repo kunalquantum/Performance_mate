@@ -33,6 +33,9 @@ pg = st.navigation({
         st.Page("pages/persona_content_impact.py",
                 title="Content x Persona impact",
                 icon=":material/groups:"),
+        st.Page("pages/persona_senior_gaps.py",
+                title="Senior gaps",
+                icon=":material/account_tree:"),
     ],
     "Email": [
         st.Page("pages/email_performance.py",
