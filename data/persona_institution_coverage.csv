@@ -1,0 +1,727 @@
+institution_key,institution,type,in_target,contacts,research,· Senior,· Operational,· Academic,finance,it_systems,unclassified,personas_held,valid_emails,missing_personas
+manchester university,University of Manchester,University,Yes,205,156,30,118,4,39,8,2,3,121,
+king s college london,King's College London,University college,Yes,177,173,46,117,10,2,1,0,3,155,
+coventry university,Coventry University,University,Yes,168,147,59,47,41,10,4,6,3,90,
+sussex university,University of Sussex,University,Yes,158,117,33,76,4,22,4,13,3,39,
+edinburgh university,University of Edinburgh,University,Yes,131,86,55,24,5,31,7,5,3,121,
+liverpool university,University of Liverpool,University,Yes,124,108,42,63,1,12,2,1,3,30,
+sheffield university,The University of Sheffield,University,Yes,115,95,32,60,3,14,3,3,3,13,
+manchester metropolitan university,The Manchester Metropolitan University,University,Yes,109,76,40,36,0,17,14,1,3,105,
+york university,University of York,University,Yes,92,77,28,44,5,10,3,2,3,81,
+cardiff university,Cardiff University,University,Yes,86,52,22,26,3,19,7,8,3,17,
+exeter university,University Of Exeter,University,Yes,95,73,25,43,5,13,9,0,3,49,
+newcastle university,Newcastle University,University,Yes,87,86,23,62,0,0,1,0,2,0,Finance  
+open university,The Open University,University,Yes,90,70,21,45,4,12,5,3,3,78,
+anglia ruskin university,Anglia Ruskin University,University,Yes,89,66,36,26,4,4,6,10,3,76,
+glasgow university,University of Glasgow,University,Yes,77,72,23,48,1,1,4,0,3,70,
+london school of economics and political science,The London School of Economics and Political Science,University,Yes,72,65,13,45,7,5,2,0,3,64,
+queen s university belfast,Queen's University Belfast,University,Yes,72,57,21,32,4,11,2,2,3,64,
+swansea university,Swansea University,University,Yes,70,52,25,24,3,8,2,8,3,40,
+the arts london university,University of the Arts London,University,Yes,69,40,27,13,0,22,6,0,3,69,
+leeds university,University of Leeds,University,Yes,68,58,12,46,0,7,3,0,3,3,
+queen mary university of london,Queen Mary University of London,University,Yes,72,41,33,8,0,15,8,5,3,60,
+nottingham university,University of Nottingham,University,Yes,67,41,39,2,0,20,5,1,3,24,
+warwick university,University of Warwick,University,Yes,65,42,16,25,1,22,1,0,3,2,
+salford university,University of Salford,University,Yes,62,42,22,16,4,11,9,0,3,54,
+the west of england university,University of the West of England,University,Yes,58,41,25,15,1,10,3,2,3,16,
+bristol university,University of Bristol,University,Yes,58,33,28,5,0,13,6,4,3,22,
+east london university,University of East London,University,Yes,61,40,26,12,2,9,6,6,3,54,
+portsmouth university,University of Portsmouth,University,Yes,58,52,22,25,4,5,1,0,3,49,
+aberdeen university,University of Aberdeen,University,Yes,52,43,20,18,4,7,1,0,3,48,
+birmingham city university,Birmingham City University,University,Yes,52,37,24,10,3,7,7,1,3,44,
+birmingham university,University of Birmingham,University,Yes,55,44,21,20,3,4,4,3,3,37,
+national oceanography centre,National Oceanography Centre,Unclassified,Yes,50,14,4,9,1,14,6,10,3,50,
+reading university,University of Reading,University,Yes,49,30,27,2,1,7,6,2,3,17,
+oxford university,University of Oxford,University,Yes,48,30,14,14,1,12,6,0,3,3,
+nottingham trent university,Nottingham Trent University,University,Yes,46,38,14,22,2,3,4,0,3,39,
+de montfort university,De Montfort University,University,Yes,45,40,24,12,4,2,2,1,3,8,
+durham university,Durham University,University,Yes,45,35,24,11,0,8,2,0,3,29,
+surrey university,University of Surrey,University,Yes,45,31,26,5,0,8,2,3,3,18,
+keele university,Keele University,University,Yes,42,30,18,12,0,8,3,1,3,10,
+bournemouth university,Bournemouth University,University,Yes,41,35,10,23,1,3,2,0,3,3,
+lincoln university,University of Lincoln,University,Yes,42,35,16,19,0,6,1,0,3,36,
+westminster university,University of Westminster,University,Yes,43,29,22,5,2,8,5,1,3,39,
+cranfield university,Cranfield University,University,Yes,41,29,12,15,2,9,3,0,3,26,
+national centre for social research,National Centre for Social Research,Research institute,Yes,39,21,18,3,0,2,2,12,3,8,
+strathclyde university,University of Strathclyde,University,Yes,41,36,11,24,1,2,2,1,3,36,
+bangor university,Bangor University,University,Yes,38,25,8,17,0,8,2,0,3,20,
+national gallery,National Gallery,Museum / heritage,Yes,38,8,5,3,0,14,4,4,3,38,
+northumbria university,Northumbria University,University,Yes,38,34,18,15,1,1,3,0,3,32,
+kent university,University of Kent,University,Yes,37,25,14,11,0,3,5,4,3,14,
+leicester university,University of Leicester,University,Yes,37,25,20,5,0,8,3,1,3,28,
+southampton university,University of Southampton,University,Yes,38,25,8,15,2,10,3,0,3,33,
+bedfordshire university,University of Bedfordshire,University,Yes,37,26,18,8,0,6,3,1,3,34,
+london school of hygiene and tropical medicine u of london,London School Of Hygiene And Tropical Medicine U. Of London,University,Yes,34,25,9,15,1,5,4,0,3,34,
+canterbury christ church university,Canterbury Christ Church University,University,Yes,32,25,18,6,0,5,2,0,3,8,
+essex university,University of Essex,University,Yes,33,24,11,12,0,6,2,0,3,2,
+st george s university of london,St George's University Of London,University,Yes,33,31,7,22,0,0,2,0,2,8,Finance  
+middlesex university,Middlesex University,University,Yes,32,21,15,6,0,6,5,0,3,28,
+leeds beckett university,Leeds Beckett University,University,Yes,31,29,10,18,0,0,2,0,2,0,Finance  
+oxford brookes university,Oxford Brookes University,University,Yes,31,19,13,3,2,8,2,2,3,15,
+aston university,Aston University,University,Yes,30,23,10,13,0,5,2,0,3,0,
+bradford university,University of Bradford,University,Yes,30,28,9,18,1,1,1,0,3,0,
+edinburgh napier university,Edinburgh Napier University,University,Yes,30,23,15,7,0,3,3,0,3,5,
+hull university,University of Hull,University,Yes,30,28,14,13,1,2,0,0,2,27,IT/Systems
+ulster university,Ulster University,University,Yes,30,26,15,10,1,2,2,0,3,0,
+cardiff metropolitan university,Cardiff Metropolitan University,University,Yes,28,24,8,13,1,3,0,0,2,3,IT/Systems
+institute of development studies,Institute of Development Studies,Research institute,Yes,27,22,3,19,0,3,0,0,2,26,IT/Systems
+liverpool john moores university,Liverpool John Moores University,University,Yes,27,21,9,10,2,4,2,0,3,13,
+stirling university,University of Stirling,University,Yes,27,20,9,10,1,4,1,0,3,23,
+ucl,UCL,University,Yes,27,15,7,6,1,11,1,0,3,21,
+city st george s university of london,"City St George's, University of London",University,Yes,26,14,12,2,0,9,1,2,3,24,
+historic environment scotland,Historic Environment Scotland,Museum / heritage,Yes,26,9,6,3,0,4,6,6,3,26,
+roehampton london university,University of Roehampton London,University,Yes,26,12,12,0,0,5,6,0,3,24,
+bath spa university,Bath Spa University,University,Yes,26,19,16,3,0,5,2,0,3,24,
+huddersfield university,University of Huddersfield,University,Yes,28,24,10,13,1,2,2,0,3,21,
+kingston university,Kingston University,University,Yes,25,13,8,4,0,10,2,0,3,0,
+liverpool school of tropical medicine,Liverpool School Of Tropical Medicine,University,Yes,24,16,10,5,1,5,1,0,3,24,
+staffordshire university,Staffordshire University,University,Yes,25,19,12,6,1,4,2,0,3,21,
+birkbeck university of london,"Birkbeck, University of London",University,Yes,22,13,7,5,1,4,4,1,3,3,
+london business school,London Business School,University,Yes,23,16,6,9,1,4,3,0,3,23,
+national physical laboratory,National Physical Laboratory,Research institute,Yes,23,1,1,0,0,9,8,1,3,21,
+nuffield health,Nuffield Health,Unclassified,No,23,1,1,0,0,16,4,2,3,23,
+alan turing institute,The Alan Turing Institute,Research institute,Yes,22,8,5,2,1,2,3,6,3,14,
+brunel university london,Brunel University London,University,Yes,22,19,7,12,0,1,2,0,3,17,
+heriot watt university,Heriot-Watt University,University,Yes,23,13,9,3,1,8,2,0,3,19,
+imperial college london,Imperial College London,University,Yes,22,20,9,8,3,0,2,0,2,19,Finance  
+west london university,University of West London,University,Yes,22,16,14,2,0,2,3,1,3,9,
+bath university,University of Bath,University,Yes,23,19,9,10,0,2,2,0,3,11,
+south wales university,University of South Wales,University,Yes,21,18,10,7,1,1,2,0,3,18,
+central lancashire university,University of Central Lancashire,University,Yes,20,18,16,2,0,1,0,1,2,6,IT/Systems
+dundee university,University of Dundee,University,Yes,20,15,12,2,1,3,0,2,2,4,IT/Systems
+malaria consortium,Malaria Consortium (UK),Charity / membership body,Yes,20,5,3,2,0,4,1,6,3,20,
+worcester university,University Of Worcester,University,Yes,21,15,12,3,0,3,3,0,3,19,
+national nuclear laboratory,National Nuclear Laboratory,Research institute,Yes,19,3,2,1,0,6,2,3,3,18,
+glasgow caledonian university,Glasgow Caledonian University,University,Yes,18,15,7,8,0,2,1,0,3,2,
+greenwich university,University of Greenwich,University,Yes,18,14,9,5,0,2,2,0,3,0,
+london south bank university,London South Bank University,University,Yes,19,13,7,5,1,5,1,0,3,13,
+northampton university,University of Northampton,University,Yes,18,13,11,2,0,3,2,0,3,18,
+plymouth university,University Of Plymouth,University,Yes,18,11,5,5,1,4,2,0,3,1,
+east anglia university,University of East Anglia,University,Yes,17,10,5,5,0,4,3,0,3,17,
+goldsmiths university of london,"Goldsmiths, University of London",University,Yes,17,13,8,4,1,2,2,0,3,16,
+niab,Niab,Research institute,Yes,17,7,4,3,0,1,2,4,3,1,
+st andrews university,University of St Andrews,University,Yes,17,10,5,5,0,1,4,1,3,17,
+university for the creative arts,University for the Creative Arts,University,Yes,17,10,9,1,0,5,2,0,3,3,
+cambridge university,University of Cambridge,University,Yes,17,9,5,3,1,6,2,0,3,16,
+francis crick institute,The Francis Crick Institute,Research institute,Yes,16,15,7,8,0,0,1,0,2,14,Finance  
+harper adams university,Harper Adams University,University,Yes,16,10,9,0,1,3,1,0,3,16,
+loughborough university,Loughborough University,University,Yes,16,14,3,11,0,1,1,0,3,14,
+royal holloway university of london,"Royal Holloway, University of London",University,Yes,16,8,3,4,1,4,3,0,3,14,
+soas university of london,SOAS University of London,University,Yes,16,9,9,0,0,5,1,0,3,12,
+solent university,Solent University (Southampton),University,Yes,21,14,12,2,0,3,4,0,3,13,
+the west of scotland university,University of the West of Scotland,University,Yes,16,12,5,6,1,1,3,0,3,12,
+university college birmingham,University College Birmingham,University,Yes,17,7,6,1,0,2,4,2,3,16,
+university college london,University College London,University,Yes,16,9,7,1,1,7,0,0,2,15,IT/Systems
+aberystwyth university,Aberystwyth University,University,Yes,15,11,10,1,0,1,3,0,3,5,
+city st georges university of london,City St Georges University Of London,University,Yes,15,6,4,2,0,3,6,0,3,0,
+queen margaret university,Queen Margaret University,University,Yes,15,6,6,0,0,4,1,3,3,15,
+royal veterinary college,Royal Veterinary College,University,Yes,15,6,4,2,0,4,4,0,3,1,
+school of advanced study,School of Advanced Study (Univ of London),University,Yes,15,10,7,3,0,0,2,2,2,10,Finance  
+universities uk,Universities UK,University,Yes,15,3,3,0,0,1,2,7,3,13,
+brac,BRAC,Unclassified,No,14,5,1,4,0,1,0,5,2,14,IT/Systems
+embl ebi,EMBL-EBI (European Bioinformatics Institute),Research institute,Yes,14,11,1,10,0,3,0,0,2,13,IT/Systems
+jisc,Jisc,Research institute,Yes,14,5,3,2,0,1,4,3,3,13,
+london metropolitan university,London Metropolitan University,University,Yes,14,6,6,0,0,4,4,0,3,0,
+sunderland university,University of Sunderland,University,Yes,16,12,3,7,1,3,1,0,3,11,
+cabi,CABI,Research institute,Yes,13,2,2,0,0,3,3,3,3,13,
+royal college of art,Royal College of Art,University,Yes,13,8,8,0,0,4,0,0,2,1,IT/Systems
+sheffield hallam university,Sheffield Hallam University,University,Yes,13,10,4,6,0,2,1,0,3,0,
+sruc,SRUC,Research institute,Yes,13,12,7,5,0,1,0,0,2,11,IT/Systems
+uk dementia research institute,UK Dementia Research Institute,Research institute,Yes,13,9,4,5,0,3,1,0,3,13,
+brunel university of london,Brunel University Of London,University,Yes,12,7,7,0,0,4,1,0,3,10,
+chester university,University of Chester,University,Yes,12,11,6,5,0,1,0,0,2,1,IT/Systems
+birdlife international,BirdLife International,Unclassified,No,11,1,1,0,0,2,2,3,3,0,
+cumbria university,University of Cumbria,University,Yes,11,6,2,4,0,4,1,0,3,10,
+hertfordshire university,University Of Hertfordshire,University,Yes,10,6,3,3,0,1,2,0,3,9,
+british museum,British Museum,Museum / heritage,Yes,9,7,4,3,0,2,0,0,2,8,IT/Systems
+city university of london,City University Of London,University,Yes,9,9,4,5,0,0,0,0,1,6,Finance  IT/Systems
+edge hill university,Edge Hill University,University,Yes,10,7,2,4,1,3,0,0,2,7,IT/Systems
+international institute for environment and development,International Institute for Environment and Development,Research institute,Yes,9,3,1,2,0,2,1,2,3,0,
+ipsos sa,Ipsos SA,Company,No,9,9,9,0,0,0,0,0,1,7,Finance  IT/Systems
+robert gordon university,Robert Gordon University,University,Yes,9,8,4,2,1,1,0,0,2,8,IT/Systems
+york st john university,York St John University,University,Yes,10,8,3,4,1,0,2,0,2,8,Finance  
+abertay university,Abertay University,University,Yes,8,5,5,0,0,1,2,0,3,7,
+derby university,University of Derby,University,Yes,8,3,1,2,0,2,2,0,3,1,
+falmouth university,Falmouth University,University,Yes,8,6,3,3,0,1,1,0,3,6,
+gloucestershire university,University of Gloucestershire,University,Yes,8,7,3,4,0,1,0,0,2,6,IT/Systems
+national foundation for educational research,National Foundation For Educational Research,Charity / membership body,Yes,8,8,8,0,0,0,0,0,1,7,Finance  IT/Systems
+royal holloway,Royal Holloway,University,Yes,8,6,4,2,0,1,1,0,3,7,
+st marys university twickenham,St Marys University Twickenham,University,Yes,8,4,3,1,0,3,1,0,3,0,
+teeside university,Teeside University,University,Yes,9,4,4,0,0,2,3,0,3,8,
+hr wallingford group,HR Wallingford Group,Company,No,7,2,2,0,0,2,2,1,3,7,
+leeds trinity university,Leeds Trinity University,University,Yes,7,4,3,1,0,1,2,0,3,6,
+royal college of music,Royal College Of Music,University,Yes,7,2,1,1,0,5,0,0,2,6,IT/Systems
+teesside university,TEESSIDE UNIVERSITY,University,Yes,7,7,2,5,0,0,0,0,1,5,Finance  IT/Systems
+the highlands and islands university,University Of The Highlands And Islands,University,Yes,7,5,5,0,0,2,0,0,2,7,IT/Systems
+wales trinity saint david university,University of Wales Trinity Saint David,University,Yes,7,7,4,3,0,0,0,0,1,0,Finance  IT/Systems
+wjec cbac,WJEC / CBAC,Unclassified,No,7,7,1,6,0,0,0,0,1,7,Finance  IT/Systems
+activate learning,Activate Learning,Unclassified,No,6,0,0,0,0,5,1,0,2,4,Research  
+arden university,Arden University,University,Yes,6,4,0,3,1,0,2,0,2,0,Finance  
+brighton and sussex medical school,Brighton and Sussex Medical School,University,Yes,6,5,2,3,0,1,0,0,2,5,IT/Systems
+brighton university,University of Brighton,University,Yes,6,4,2,2,0,1,1,0,3,6,
+buckinghamshire new university,Buckinghamshire New University,University,Yes,6,4,4,0,0,0,2,0,2,4,Finance  
+courtauld institute of art,The Courtauld Institute of Art,University,Yes,6,2,1,1,0,2,1,0,3,1,
+glasgow school of art,The Glasgow School of Art,University,Yes,6,3,2,1,0,2,1,0,3,5,
+james hutton institute,The James Hutton Institute,Research institute,Yes,6,3,1,2,0,2,1,0,3,4,
+norwich university of the arts,Norwich University of the Arts,University,Yes,6,5,3,2,0,1,0,0,2,6,IT/Systems
+oxford nanopore technologies,Oxford Nanopore Technologies,Company,No,6,6,4,0,1,0,0,0,1,6,Finance  IT/Systems
+ravensbourne university london,Ravensbourne University London,University,Yes,6,2,2,0,0,3,1,0,3,6,
+roehampton university,University Of Roehampton,University,Yes,6,2,0,1,1,3,1,0,3,2,
+royal agricultural university,Royal Agricultural University,University,Yes,6,4,2,2,0,1,1,0,3,4,
+royal central school of speech and drama,The Royal Central School Of Speech And Drama,University,Yes,6,2,2,0,0,3,1,0,3,5,
+trl limited,TRL Limited,Company,No,6,0,0,0,0,4,0,0,1,6,Research  IT/Systems
+wrexham university,Wrexham University,University,Yes,6,2,2,0,0,2,1,1,3,4,
+brac university,BRAC University,University,Yes,5,3,3,0,0,1,1,0,3,5,
+british antarctic survey,British Antarctic Survey,Research institute,Yes,5,3,1,2,0,0,0,2,1,4,Finance  IT/Systems
+buckingham university,University of Buckingham,University,Yes,5,2,2,0,0,2,1,0,3,5,
+chichester university,University of Chichester,University,Yes,5,1,0,0,1,3,1,0,3,5,
+earlham institute,Earlham Institute,Research institute,Yes,5,2,2,0,0,0,1,1,2,5,Finance  
+leverhulme trust,The Leverhulme Trust,Charity / membership body,No,5,4,0,3,1,1,0,0,2,5,IT/Systems
+london school of hygiene and tropical medicine,London School of Hygiene & Tropical Medicine,University,Yes,5,2,1,1,0,3,0,0,2,5,IT/Systems
+london university,University of London,University,Yes,5,0,0,0,0,2,3,0,2,0,Research  
+rsacademics,RSAcademics,Unclassified,No,5,3,1,2,0,2,0,0,2,5,IT/Systems
+arts university bournemouth,Arts University Bournemouth,University,Yes,4,2,1,1,0,1,1,0,3,4,
+cambridge university press and assessment,Cambridge University Press & Assessment,Unclassified,No,4,4,2,2,0,0,0,0,1,0,Finance  IT/Systems
+charles river laboratories,Charles River Laboratories,Company,No,4,4,3,1,0,0,0,0,1,4,Finance  IT/Systems
+chartered association of business schools,Chartered Association Of Business Schools,Charity / membership body,No,4,2,1,1,0,2,0,0,2,4,IT/Systems
+guildhall school of music and drama,Guildhall School of Music & Drama,University,Yes,4,3,2,0,1,0,1,0,2,4,Finance  
+health sciences university,Health Sciences University,University,Yes,4,2,1,1,0,1,1,0,3,4,
+into university partnerships,INTO University Partnerships,University,Yes,4,1,0,1,0,3,0,0,2,4,IT/Systems
+law university,The University of Law,University,Yes,4,2,0,2,0,0,2,0,2,0,Finance  
+leeds arts university,Leeds Arts University,University,Yes,4,1,1,0,0,2,1,0,3,4,
+royal northern college of music,Royal Northern College of Music,University college,Yes,4,1,1,0,0,3,0,0,2,4,IT/Systems
+salesforce,Salesforce,Company,No,4,0,0,0,0,0,0,3,0,4,Research  Finance  IT/Systems
+suffolk university,University of Suffolk,University,Yes,4,4,2,1,1,0,0,0,1,3,Finance  IT/Systems
+taso,TASO,Unclassified,Yes,4,4,0,4,0,0,0,0,1,2,Finance  IT/Systems
+winchester university,University of Winchester,University,Yes,4,4,4,0,0,0,0,0,1,4,Finance  IT/Systems
+wolverhampton university,University of Wolverhampton,University,Yes,4,3,2,1,0,0,1,0,2,0,Finance  
+youth sport trust,Youth Sport Trust,Charity / membership body,No,4,4,1,3,0,0,0,0,1,4,Finance  IT/Systems
+acer trust,Acer Trust,Charity / membership body,No,3,0,0,0,0,3,0,0,1,2,Research  IT/Systems
+bayes business school,Bayes Business School,University,Yes,3,3,1,1,1,0,0,0,1,0,Finance  IT/Systems
+boston college,Boston College,Unclassified,No,3,0,0,0,0,2,1,0,2,3,Research  
+bright horizons uk,Bright Horizons UK,Unclassified,No,3,3,2,1,0,0,0,0,1,3,Finance  IT/Systems
+brilliant club,The Brilliant Club,Unclassified,No,3,2,0,2,0,1,0,0,2,1,IT/Systems
+broadleaf partnership trust,Broadleaf Partnership Trust,Charity / membership body,No,3,0,0,0,0,2,1,0,2,3,Research  
+cilex,CILEX,Unclassified,No,3,0,0,0,0,3,0,0,1,2,Research  IT/Systems
+department for science innovation and technology,"Department for Science, Innovation and Technology (DSIT)",Government / public body,No,3,1,1,0,0,0,1,0,2,3,Finance  
+gartner inc,Gartner Inc.,Company,No,3,3,3,0,0,0,0,0,1,0,Finance  IT/Systems
+guildhe,GuildHE,Research institute,Yes,3,1,1,0,0,1,0,1,2,3,IT/Systems
+hisp multi academy trust,HISP Multi-Academy Trust,School / academy trust,No,3,0,0,0,0,3,0,0,1,2,Research  IT/Systems
+icas,ICAS,Unclassified,No,3,1,1,0,0,1,1,0,3,2,
+illumina inc,Illumina Inc.,Company,No,3,3,3,0,0,0,0,0,1,0,Finance  IT/Systems
+ioe ucl s faculty of education and society,IOE - UCL's Faculty Of Education And Society,University,Yes,3,3,0,3,0,0,0,0,1,3,Finance  IT/Systems
+kpmg,KPMG,Company,No,3,0,0,0,0,0,0,3,0,3,Research  Finance  IT/Systems
+learning partners academy trust,Learning Partners Academy Trust,School / academy trust,No,3,0,0,0,0,3,0,0,1,2,Research  IT/Systems
+liverpool hope university,Liverpool Hope University,University,Yes,5,4,2,0,1,0,1,0,2,3,Finance  
+medical research council,Medical Research Council,Research institute,Yes,3,2,0,2,0,1,0,0,2,2,IT/Systems
+metanoia institute,Metanoia Institute,Research institute,Yes,3,0,0,0,0,3,0,0,1,3,Research  IT/Systems
+natcen social research,NatCen Social Research,Research institute,Yes,3,3,2,0,1,0,0,0,1,3,Finance  IT/Systems
+office for students,Office for Students,Unclassified,No,3,0,0,0,0,2,0,1,1,2,Research  IT/Systems
+oxed and assessment,OxEd And Assessment,Unclassified,No,3,3,0,3,0,0,0,0,1,3,Finance  IT/Systems
+paul mellon centre for studies in british art,Paul Mellon Centre For Studies In British Art,Research institute,Yes,3,2,0,2,0,1,0,0,2,3,IT/Systems
+plymouth marine laboratory,Plymouth Marine Laboratory (PML),Research institute,Yes,3,3,1,2,0,0,0,0,1,3,Finance  IT/Systems
+prokarium,Prokarium,Unclassified,No,3,2,2,0,0,1,0,0,2,3,IT/Systems
+pwc,PwC,Company,No,3,0,0,0,0,0,0,3,0,3,Research  Finance  IT/Systems
+qs quacquarelli symonds,QS Quacquarelli Symonds,Company,No,3,1,0,1,0,1,1,0,3,3,
+regent s university london,Regent's University London,University,Yes,3,0,0,0,0,1,2,0,2,0,Research  
+shakespeare martineau,Shakespeare Martineau,Unclassified,No,3,0,0,0,0,0,0,3,0,3,Research  Finance  IT/Systems
+uk centre for ecology and hydrology,UK Centre for Ecology & Hydrology (UKCEH),Research institute,Yes,3,3,2,1,0,0,0,0,1,3,Finance  IT/Systems
+universities scotland,Universities Scotland,University,Yes,3,2,0,1,1,0,0,1,1,3,Finance  IT/Systems
+upp,UPP,Unclassified,No,3,1,1,0,0,1,1,0,3,0,
+wood mackenzie,Wood Mackenzie,Company,No,3,3,3,0,0,0,0,0,1,3,Finance  IT/Systems
+adaptimmune,Adaptimmune,Unclassified,No,2,2,2,0,0,0,0,0,1,0,Finance  IT/Systems
+advance he,Advance HE,Research institute,Yes,2,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+all nations christian college,All Nations Christian College,Unclassified,Yes,2,1,1,0,0,1,0,0,2,2,IT/Systems
+alliance manchester business school,Alliance Manchester Business School,University,Yes,2,2,2,0,0,0,0,0,1,0,Finance  IT/Systems
+altus education partnership,Altus Education Partnership,Unclassified,No,2,0,0,0,0,1,1,0,2,2,Research  
+ashbourne day nurseries,Ashbourne Day Nurseries,Unclassified,No,2,0,0,0,0,2,0,0,1,2,Research  IT/Systems
+askham bryan college,Askham Bryan College,Unclassified,No,2,0,0,0,0,2,0,0,1,2,Research  IT/Systems
+better futures multi academy trust,Better Futures Multi-Academy Trust,School / academy trust,No,2,0,0,0,0,1,1,0,2,2,Research  
+blackpool and the fylde college,Blackpool And The Fylde College,Unclassified,No,2,0,0,0,0,2,0,0,1,2,Research  IT/Systems
+brentwood school uk,Brentwood School UK,School / academy trust,No,2,2,2,0,0,0,0,0,1,0,Finance  IT/Systems
+cambridge judge business school,Cambridge Judge Business School,University,Yes,2,2,1,1,0,0,0,0,1,2,Finance  IT/Systems
+cardiff business school,Cardiff Business School,University,Yes,2,2,1,1,0,0,0,0,1,0,Finance  IT/Systems
+career connect,Career Connect,Unclassified,No,2,1,1,0,0,1,0,0,2,1,IT/Systems
+carnegie trust for the universities of scotland,Carnegie Trust For The Universities Of Scotland,University,Yes,2,1,0,1,0,1,0,0,2,2,IT/Systems
+colchester institute,Colchester Institute,Research institute,Yes,2,0,0,0,0,1,1,0,2,1,Research  
+committee of university chairs,Committee of University Chairs,University,Yes,2,0,0,0,0,0,0,1,0,1,Research  Finance  IT/Systems
+department of alc,Department Of ALC,Government / public body,No,2,2,1,1,0,0,0,0,1,0,Finance  IT/Systems
+department of engineering at the university of cambridge,Department Of Engineering At The University Of Cambridge,University,Yes,2,2,2,0,0,0,0,0,1,2,Finance  IT/Systems
+diocese of westminster academy trust,The Diocese Of Westminster Academy Trust,School / academy trust,No,2,0,0,0,0,2,0,0,1,2,Research  IT/Systems
+e careers,E-Careers,Unclassified,No,2,0,0,0,0,1,1,0,2,2,Research  
+east midlands education trust,East Midlands Education Trust,Charity / membership body,No,2,0,0,0,0,2,0,0,1,0,Research  IT/Systems
+edwin group,The Edwin Group,Company,No,2,0,0,0,0,1,1,0,2,2,Research  
+etio,Etio,Unclassified,No,2,0,0,0,0,0,0,0,0,2,Research  Finance  IT/Systems
+evolution academy trust,Evolution Academy Trust,School / academy trust,No,2,0,0,0,0,2,0,0,1,2,Research  IT/Systems
+forrester,Forrester,Unclassified,No,2,2,2,0,0,0,0,0,1,2,Finance  IT/Systems
+google deepmind,Google DeepMind,Unclassified,No,2,2,2,0,0,0,0,0,1,0,Finance  IT/Systems
+idc,IDC,Unclassified,No,2,2,2,0,0,0,0,0,1,2,Finance  IT/Systems
+institute for jewish policy research,Institute For Jewish Policy Research,Research institute,Yes,2,2,0,0,2,0,0,0,1,2,Finance  IT/Systems
+institute of ismaili studies,The Institute Of Ismaili Studies,Research institute,Yes,2,2,0,2,0,0,0,0,1,0,Finance  IT/Systems
+john innes centre,John Innes Centre,Research institute,Yes,2,0,0,0,0,0,0,1,0,2,Research  Finance  IT/Systems
+juniper education group,Juniper Education Group,Company,No,2,0,0,0,0,2,0,0,1,2,Research  IT/Systems
+kenilworth multi academy trust,Kenilworth Multi Academy Trust,School / academy trust,No,2,0,0,0,0,2,0,0,1,2,Research  IT/Systems
+king s foundation,The King's Foundation,Charity / membership body,No,2,1,1,0,0,1,0,0,2,2,IT/Systems
+kirklees college,Kirklees College,Unclassified,No,2,0,0,0,0,2,0,0,1,2,Research  IT/Systems
+lma liverpool,LMA - Liverpool,Unclassified,Yes,2,0,0,0,0,2,0,0,1,2,Research  IT/Systems
+london early years foundation,London Early Years Foundation,Charity / membership body,No,2,0,0,0,0,2,0,0,1,2,Research  IT/Systems
+lyfta education,Lyfta Education,Unclassified,No,2,1,1,0,0,0,1,0,2,2,Finance  
+marsh academy,THE MARSH ACADEMY,Unclassified,No,2,0,0,0,0,2,0,0,1,2,Research  IT/Systems
+mel research,MEL Research,Unclassified,Yes,2,2,1,1,0,0,0,0,1,2,Finance  IT/Systems
+mills and reeve llp,Mills & Reeve LLP,Company,No,2,0,0,0,0,0,0,2,0,1,Research  Finance  IT/Systems
+national college,The National College,Unclassified,No,2,1,0,1,0,1,0,0,2,2,IT/Systems
+national institute of economic and social research,National Institute Of Economic And Social Research,Research institute,Yes,2,2,2,0,0,0,0,0,1,2,Finance  IT/Systems
+national institute of teaching and education,National Institute Of Teaching And Education,Research institute,Yes,2,1,1,0,0,0,1,0,2,0,Finance  
+newbold college of higher education,Newbold College Of Higher Education,University college,Yes,2,1,1,0,0,1,0,0,2,2,IT/Systems
+newbury college berkshire uk,Newbury College Berkshire UK,Unclassified,No,2,0,0,0,0,2,0,0,1,2,Research  IT/Systems
+nihr,NIHR,Unclassified,No,2,2,2,0,0,0,0,0,1,1,Finance  IT/Systems
+nous data insights,Nous Data Insights,Unclassified,No,2,0,0,0,0,0,0,0,0,2,Research  Finance  IT/Systems
+oaklands college,Oaklands College,Unclassified,No,2,0,0,0,0,1,1,0,2,2,Research  
+ocr,OCR,Unclassified,No,2,2,0,2,0,0,0,0,1,2,Finance  IT/Systems
+qa research,Qa Research,Unclassified,Yes,2,2,2,0,0,0,0,0,1,1,Finance  IT/Systems
+rand europe,RAND Europe,Unclassified,Yes,2,2,1,1,0,0,0,0,1,0,Finance  IT/Systems
+resolution foundation,Resolution Foundation,Charity / membership body,No,2,2,2,0,0,0,0,0,1,2,Finance  IT/Systems
+rose bruford college,Rose Bruford College,Unclassified,Yes,2,2,1,1,0,0,0,0,1,2,Finance  IT/Systems
+seo london,SEO London,Unclassified,No,2,0,0,0,0,2,0,0,1,2,Research  IT/Systems
+skills network,The Skills Network,Charity / membership body,No,2,0,0,0,0,1,1,0,2,2,Research  
+sparsholt college group,Sparsholt College Group,Company,No,2,1,0,1,0,1,0,0,2,2,IT/Systems
+st john s college university of cambridge,St John's College - University of Cambridge,University,Yes,2,0,0,0,0,1,1,0,2,2,Research  
+st mark and st john university,University of St Mark & St John,University,Yes,2,1,0,1,0,0,1,0,2,0,Finance  
+st mary s university,St Mary's University,University,Yes,2,2,2,0,0,0,0,0,1,1,Finance  IT/Systems
+study group,Study Group,Company,No,2,0,0,0,0,2,0,0,1,2,Research  IT/Systems
+t therapeutics ltd,T-Therapeutics Ltd,Company,No,2,2,2,0,0,0,0,0,1,2,Finance  IT/Systems
+tech educators,Tech Educators,Unclassified,No,2,0,0,0,0,1,1,0,2,2,Research  
+touchlight,Touchlight,Unclassified,No,2,2,2,0,0,0,0,0,1,2,Finance  IT/Systems
+trinity laban,Trinity Laban,Unclassified,Yes,2,0,0,0,0,2,0,0,1,0,Research  IT/Systems
+tutors international,Tutors International,Unclassified,No,2,0,0,0,0,1,1,0,2,0,Research  
+ucfb,UCFB,Unclassified,Yes,2,0,0,0,0,2,0,0,1,2,Research  IT/Systems
+uhr universities human resources,UHR Universities Human Resources,University,Yes,2,2,0,2,0,0,0,0,1,2,Finance  IT/Systems
+university college london hospitals nhs foundation trust,University College London Hospitals NHS Foundation Trust,University,Yes,2,1,1,0,0,1,0,0,2,0,IT/Systems
+usp college,USP College,Unclassified,No,2,0,0,0,0,2,0,0,1,0,Research  IT/Systems
+virti,Virti,Unclassified,No,2,0,0,0,0,1,1,0,2,2,Research  
+warwick warwick business school university,University Of Warwick - Warwick Business School,University,Yes,2,0,0,0,0,2,0,0,1,2,Research  IT/Systems
+wcg,WCG,Unclassified,No,2,0,0,0,0,1,1,0,2,2,Research  
+wellcome sanger institute,Wellcome Sanger Institute,Research institute,Yes,2,2,1,1,0,0,0,0,1,2,Finance  IT/Systems
+wellington school,Wellington School,School / academy trust,No,2,0,0,0,0,2,0,0,1,2,Research  IT/Systems
+wigan and leigh college and university centre,Wigan & Leigh College And University Centre,University,Yes,2,0,0,0,0,2,0,0,1,0,Research  IT/Systems
+wishford schools,Wishford Schools,Unclassified,No,2,0,0,0,0,2,0,0,1,2,Research  IT/Systems
+abi research,ABI Research,Unclassified,Yes,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+acacia avenue,Acacia Avenue,Unclassified,No,1,1,1,0,0,0,0,0,1,0,Finance  IT/Systems
+academy of music and sound,Academy Of Music & Sound,Unclassified,Yes,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+acm academy of contemporary music,ACM - Academy Of Contemporary Music,Unclassified,No,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+acorn early years,Acorn Early Years,Unclassified,No,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+activate learning education trust,Activate Learning Education Trust,Charity / membership body,No,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+ada lovelace institute,Ada Lovelace Institute,Research institute,Yes,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+african institute for development policy,African Institute For Development Policy,Research institute,Yes,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+agcas,AGCAS,Unclassified,No,1,1,0,1,0,0,0,0,1,1,Finance  IT/Systems
+agilysis limited,Agilysis Limited,Company,No,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+airfire control limited,AIRFIRE CONTROL LIMITED,Company,No,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+akamis bio,Akamis Bio,Unclassified,No,1,1,1,0,0,0,0,0,1,0,Finance  IT/Systems
+amgen inc,Amgen Inc.,Company,No,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+amosshe the student services organisation,AMOSSHE The Student Services Organisation,Unclassified,No,1,1,0,1,0,0,0,0,1,1,Finance  IT/Systems
+applied photophysics,Applied Photophysics,Unclassified,No,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+apply group,The Apply Group,Company,No,1,0,0,0,0,0,1,0,1,1,Research  Finance  
+aquila the diocese of canterbury academies trust,Aquila The Diocese Of Canterbury Academies Trust,School / academy trust,No,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+arc universities group,Arc Universities Group,University,Yes,1,0,0,0,0,0,0,1,0,1,Research  Finance  IT/Systems
+architectural association,Architectural Association,Charity / membership body,No,1,1,1,0,0,0,0,0,1,0,Finance  IT/Systems
+ashburton cookery school,Ashburton Cookery School,School / academy trust,No,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+association of colleges,Association of Colleges,Charity / membership body,No,1,0,0,0,0,0,0,0,0,1,Research  Finance  IT/Systems
+association of heads of university administration,Association of Heads of University Administration (AHUA),University,Yes,1,0,0,0,0,0,0,1,0,0,Research  Finance  IT/Systems
+astrum mat,Astrum MAT,Unclassified,No,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+atass sports,ATASS Sports,Unclassified,No,1,0,0,0,0,0,1,0,1,1,Research  Finance  
+atkinsr alis,AtkinsRéalis,Unclassified,No,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+aviv group,AVIV Group,Company,No,1,1,1,0,0,0,0,0,1,0,Finance  IT/Systems
+aylesbury vale academy,The Aylesbury Vale Academy,Unclassified,No,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+babraham institute,The Babraham Institute,Research institute,Yes,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+barclays,Barclays,Unclassified,No,1,0,0,0,0,0,0,1,0,1,Research  Finance  IT/Systems
+barinthus biotherapeutics,Barinthus Biotherapeutics,Unclassified,No,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+barnet and southgate college,Barnet And Southgate College,Unclassified,No,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+basis,Basis,Unclassified,No,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+battelle crop protection solutions,Battelle Crop Protection Solutions,Company,No,1,1,0,0,1,0,0,0,1,0,Finance  IT/Systems
+bayes centre,Bayes Centre,Unclassified,Yes,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+bbc,BBC,Unclassified,No,1,1,0,1,0,0,0,0,1,1,Finance  IT/Systems
+becomingx,BecomingX,Unclassified,No,1,0,0,0,0,0,1,0,1,1,Research  Finance  
+bedfordshire schools trust,Bedfordshire Schools Trust,Charity / membership body,No,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+belfast metropolitan college,Belfast Metropolitan College,Unclassified,No,1,1,0,1,0,0,0,0,1,0,Finance  IT/Systems
+bennett institute for applied data science,Bennett Institute For Applied Data Science,Research institute,Yes,1,1,0,0,1,0,0,0,1,0,Finance  IT/Systems
+beyond schools trust,Beyond Schools Trust,Charity / membership body,No,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+bibliu,BibliU,Unclassified,No,1,0,0,0,0,1,0,0,1,0,Research  IT/Systems
+bimm institute,BIMM Institute,Research institute,Yes,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+bimm university,BIMM University,University,Yes,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+bishop burton college,Bishop Burton College,Unclassified,No,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+bishop chadwick catholic education trust,Bishop Chadwick Catholic Education Trust,Charity / membership body,No,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+bit bio,Bit.bio,Unclassified,No,1,1,1,0,0,0,0,0,1,0,Finance  IT/Systems
+blavatnik school of government university of oxford,Blavatnik School Of Government University Of Oxford,School / academy trust,No,1,1,0,1,0,0,0,0,1,0,Finance  IT/Systems
+bloxham school,Bloxham School,School / academy trust,No,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+blue marble research,Blue Marble Research,Unclassified,Yes,1,1,1,0,0,0,0,0,1,0,Finance  IT/Systems
+bmg research,BMG Research,Unclassified,Yes,1,1,1,0,0,0,0,0,1,0,Finance  IT/Systems
+bodleian libraries university of oxford,The Bodleian Libraries University Of Oxford,University,Yes,1,1,1,0,0,0,0,0,1,0,Finance  IT/Systems
+british academy,The British Academy,Unclassified,No,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+broken string biosciences,Broken String Biosciences,Unclassified,No,1,0,0,0,0,0,1,0,1,1,Research  Finance  
+buckinghamshire college group,Buckinghamshire College Group,Company,No,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+bufdg,BUFDG,Unclassified,No,1,0,0,0,0,0,0,1,0,1,Research  Finance  IT/Systems
+california polytechnic state university,California Polytechnic State University,University,Yes,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+cambridge epigenetix,Cambridge Epigenetix,Unclassified,No,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+canonium learning trust,Canonium Learning Trust,Charity / membership body,No,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+capital city college group,Capital City College Group,Company,No,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+cardiac risk in the young,Cardiac Risk In The Young,Unclassified,No,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+cardiff university students union,Cardiff University Students Union,University,Yes,1,1,0,1,0,0,0,0,1,0,Finance  IT/Systems
+catalyst inc,Catalyst Inc.,Company,No,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+ccs insight,CCS Insight,Unclassified,No,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+cell guidance systems,Cell Guidance Systems,Unclassified,No,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+centre for health economics,Centre For Health Economics,Research institute,Yes,1,1,0,0,1,0,0,0,1,1,Finance  IT/Systems
+centrus,Centrus,Unclassified,No,1,0,0,0,0,0,0,1,0,1,Research  Finance  IT/Systems
+cfe ltd,CFE Ltd,Company,No,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+chartered institute of export and international trade,The Chartered Institute Of Export & International Trade,Research institute,Yes,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+charterhouse school,Charterhouse School,School / academy trust,No,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+childwise research,CHILDWISE Research,Unclassified,Yes,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+city and guilds,City & Guilds,Unclassified,No,1,1,0,1,0,0,0,0,1,1,Finance  IT/Systems
+city college norwich,City College Norwich,Unclassified,No,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+city lit,City Lit,Unclassified,No,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+city of liverpool college,The City Of Liverpool College,Unclassified,No,1,0,0,0,0,0,1,0,1,1,Research  Finance  
+clayesmore school,Clayesmore School,School / academy trust,No,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+climate spring,Climate Spring,Unclassified,No,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+cnrs,CNRS,Unclassified,No,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+codeclan,CodeClan,Unclassified,No,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+coleg cambria,Coleg Cambria,Unclassified,No,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+coleg cymraeg cenedlaethol,Coleg Cymraeg Cenedlaethol,Unclassified,No,1,1,0,1,0,0,0,0,1,1,Finance  IT/Systems
+community and patient preference research,Community And Patient Preference Research,Unclassified,Yes,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+consynance therapeutics inc,ConSynance Therapeutics Inc.,Company,No,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+coresight research,Coresight Research,Unclassified,Yes,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+cormack consultancy group,Cormack Consultancy Group,Company,No,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+cosector university of london,CoSector - University of London,University,Yes,1,1,1,0,0,0,0,0,1,0,Finance  IT/Systems
+cosmetic courses,Cosmetic Courses,Unclassified,No,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+courtauld institute of art u of london,"Courtauld Institute of Art, U. of London",University,Yes,1,1,0,1,0,0,0,0,1,0,Finance  IT/Systems
+coventry university uhcw,Coventry University / UHCW,University,Yes,1,1,0,0,1,0,0,0,1,1,Finance  IT/Systems
+culturestudio,Culturestudio.,Unclassified,No,1,1,0,0,0,0,0,0,1,0,Finance  IT/Systems
+curious sky ltd,Curious Sky Ltd,Company,No,1,0,0,0,0,0,0,1,0,1,Research  Finance  IT/Systems
+dartington service design lab,Dartington Service Design Lab,Unclassified,No,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+davies mckerr,Davies+mckerr,Unclassified,No,1,1,1,0,0,0,0,0,1,0,Finance  IT/Systems
+dean trust,The Dean Trust,Charity / membership body,No,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+department for education,Department for Education,Government / public body,No,1,0,0,0,0,0,1,0,1,0,Research  Finance  
+dialect,Dialect.,Unclassified,No,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+differentology,Differentology,Unclassified,No,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+discovery research,Discovery Research,Unclassified,Yes,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+dunn school,Dunn School,School / academy trust,No,1,1,0,1,0,0,0,0,1,1,Finance  IT/Systems
+east surrey college,East Surrey College,Unclassified,No,1,0,0,0,0,1,0,0,1,0,Research  IT/Systems
+ecc,ECC,Unclassified,No,1,0,0,0,0,0,0,0,0,1,Research  Finance  IT/Systems
+ecorys,Ecorys,Unclassified,No,1,1,0,1,0,0,0,0,1,1,Finance  IT/Systems
+ecospray limited,ECOSPRAY LIMITED,Company,No,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+edgbaston high school for girls,Edgbaston High School For Girls,School / academy trust,No,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+edge foundation,Edge Foundation,Charity / membership body,No,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+edinburgh business school university,University Of Edinburgh Business School,University,Yes,1,1,0,1,0,0,0,0,1,1,Finance  IT/Systems
+edinburgh law school university,University Of Edinburgh Law School,University,Yes,1,1,0,1,0,0,0,0,1,1,Finance  IT/Systems
+edinburgh moray house school of education and sport university,University Of Edinburgh Moray House School Of Education And Sport,School / academy trust,No,1,1,0,1,0,0,0,0,1,1,Finance  IT/Systems
+edinburgh university students association,Edinburgh University Studentsâ€‹ Association,University,Yes,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+education people,The Education People,Unclassified,No,1,1,0,1,0,0,0,0,1,0,Finance  IT/Systems
+education sub saharan africa,Education Sub Saharan Africa,Unclassified,No,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+edukos trust,Edukos Trust,Charity / membership body,No,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+ekc group,EKC Group,Company,No,1,0,0,0,0,1,0,0,1,0,Research  IT/Systems
+elastik,Elastik,Unclassified,No,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+enactus uk and ireland,Enactus UK & Ireland,Unclassified,No,1,1,1,0,0,0,0,0,1,0,Finance  IT/Systems
+energy consortium,The Energy Consortium (TEC),Charity / membership body,No,1,0,0,0,0,0,0,0,0,1,Research  Finance  IT/Systems
+energy for growth hub,The Energy For Growth Hub,Unclassified,No,1,1,1,0,0,0,0,0,1,0,Finance  IT/Systems
+enfuse group,Enfuse Group,Company,No,1,0,0,0,0,0,0,1,0,1,Research  Finance  IT/Systems
+english uk,English UK,Unclassified,No,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+enjoy education,Enjoy Education,Unclassified,No,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+enroly,Enroly,Unclassified,No,1,0,0,0,0,0,1,0,1,0,Research  Finance  
+entrepreneurs network,The Entrepreneurs Network,Charity / membership body,No,1,1,1,0,0,0,0,0,1,0,Finance  IT/Systems
+epcc,EPCC,Unclassified,No,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+epilepsygtx,EpilepsyGTx,Unclassified,No,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+equal education partners,Equal Education Partners,Company,No,1,0,0,0,0,1,0,0,1,0,Research  IT/Systems
+eton academy,Eton Academy,Unclassified,No,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+european futures observatory,The European Futures Observatory,Unclassified,Yes,1,1,1,0,0,0,0,0,1,0,Finance  IT/Systems
+european science foundation,European Science Foundation,Charity / membership body,No,1,1,0,0,0,0,0,0,1,0,Finance  IT/Systems
+evidera,Evidera,Unclassified,No,1,1,1,0,0,0,0,0,1,0,Finance  IT/Systems
+evox therapeutics ltd,Evox Therapeutics Ltd,Company,No,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+explori,Explori,Unclassified,No,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+expressionedits,ExpressionEdits,Unclassified,No,1,1,0,0,1,0,0,0,1,1,Finance  IT/Systems
+faraday institute for science and religion,The Faraday Institute For Science And Religion,Research institute,Yes,1,1,0,1,0,0,0,0,1,1,Finance  IT/Systems
+fawrii,Fawrii,Unclassified,No,1,0,0,0,0,0,1,0,1,0,Research  Finance  
+fie foundation for international education,FIE Foundation For International Education,Charity / membership body,No,1,0,0,0,0,0,1,0,1,1,Research  Finance  
+field ready,Field Ready,Unclassified,No,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+fitch solutions,Fitch Solutions,Company,No,1,1,1,0,0,0,0,0,1,0,Finance  IT/Systems
+flinders university,Flinders University,University,Yes,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+flywire payments limited,Flywire Payments Limited,Company,No,1,0,0,0,0,0,0,0,0,0,Research  Finance  IT/Systems
+four stones mat,The Four Stones MAT,Unclassified,No,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+frays academy trust,Frays Academy Trust,School / academy trust,No,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+future biomanufacturing research hub,Future Biomanufacturing Research Hub,Unclassified,Yes,1,1,1,0,0,0,0,0,1,0,Finance  IT/Systems
+future focus research,Future Focus Research,Unclassified,Yes,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+futuru,FuturU,Unclassified,No,1,0,0,0,0,0,1,0,1,1,Research  Finance  
+gaia learning,Gaia Learning,Unclassified,No,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+gain therapeutics,Gain Therapeutics,Unclassified,No,1,1,0,0,0,0,0,0,1,1,Finance  IT/Systems
+galen research ltd,Galen Research Ltd,Company,No,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+gallery trust,The Gallery Trust,Museum / heritage,Yes,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+gateway qualifications,Gateway Qualifications,Unclassified,No,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+genomics england limited,Genomics England Limited,Company,No,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+girls in charge initiative,Girls In Charge Initiative,Unclassified,No,1,1,0,1,0,0,0,0,1,0,Finance  IT/Systems
+gist research ltd,GIST Research Ltd,Company,No,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+glasgow kelvin college,Glasgow Kelvin College,Unclassified,No,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+global entrepreneurship and development institute,Global Entrepreneurship And Development Institute,Research institute,Yes,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+global school leaders,Global School Leaders,School / academy trust,No,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+global university systems,Global University Systems,University,Yes,1,0,0,0,0,0,0,1,0,0,Research  Finance  IT/Systems
+gloucestershire college,Gloucestershire College,Unclassified,No,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+gower college swansea,Gower College Swansea,Unclassified,No,1,1,1,0,0,0,0,0,1,0,Finance  IT/Systems
+grant thornton uk,Grant Thornton UK,Unclassified,No,1,0,0,0,0,0,0,1,0,1,Research  Finance  IT/Systems
+grantsnow,GrantsNow,Unclassified,No,1,0,0,0,0,0,0,1,0,1,Research  Finance  IT/Systems
+gresham college,Gresham College,Unclassified,No,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+griffin institute,The Griffin Institute,Research institute,Yes,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+gusto research,Gusto Research,Unclassified,Yes,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+gw4 alliance,GW4 Alliance,Charity / membership body,No,1,1,0,1,0,0,0,0,1,1,Finance  IT/Systems
+halesowen college,Halesowen College,Unclassified,No,1,0,0,0,0,0,1,0,1,1,Research  Finance  
+hampton school,Hampton School,School / academy trust,No,1,0,0,0,0,0,1,0,1,1,Research  Finance  
+hansard society,Hansard Society,Charity / membership body,No,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+harbin institute of technology shenzhen,Harbin Institute Of Technology Shenzhen,Research institute,Yes,1,1,0,0,1,0,0,0,1,1,Finance  IT/Systems
+harlow consulting,Harlow Consulting,Company,No,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+harness therapeutics,Harness Therapeutics,Unclassified,No,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+hartpury university and hartpury college,Hartpury University and Hartpury College,University,Yes,1,1,0,1,0,0,0,0,1,0,Finance  IT/Systems
+hasmonean high school,Hasmonean High School,School / academy trust,No,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+hatch digital,Hatch Digital,Unclassified,No,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+heart of worcestershire college,Heart Of Worcestershire College,Unclassified,No,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+hendon school,Hendon School,School / academy trust,No,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+herefordshire ludlow and north shropshire college,Herefordshire Ludlow And North Shropshire College,Unclassified,No,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+hfl education,HFL Education,Unclassified,No,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+holy family catholic multi academy trust,Holy Family Catholic Multi Academy Trust,School / academy trust,No,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+huish episcopi academy,Huish Episcopi Academy,Unclassified,No,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+hull york medical school,Hull York Medical School,University,Yes,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+humanities research institute university of buckingham,Humanities Research Institute University Of Buckingham,University,Yes,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+hurstpierpoint college,Hurstpierpoint College,Unclassified,No,1,1,1,0,0,0,0,0,1,0,Finance  IT/Systems
+ibn rushd centre of excellence for islamic research,Ibn Rushd Centre Of Excellence For Islamic Research,Research institute,Yes,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+icaro consulting limited,ICARO CONSULTING LIMITED,Company,No,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+icen risk,ICEN RISK,Unclassified,No,1,0,0,0,0,0,0,1,0,1,Research  Finance  IT/Systems
+identity exploration ltd,Identity Exploration Ltd,Company,No,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+idtechex,IDTechEx,Unclassified,No,1,1,1,0,0,0,0,0,1,0,Finance  IT/Systems
+iff research,IFF Research,Unclassified,Yes,1,1,1,0,0,0,0,0,1,0,Finance  IT/Systems
+ifma,IFMA,Unclassified,No,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+iksuda therapeutics,Iksuda Therapeutics,Unclassified,No,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+imap centre ltd,IMap Centre Ltd,Company,No,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+impact futures uk,Impact Futures UK,Unclassified,No,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+impel college of london ltd,IMPEL COLLEGE OF LONDON LTD,University college,Yes,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+in toto ed,In Toto Ed,Unclassified,No,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+inchbald school of design,Inchbald School Of Design,University,Yes,1,0,0,0,0,0,1,0,1,1,Research  Finance  
+informa,Informa,Unclassified,No,1,1,0,1,0,0,0,0,1,1,Finance  IT/Systems
+information services group,Information Services Group,Company,No,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+ingenox therapeutics,IngenOx Therapeutics,Unclassified,No,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+ingenox therapeutics limited,IngenOx Therapeutics Limited,Company,No,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+inserm,INSERM,Unclassified,No,1,1,1,0,0,0,0,0,1,0,Finance  IT/Systems
+insights family,The Insights Family,Unclassified,No,1,1,1,0,0,0,0,0,1,0,Finance  IT/Systems
+instil bio,Instil Bio,Unclassified,No,1,1,1,0,0,0,0,0,1,0,Finance  IT/Systems
+institute for fiscal studies,Institute For Fiscal Studies,Research institute,Yes,1,1,0,0,1,0,0,0,1,1,Finance  IT/Systems
+institute for voluntary action research,Institute For Voluntary Action Research,Research institute,Yes,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+institute for war and peace reporting,Institute For War & Peace Reporting,Research institute,Yes,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+invictus education trust,Invictus Education Trust,Charity / membership body,No,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+ipsos uk,Ipsos UK,Company,No,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+isos partnership,Isos Partnership,Unclassified,No,1,1,1,0,0,0,0,0,1,0,Finance  IT/Systems
+ivy education trust,Ivy Education Trust,Charity / membership body,No,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+jaguar gene therapy,Jaguar Gene Therapy,Unclassified,No,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+jamworks,Jamworks,Unclassified,No,1,0,0,0,0,1,0,0,1,0,Research  IT/Systems
+js group,JS Group,Company,No,1,0,0,0,0,0,0,1,0,1,Research  Finance  IT/Systems
+juniper training ltd,Juniper Training Ltd,Company,No,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+kedleston group,Kedleston Group,Company,No,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+kennedy institute of rheumatology,Kennedy Institute Of Rheumatology,Research institute,Yes,1,1,1,0,0,0,0,0,1,0,Finance  IT/Systems
+kernow learning multi academy trust,Kernow Learning Multi Academy Trust,School / academy trust,No,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+keystone tutors,Keystone Tutors,Unclassified,No,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+kidsknowbest,KidsKnowBest,Unclassified,No,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+king s ely,King's Ely,Unclassified,No,1,1,0,1,0,0,0,0,1,1,Finance  IT/Systems
+king s house school,King's House School,School / academy trust,No,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+kings education,Kings Education,Unclassified,No,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+knowledge exchange uk,Knowledge Exchange UK,Unclassified,No,1,1,0,0,0,0,0,0,1,1,Finance  IT/Systems
+kynetec,Kynetec,Unclassified,No,1,1,1,0,0,0,0,0,1,0,Finance  IT/Systems
+laidlaw schools trust,Laidlaw Schools Trust,Charity / membership body,No,1,0,0,0,0,1,0,0,1,0,Research  IT/Systems
+lancashire university,University of Lancashire,University,Yes,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+ldn apprenticeships,LDN Apprenticeships,Unclassified,No,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+leading edge academies partnership,Leading Edge Academies Partnership,Unclassified,No,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+learners trust,LEARNERsâ€‹ Trust,Charity / membership body,No,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+learning today leading tomorrow,Learning Today Leading Tomorrow,Unclassified,No,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+leeds university business school,Leeds University Business School,University,Yes,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+leukaemia uk,Leukaemia UK,Unclassified,No,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+light hall school,Light Hall School,School / academy trust,No,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+lighthouse schools partnership,Lighthouse Schools Partnership,Unclassified,No,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+lines between,The Lines Between,Unclassified,No,1,1,0,1,0,0,0,0,1,1,Finance  IT/Systems
+london academy of excellence stratford,London Academy Of Excellence - Stratford,Unclassified,No,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+london school of commerce london united kingdom,London School Of Commerce London United Kingdom,School / academy trust,No,1,0,0,0,0,0,1,0,1,1,Research  Finance  
+london school of management education,London School Of Management Education,University,Yes,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+london school of science and technology,London School Of Science & Technology,School / academy trust,No,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+london school of theology,London School Of Theology,University,Yes,1,1,1,0,0,0,0,0,1,0,Finance  IT/Systems
+loxford school trust,Loxford School Trust,School / academy trust,No,1,0,0,0,0,0,1,0,1,1,Research  Finance  
+lse middle east centre,LSE Middle East Centre,University,Yes,1,1,0,1,0,0,0,0,1,1,Finance  IT/Systems
+lupc,LUPC,Unclassified,No,1,0,0,0,0,0,0,1,0,1,Research  Finance  IT/Systems
+m and c saatchi world services,M&C Saatchi World Services,Unclassified,No,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+macro advisory ltd,Macro-Advisory Ltd.,Company,No,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+macular society,Macular Society,Charity / membership body,No,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+mall research consultancy ltd,Mall Research Consultancy Ltd,Company,No,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+manageable,Manageable,Unclassified,No,1,0,0,0,0,0,1,0,1,1,Research  Finance  
+manchester law school university,The University Of Manchester Law School,University,Yes,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+marie curie uk,Marie Curie UK,Unclassified,No,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+maru group,Maru Group,Company,No,1,1,1,0,0,0,0,0,1,0,Finance  IT/Systems
+mccann,McCann,Unclassified,No,1,1,0,0,0,0,0,0,1,0,Finance  IT/Systems
+medical research council london institute of medical sciences,Medical Research Council London Institute of Medical Sciences,Research institute,Yes,1,1,0,1,0,0,0,0,1,1,Finance  IT/Systems
+miller research ltd,Miller Research Ltd,Company,No,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+mindlab international,Mindlab International,Unclassified,No,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+mink therapeutics,MiNK Therapeutics,Unclassified,No,1,1,1,0,0,0,0,0,1,0,Finance  IT/Systems
+mnd scotland,MND Scotland,Unclassified,No,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+modern slavery and human rights policy and evidence centre,Modern Slavery And Human Rights Policy And Evidence Centre,Unclassified,Yes,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+mont rose college,Mont Rose College,Unclassified,No,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+morrisby,Morrisby,Unclassified,No,1,0,0,0,0,0,1,0,1,1,Research  Finance  
+mps uk group ltd,MPS UK Group Ltd,Company,No,1,0,0,0,0,1,0,0,1,0,Research  IT/Systems
+my ohana,My Ohana,Unclassified,No,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+myriad research,Myriad Research,Unclassified,Yes,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+n8 research partnership,N8 Research Partnership,Unclassified,Yes,1,1,0,1,0,0,0,0,1,1,Finance  IT/Systems
+native antigen company,The Native Antigen Company,Unclassified,No,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+neupc,NEUPC,Unclassified,No,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+new college of the humanities,New College Of The Humanities,Unclassified,No,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+new london educational trust,New London Educational Trust,Charity / membership body,No,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+new wave federation,New Wave Federation,Charity / membership body,No,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+neway training solutions ltd,Neway Training Solutions Ltd,Company,No,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+newman university birmingham,Newman University Birmingham,University,Yes,1,1,0,1,0,0,0,0,1,0,Finance  IT/Systems
+nexus education schools trust,Nexus Education Schools Trust,Charity / membership body,No,1,1,0,1,0,0,0,0,1,1,Finance  IT/Systems
+nhs r and d forum,NHS R&D Forum,NHS / healthcare,No,1,1,1,0,0,0,0,0,1,0,Finance  IT/Systems
+nihr bioresource,NIHR BioResource,Unclassified,No,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+nimbuspoint consulting,NimbusPoint Consulting,Company,No,1,0,0,0,0,0,0,0,0,1,Research  Finance  IT/Systems
+nmite,NMITE,Unclassified,No,1,0,0,0,0,0,1,0,1,1,Research  Finance  
+north hertfordshire college,North Hertfordshire College,Unclassified,No,1,0,0,0,0,1,0,0,1,0,Research  IT/Systems
+north oxfordshire academy,North Oxfordshire Academy,Unclassified,No,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+northampton students union university,University Of Northampton Studentsâ€‹ Union,University,Yes,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+northern education trust,Northern Education Trust,Charity / membership body,No,1,0,0,0,0,1,0,0,1,0,Research  IT/Systems
+nottingham college,Nottingham College,Unclassified,No,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+nspcc,NSPCC,Unclassified,No,1,1,0,1,0,0,0,0,1,0,Finance  IT/Systems
+nuclera,Nuclera,Unclassified,No,1,1,1,0,0,0,0,0,1,0,Finance  IT/Systems
+nuffield trust,Nuffield Trust,Charity / membership body,No,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+nwupc ltd,NWUPC Ltd.,Company,No,1,0,0,0,0,0,0,0,0,1,Research  Finance  IT/Systems
+oak multi academy trust,OAK Multi Academy Trust,School / academy trust,No,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+ocn london,OCN London,Unclassified,No,1,0,0,0,0,1,0,0,1,0,Research  IT/Systems
+omdia,Omdia,Unclassified,No,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+oneday,Oneday,Unclassified,No,1,0,0,0,0,0,1,0,1,1,Research  Finance  
+onehive,OneHive,Unclassified,No,1,0,0,0,0,0,1,0,1,0,Research  Finance  
+open college of the arts,Open College Of The Arts,Unclassified,No,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+open inclusion,Open Inclusion,Unclassified,No,1,1,1,0,0,0,0,0,1,0,Finance  IT/Systems
+opogo,Opogo,Unclassified,No,1,0,0,0,0,0,1,0,1,1,Research  Finance  
+oratory school,The Oratory School,School / academy trust,No,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+orchard hill college and academy trust,Orchard Hill College & Academy Trust,School / academy trust,No,1,0,0,0,0,1,0,0,1,0,Research  IT/Systems
+orchard therapeutics,Orchard Therapeutics,Unclassified,No,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+oriel square limited,Oriel Square Limited,Company,No,1,1,0,1,0,0,0,0,1,0,Finance  IT/Systems
+orpheus institute,Orpheus Institute,Research institute,Yes,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+orwell multi academy trust,Orwell Multi Academy Trust,School / academy trust,No,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+osborne co operative academy,Osborne Co-operative Academy,Unclassified,No,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+ossianix,Ossianix,Unclassified,No,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+overviewfx,OverviewFX,Unclassified,No,1,0,0,0,0,0,1,0,1,1,Research  Finance  
+oviva therapeutics,Oviva Therapeutics,Unclassified,No,1,1,1,0,0,0,0,0,1,0,Finance  IT/Systems
+oxford centre for hindu studies,Oxford Centre For Hindu Studies,Research institute,Yes,1,1,0,0,1,0,0,0,1,1,Finance  IT/Systems
+oxford measured,Oxford MeasurEd,Unclassified,No,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+pangea bio,Pangea Bio,Unclassified,No,1,1,1,0,0,0,0,0,1,0,Finance  IT/Systems
+paragraf,Paragraf,Unclassified,No,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+parkinson s uk,Parkinson's UK,Unclassified,No,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+pdr international centre for design and research,PDR International Centre For Design And Research,Research institute,Yes,1,1,1,0,0,0,0,0,1,0,Finance  IT/Systems
+phasecraft,Phasecraft,Unclassified,No,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+pie,The PIE,Unclassified,No,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+planet education networks,Planet Education Networks,Unclassified,No,1,0,0,0,0,0,1,0,1,1,Research  Finance  
+plasticell limited,Plasticell Limited,Company,No,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+plumpton college,Plumpton College,Unclassified,No,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+plymouth college of art,Plymouth College Of Art,Unclassified,No,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+populus select ltd,Populus Select Ltd,Company,No,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+prenton high school,Prenton High School,School / academy trust,No,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+prince s mead school,Prince's Mead School,School / academy trust,No,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+prior s field school,Prior's Field School,School / academy trust,No,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+progressive,Progressive,Unclassified,No,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+project access,Project Access,Unclassified,No,1,1,0,1,0,0,0,0,1,1,Finance  IT/Systems
+proteus instruments,Proteus Instruments,Unclassified,No,1,1,0,1,0,0,0,0,1,1,Finance  IT/Systems
+pspa,PSPA,Unclassified,No,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+pye tait consulting,Pye Tait Consulting,Company,No,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+qatar computing research institute,Qatar Computing Research Institute,Research institute,Yes,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+quadram institute bioscience,Quadram Institute Bioscience,Research institute,Yes,1,0,0,0,0,0,0,0,0,1,Research  Finance  IT/Systems
+r f associates,R F Associates,Unclassified,No,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+raised in bristol,Raised In Bristol,Unclassified,No,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+reflections nursery and small school,Reflections Nursery & Small School,School / academy trust,No,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+research by design,Research By Design,Unclassified,Yes,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+research england uk research councils,"Research England, UK Research Councils",Unclassified,Yes,1,0,0,0,0,0,0,1,0,1,Research  Finance  IT/Systems
+revealing reality,Revealing Reality,Unclassified,No,1,1,1,0,0,0,0,0,1,0,Finance  IT/Systems
+review port,Review Port,Unclassified,No,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+ridc,RiDC,Unclassified,No,1,1,1,0,0,0,0,0,1,0,Finance  IT/Systems
+rise multi academy trust,Rise Multi Academy Trust,School / academy trust,No,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+roffey park institute,Roffey Park Institute,Research institute,Yes,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+s rm,S-RM,Unclassified,No,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+sainsbury laboratory,The Sainsbury Laboratory,Unclassified,Yes,1,0,0,0,0,0,0,1,0,1,Research  Finance  IT/Systems
+salterns academy trust,Salterns Academy Trust,School / academy trust,No,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+sarum college,Sarum College,Unclassified,No,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+sarvari research trust,SARVARI RESEARCH TRUST,Charity / membership body,No,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+sawston nursery,Sawston Nursery,School / academy trust,No,1,0,0,0,0,1,0,0,1,0,Research  IT/Systems
+scbm services,SCBM Services,Unclassified,No,1,0,0,0,0,1,0,0,1,0,Research  IT/Systems
+scottish council on human bioethics,THE SCOTTISH COUNCIL ON HUMAN BIOETHICS,Charity / membership body,No,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+scottish funding council,Scottish Funding Council,Charity / membership body,No,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+select english,Select English,Unclassified,No,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+self employed,Self-Employed,Unclassified,No,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+seychelles islands foundation,Seychelles Islands Foundation,Charity / membership body,No,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+shiplake college,Shiplake College,Unclassified,No,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+shipley college,Shipley College,Unclassified,No,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+shortwork,Shortwork,Unclassified,No,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+silent spring consultants,Silent Spring Consultants,Unclassified,No,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+soas,SOAS,University,Yes,1,1,0,1,0,0,0,0,1,0,Finance  IT/Systems
+social progress imperative,Social Progress Imperative,Unclassified,No,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+solutions research,Solutions Research,Company,No,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+source nine insights,Source Nine Insights,Unclassified,No,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+south cumbria multi academy trust,South Cumbria Multi-Academy Trust,School / academy trust,No,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+south gloucestershire and stroud college,South Gloucestershire And Stroud College,Unclassified,No,1,0,0,0,0,0,1,0,1,0,Research  Finance  
+southern african social policy research institute,Southern African Social Policy Research Institute,Research institute,Yes,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+southern regional college,Southern Regional College,Unclassified,No,1,1,0,1,0,0,0,0,1,0,Finance  IT/Systems
+southern universities management services,Southern Universities Management Services,University,Yes,1,0,0,0,0,0,0,0,0,1,Research  Finance  IT/Systems
+st abbs marine station,St Abbs Marine Station,Unclassified,No,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+st chad s academies trust,St Chad's Academies Trust,School / academy trust,No,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+st christopher school letchworth,St Christopher School Letchworth,School / academy trust,No,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+st lawrence academies trust,St Lawrence Academies Trust,School / academy trust,No,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+st teresa of calcutta catholic academy trust,St Teresa Of Calcutta Catholic Academy Trust,School / academy trust,No,1,0,0,0,0,0,1,0,1,1,Research  Finance  
+stemres,STEMRES,Unclassified,No,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+storal,Storal,Unclassified,No,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+stranmillis university college belfast,Stranmillis University College Belfast,University,Yes,1,1,0,0,1,0,0,0,1,0,Finance  IT/Systems
+strode college,Strode College,Unclassified,No,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+studentcrowd,StudentCrowd,Unclassified,No,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+students union ucl,Students Union UCL,University,Yes,1,1,0,1,0,0,0,0,1,1,Finance  IT/Systems
+suffolk new college,Suffolk New College,Unclassified,No,1,1,0,1,0,0,0,0,1,0,Finance  IT/Systems
+tech returners,Tech Returners,Unclassified,No,1,0,0,0,0,0,1,0,1,1,Research  Finance  
+teledyne healthcare,Teledyne Healthcare,NHS / healthcare,No,1,0,0,0,0,0,1,0,1,1,Research  Finance  
+telltale research,Telltale Research,Unclassified,Yes,1,1,0,0,0,0,0,0,1,0,Finance  IT/Systems
+telonostix,TeloNostiX,Unclassified,No,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+tgc,TGC,Unclassified,No,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+the built environment university,University of the Built Environment,University,Yes,1,0,0,0,0,0,0,1,0,0,Research  Finance  IT/Systems
+thesis,Thesis,Unclassified,No,1,0,0,0,0,0,1,0,1,1,Research  Finance  
+thinks insight and strategy,Thinks Insight & Strategy,Unclassified,No,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+thomass london day schools,Thomass London Day Schools,Unclassified,No,1,0,0,0,0,0,1,0,1,1,Research  Finance  
+thrive approach,Thrive Approach,Unclassified,No,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+thrive childcare and education,Thrive Childcare And Education,Unclassified,No,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+times higher education,Times Higher Education,Unclassified,No,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+tooled up education digital platform on education parenting and family life,Tooled Up Education Digital Platform On Education Parenting And Family Life,Unclassified,No,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+trimetis,Trimetis,Unclassified,No,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+trinity college bristol,Trinity College Bristol,Unclassified,No,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+trinity mcqueen,Trinity McQueen,Unclassified,No,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+truro and penwith college,Truro And Penwith College,Unclassified,No,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+tutor2u,Tutor2u,Unclassified,No,1,0,0,0,0,0,1,0,1,1,Research  Finance  
+twin group,Twin Group,Company,No,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+ucl centre for advanced research computing,UCL Centre For Advanced Research Computing,University,Yes,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+ucl faculty of life sciences,UCL Faculty Of Life Sciences,University,Yes,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+ucl school of management,UCL School Of Management,University,Yes,1,1,0,0,1,0,0,0,1,1,Finance  IT/Systems
+uhi,UHI,Unclassified,No,1,1,0,1,0,0,0,0,1,1,Finance  IT/Systems
+uk training and development,UK Training & Development,Unclassified,No,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+uniquest ltd,UniQuest Ltd.,Company,No,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+unity education trust,Unity Education Trust,Charity / membership body,No,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+university and colleges employers association,University and Colleges Employers Association (UCEA),University,Yes,1,0,0,0,0,0,0,0,0,1,Research  Finance  IT/Systems
+uwe bristol,UWE Bristol,Unclassified,No,1,0,0,0,0,0,1,0,1,0,Research  Finance  
+vauxhall city farm,Vauxhall City Farm,Unclassified,No,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+ventrus multi academy trust,Ventrus Multi Academy Trust,School / academy trust,No,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+versus arthritis,Versus Arthritis,Unclassified,No,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+visionspring,VisionSpring,Unclassified,No,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+volunteering new zealand t ao aotearoa,Volunteering New Zealand | TÅ«ao Aotearoa,Unclassified,No,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+wallace high school,The Wallace High School,School / academy trust,No,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+walnut unlimited,Walnut Unlimited,Unclassified,No,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+watford grammar school for girls,Watford Grammar School For Girls,School / academy trust,No,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+we bridge academy,WE Bridge Academy,Unclassified,No,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+west norfolk academies trust,WEST NORFOLK ACADEMIES TRUST,School / academy trust,No,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+william evans,William Evans,Unclassified,No,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+william temple foundation,William Temple Foundation,Charity / membership body,No,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+wiltshire college and university centre,Wiltshire College & University Centre,University,Yes,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+wise academies,WISE Academies,Unclassified,No,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+wolverhampton science park limited university,University Of Wolverhampton Science Park Limited,Company,No,1,1,1,0,0,0,0,0,1,0,Finance  IT/Systems
+woodbrooke,Woodbrooke,Unclassified,No,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+world academy of sport,World Academy Of Sport,Unclassified,No,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+world cancer research fund,World Cancer Research Fund,Charity / membership body,No,1,1,1,0,0,0,0,0,1,1,Finance  IT/Systems
+yale law school,Yale Law School,University,Yes,1,1,0,0,0,0,0,0,1,0,Finance  IT/Systems
+yarrells preparatory school ltd,Yarrells Preparatory School Ltd.,School / academy trust,No,1,0,0,0,0,1,0,0,1,1,Research  IT/Systems
+yorkshire universities,Yorkshire Universities,University,Yes,1,0,0,0,0,0,0,1,0,1,Research  Finance  IT/Systems

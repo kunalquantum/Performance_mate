@@ -166,6 +166,38 @@ def parse(sheet_path, sheet_name="GrantsNow Breakdown"):
     newsletter_counts = [x[0] for x in newsletter_parsed]
     newsletter_notes = [x[1] for x in newsletter_parsed]
 
+    # Rows 13-36: LinkedIn + Web columns from the same weekly sheet
+    def _text_row(name):
+        vals = row(name)
+        return [("" if v is None or (isinstance(v, float)
+                                        and pd.isna(v))
+                  else str(v).strip())
+                for v in vals]
+
+    li_page_views      = [_num(v) for v in row("Page views")]
+    li_individual      = [_num(v) for v in row("Individual Visits")]
+    li_followers_wk    = [_num(v) for v in row("Followers")]
+    li_top_company     = _text_row("Most viewed Companies type")
+    li_top_jobrole     = _text_row("Most viewed job Role")
+    li_gn_searches     = [_num(v) for v in row("GrantsNow searches")]
+    li_impressions     = [_num(v) for v in row("Impressions")]
+    li_reactions       = [_num(v) for v in row("Reactions")]
+    li_top_post_url    = _text_row("Most engaged post")
+    li_comp_rank       = _text_row("Place in top 10 competitor companies")
+    li_competitors     = _text_row("competitors to follow up on")
+    li_interested_ppl  = _text_row("Most interested companies/people")
+    li_notes           = _text_row("Notes - learnings")
+
+    web_interested     = _text_row("Most interested companies(Whois)")
+    web_visits         = [_num(v) for v in row("Webvisits")]
+    web_direct         = [_num(v) for v in row("Direct (Links, direct search)")]
+    web_organic        = [_num(v) for v in row("Organic Search (Results from search)")]
+    web_referral       = [_num(v) for v in row("Referral ")]
+    if all(pd.isna(v) for v in web_referral):
+        web_referral   = [_num(v) for v in row("Referral")]
+    web_chatgpt        = [_num(v) for v in row("chatgpt.com")]
+    web_forcecom       = [_num(v) for v in row("force.com")]
+
     out = pd.DataFrame({
         "week_label": labels,
         "week_start": _week_start_guess(labels),
@@ -191,6 +223,28 @@ def parse(sheet_path, sheet_name="GrantsNow Breakdown"):
         "interested_companies_raw": interest_joined,
         "newsletter_subs": newsletter_counts,
         "newsletter_note": newsletter_notes,
+        # LinkedIn columns (rows 14-26)
+        "li_page_views":     li_page_views,
+        "li_individual_visits": li_individual,
+        "li_new_followers":  li_followers_wk,
+        "li_top_company_type": li_top_company,
+        "li_top_job_role":   li_top_jobrole,
+        "gn_searches":       li_gn_searches,
+        "li_impressions":    li_impressions,
+        "li_reactions":      li_reactions,
+        "li_top_post_url":   li_top_post_url,
+        "li_competitor_rank": li_comp_rank,
+        "li_competitors_watch": li_competitors,
+        "li_interested_people": li_interested_ppl,
+        "li_notes":          li_notes,
+        # Web columns (rows 28-34)
+        "web_interested":    web_interested,
+        "web_visits":        web_visits,
+        "web_direct":        web_direct,
+        "web_organic":       web_organic,
+        "web_referral":      web_referral,
+        "web_chatgpt":       web_chatgpt,
+        "web_forcecom":      web_forcecom,
     })
 
     # derive canonical rates

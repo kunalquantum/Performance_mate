@@ -160,6 +160,132 @@ def inject_css():
 
 
 # --------------------------------------------------------------------------
+# Status-colour legend + KPI helper with tooltip. Call render_status_key()
+# once near the top of every page so the sales director always has the key
+# in view. Use kpi_tile() for KPIs so a native browser tooltip explains
+# each metric on hover.
+# --------------------------------------------------------------------------
+def core_question(question):
+    """Render the core question this page answers, as a big teal-lined
+    banner directly under the h1. Keeps every page anchored to a
+    single job-to-be-done so the director sees, in one glance, whether
+    they are on the right screen."""
+    st.markdown(
+        f'<div style="background:#EBF3F2;border-left:5px solid '
+        f'{ACCENT};border-radius:6px;padding:.9rem 1.2rem;'
+        f'margin:.6rem 0 1rem;font-size:1.05rem;color:{INK};'
+        f'font-weight:500;line-height:1.4">'
+        f'<div style="font-size:.66rem;letter-spacing:.14em;'
+        f'text-transform:uppercase;color:{ACCENT};font-weight:700;'
+        f'margin-bottom:.3rem">The question this page answers</div>'
+        f'{question}</div>',
+        unsafe_allow_html=True)
+
+
+def render_status_key():
+    """A tiny legend strip explaining what green / gold / red mean."""
+    st.markdown(
+        f'<div style="display:flex;gap:1.2rem;align-items:center;'
+        f'padding:.35rem .7rem;margin:.2rem 0 1rem;border:1px solid '
+        f'{LINE};border-radius:6px;background:{BG_SOFT};'
+        f'font-size:.78rem;color:{INK_SOFT}">'
+        f'<span><span style="display:inline-block;width:10px;height:10px;'
+        f'border-radius:50%;background:{ACCENT};margin-right:.4rem;'
+        f'vertical-align:middle"></span>On track</span>'
+        f'<span><span style="display:inline-block;width:10px;height:10px;'
+        f'border-radius:50%;background:{GOLD};margin-right:.4rem;'
+        f'vertical-align:middle"></span>Look closer</span>'
+        f'<span><span style="display:inline-block;width:10px;height:10px;'
+        f'border-radius:50%;background:{WARN};margin-right:.4rem;'
+        f'vertical-align:middle"></span>Concern</span>'
+        f'<span style="margin-left:auto;color:{MUTED}">'
+        f'Hover any tile for a plain-English definition.</span>'
+        f'</div>', unsafe_allow_html=True)
+
+
+def kpi_tile(label, value, sub="", tooltip="", color=None):
+    """Render a KPI tile with a native browser tooltip. The value inherits
+    the accent colour unless explicitly overridden."""
+    value_style = f'color:{color};' if color else ''
+    tip_attr = (f' title="{tooltip}"' if tooltip else '')
+    st.markdown(
+        f'<div class="kpi"{tip_attr} style="cursor:help">'
+        f'<div class="kpi-label">{label}</div>'
+        f'<div class="kpi-value" style="{value_style}">{value}</div>'
+        f'<div class="kpi-sub">{sub}</div></div>',
+        unsafe_allow_html=True)
+
+
+def so_what(text, tone="info"):
+    """Render a 'so what' observation box under a chart. tone in
+    {info, good, warn}."""
+    bar = {"info": ACCENT, "good": ACCENT, "warn": GOLD}.get(tone, ACCENT)
+    bg  = {"info": "#faf7f0", "good": "#EBF3F2",
+            "warn": "#FBF3E5"}.get(tone, "#faf7f0")
+    st.markdown(
+        f'<div style="background:{bg};border-left:3px solid {bar};'
+        f'padding:.6rem 1rem;margin:.6rem 0 1.2rem;border-radius:4px;'
+        f'font-size:.9rem;line-height:1.5">'
+        f'<strong>So what:</strong> {text}</div>',
+        unsafe_allow_html=True)
+
+
+def explain_this(shows, good_pattern, action_hint, key=None):
+    """Collapsed expander under a chart: what it shows, what good looks
+    like, what to do. Static (not derived from live data)."""
+    with st.expander("Explain this chart", expanded=False):
+        st.markdown(
+            f'<div style="font-size:.88rem;line-height:1.55">'
+            f'<div style="margin-bottom:.5rem">'
+            f'<strong style="color:{ACCENT}">What it shows.</strong> '
+            f'{shows}</div>'
+            f'<div style="margin-bottom:.5rem">'
+            f'<strong style="color:{ACCENT}">What good looks like.</strong> '
+            f'{good_pattern}</div>'
+            f'<div>'
+            f'<strong style="color:{ACCENT}">What to do.</strong> '
+            f'{action_hint}</div>'
+            f'</div>', unsafe_allow_html=True)
+
+
+def onboarding_banner(banner_key="onboarding_home_v1"):
+    """Dismissible tips banner shown on first visit. Persisted per session
+    via st.session_state under `banner_key`."""
+    if st.session_state.get(banner_key + "_dismissed"):
+        return
+    st.markdown(
+        f'<div style="background:linear-gradient(135deg,#EBF3F2 0%,'
+        f'#F7F7F8 100%);border:1px solid {ACCENT_SOFT};border-left:5px '
+        f'solid {ACCENT};border-radius:8px;padding:1.1rem 1.3rem;'
+        f'margin:.6rem 0 1.5rem">'
+        f'<div style="font-size:.72rem;letter-spacing:.14em;'
+        f'text-transform:uppercase;color:{ACCENT};font-weight:700;'
+        f'margin-bottom:.5rem">First time here? Read this.</div>'
+        f'<div style="font-size:.92rem;line-height:1.6;color:{INK}">'
+        f'<strong>1.</strong> Pick an app in the left sidebar '
+        f'(<em>LinkedIn</em> or <em>Email</em>) then the screen for the '
+        f'question you have.<br>'
+        f'<strong>2.</strong> The colour key at the top of every page '
+        f'tells you if a number is on-track (green), worth a look (gold), '
+        f'or a concern (red).<br>'
+        f'<strong>3.</strong> Every KPI tile has a plain-English '
+        f'definition on hover.<br>'
+        f'<strong>4.</strong> Below each chart, look for the '
+        f'&ldquo;So what&rdquo; box (auto-observation of your data) and '
+        f'the &ldquo;Explain this chart&rdquo; expander (how to read it).'
+        f'<br>'
+        f'<strong>5.</strong> The <em>This week&apos;s brief</em> and '
+        f'<em>This week&apos;s actions</em> below give you the '
+        f'summary and next steps without touching a filter.'
+        f'</div></div>',
+        unsafe_allow_html=True)
+    if st.button("Got it, hide this", key=f"btn_{banner_key}",
+                   type="primary"):
+        st.session_state[banner_key + "_dismissed"] = True
+        st.rerun()
+
+
+# --------------------------------------------------------------------------
 # LinkedIn setup: sidebar filters + date range + scoring pipeline.
 # Called once at the top of each LinkedIn page. Returns a SimpleNamespace
 # so page bodies can pull what they need with attribute access.
@@ -174,6 +300,20 @@ def _unique_vals_for(df, col):
         return []
     s = df[col].dropna().astype(str).str.strip()
     return sorted([v for v in s.unique() if v and v.lower() != "nan"])
+
+
+FRIENDLY_MODE_TITLES = {
+    "Explore":   ("What worked",
+                   "Every LinkedIn post as a dot. Click a dot to compare "
+                   "it with the top performer. Sidebar on the left trims "
+                   "what you see."),
+    "Visualize": ("See the pattern",
+                   "What actually drives the score - by writing choice, "
+                   "image treatment, day of week, and hashtag mix."),
+    "Recommend": ("Draft the next post",
+                   "Predict how a new draft will land before you publish "
+                   "it. The model is trained on every past post."),
+}
 
 
 def linkedin_setup(mode):
@@ -300,9 +440,21 @@ def linkedin_setup(mode):
             _scoring.WEIGHTS[k] = st.slider(k, 0.0, 10.0, default, 0.5)
 
     # ---------------- Header ---------------------------------------------
+    title, blurb = FRIENDLY_MODE_TITLES.get(mode, (mode, ""))
     st.markdown('<div class="eyebrow">GrantsNow &middot; LinkedIn</div>',
                 unsafe_allow_html=True)
-    st.markdown(f'<h1>{mode}</h1>', unsafe_allow_html=True)
+    st.markdown(f'<h1>{title}</h1>', unsafe_allow_html=True)
+    _LINKEDIN_CORE_Q = {
+        'Explore':   'Which posts worked, and which did not, over the chosen window?',
+        'Visualize': 'What are the writing and image patterns that actually drive the score?',
+        'Recommend': 'How will a new draft post score before I publish it?',
+    }
+    _q = _LINKEDIN_CORE_Q.get(mode)
+    if _q:
+        core_question(_q)
+    if blurb:
+        st.caption(blurb)
+    render_status_key()
 
     # ---------------- Date range with quick-range buttons ----------------
     if "range_start_input" not in st.session_state:

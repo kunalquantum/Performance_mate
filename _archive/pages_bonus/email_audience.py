@@ -1,7 +1,8 @@
 """
 Email Performance Matrix - Audience screen.
 """
-from shared import (inject_css, load_csv, DATA_DIR, SOURCES_DIR, INK,
+from shared import (core_question, inject_css, render_status_key, so_what, kpi_tile,
+                     load_csv, DATA_DIR, SOURCES_DIR, INK,
                      INK_SOFT, MUTED, LINE, BG, BG_SOFT, ACCENT,
                      ACCENT_SOFT, WARN, GOLD)
 import os, re
@@ -13,7 +14,12 @@ inject_css()
 
 st.markdown('<div class="eyebrow">GrantsNow &middot; Email</div>',
             unsafe_allow_html=True)
-st.markdown('<h1>Audience &amp; Next Send</h1>', unsafe_allow_html=True)
+st.markdown('<h1>Who we can reach</h1>', unsafe_allow_html=True)
+core_question("Who can we email today, and who should be in the next send?")
+st.caption("The 4,400-contact UK list, split by who is ready to email "
+            "today. Use the Next Send Builder to pick who to send to next "
+            "and download the CSV to hand to the mail tool.")
+render_status_key()
 
 emails_all = load_csv("emails.csv")
 if not emails_all.empty:
@@ -53,30 +59,32 @@ else:
 
     at1, at2, at3, at4, at5 = st.columns(5)
     with at1:
-        st.markdown(f'<div class="kpi"><div class="kpi-label">'
-                    f'Send ready</div><div class="kpi-value">{send_ready:,}'
-                    f'</div></div>', unsafe_allow_html=True)
+        kpi_tile("Send ready", f"{send_ready:,}",
+                  tooltip="Contacts marked as send-ready in the source "
+                          "spreadsheet. Everyone else is either "
+                          "unverified or missing segment tags.")
     with at2:
-        st.markdown(f'<div class="kpi"><div class="kpi-label">'
-                    f'Needs verify</div><div class="kpi-value">'
-                    f'{needs_verify:,}</div></div>',
-                    unsafe_allow_html=True)
+        kpi_tile("Needs verify", f"{needs_verify:,}",
+                  tooltip="Contacts whose email address has not been "
+                          "verified. Sending to them risks bounces. "
+                          "Clearing this queue grows your reachable "
+                          "list.")
     with at3:
-        st.markdown(f'<div class="kpi"><div class="kpi-label">'
-                    f'Needs segment</div><div class="kpi-value">'
-                    f'{needs_segment:,}</div></div>',
-                    unsafe_allow_html=True)
+        kpi_tile("Needs segment", f"{needs_segment:,}",
+                  tooltip="Contacts still missing a persona or "
+                          "seniority tag. They cannot be targeted by "
+                          "role until tagged.")
     with at4:
-        st.markdown(f'<div class="kpi"><div class="kpi-label">'
-                    f'Fresh</div><div class="kpi-value">{fresh:,}'
-                    f'</div><div class="kpi-sub">of {total_c:,} '
-                    f'total</div></div>', unsafe_allow_html=True)
+        kpi_tile("Fresh", f"{fresh:,}", sub=f"of {total_c:,} total",
+                  tooltip="Contacts never approached before. Cold "
+                          "sends should draw from here.")
     with at5:
-        st.markdown(f'<div class="kpi"><div class="kpi-label">'
-                    f'Actionable now</div><div class="kpi-value" '
-                    f'style="color:{ACCENT}">{actionable:,}</div>'
-                    f'<div class="kpi-sub">send-ready + fresh + '
-                    f'verified</div></div>', unsafe_allow_html=True)
+        kpi_tile("Actionable now", f"{actionable:,}",
+                  sub="send-ready + fresh + verified",
+                  tooltip="Contacts you can email right now with a "
+                          "clean list. The Next Send Builder draws "
+                          "from this pool.",
+                  color=ACCENT)
 
     st.caption(f"Already approached: {already:,}. "
                f"Actionable pool ({actionable:,}) is what a fresh "
@@ -102,7 +110,12 @@ else:
             key="nsb_personas")
     with nsb2:
         tiers = sorted(contacts_df["seniority_tier"].dropna().unique().tolist())
-        default_tiers = [t for t in tiers if t.startswith(("T1", "T2", "T3"))]
+        # Sensible defaults for the Contact Audit taxonomy
+        # (Senior / Operational / Academic / Unspecified)
+        default_tiers = [t for t in tiers
+                          if t in ("Senior", "Operational")]
+        if not default_tiers:
+            default_tiers = tiers
         picked_tiers = st.multiselect(
             "Seniority tiers",
             options=tiers,
@@ -259,16 +272,16 @@ else:
             if pd.notna(band_mid):
                 st.markdown(
                     f'<div class="kpi"><div class="kpi-label">'
-                    f'Expected open rate (95% band)</div>'
+                    f'Likely open rate</div>'
                     f'<div class="kpi-value" style="color:{ACCENT}">'
                     f'{band_lo*100:.1f}% - {band_hi*100:.1f}%</div>'
-                    f'<div class="kpi-sub">point estimate '
-                    f'{band_mid*100:.1f}%, from {n_weeks_bucket} '
-                    f'{bucket_label}</div></div>',
+                    f'<div class="kpi-sub">typically {band_mid*100:.1f}% '
+                    f'on {n_weeks_bucket} similar-sized past sends</div>'
+                    f'</div>',
                     unsafe_allow_html=True)
             else:
                 st.info("Not enough matching history to estimate a "
-                         "band for this batch size.")
+                         "range for this batch size.")
         with eb2:
             if pd.notna(band_mid):
                 exp_lo = int(band_lo * len(batch))
@@ -425,14 +438,15 @@ def _analyse_email(subject, body):
     }
 
 # ------ header ------
-st.markdown('<h2>Email Matrix</h2>', unsafe_allow_html=True)
-st.caption("Draft a result-driven promotional email using the house "
-           "seven-slot pattern. The analyser scores readability, "
-           "checks the SaaS vocabulary coverage, and flags weak "
-           "phrases as you type.")
+st.markdown('<h2>Draft an email</h2>', unsafe_allow_html=True)
+st.caption("Draft a promotional email using the GrantsNow drafting "
+           "pattern (the seven-slot template from Ian&apos;s WP5 "
+           "reference). The analyser scores readability, checks how "
+           "much of the GrantsNow vocabulary you have used, and flags "
+           "weak phrases as you type.")
 
 # ------ 1. the pattern reference ------
-with st.expander("The seven-slot house pattern (reference)",
+with st.expander("The seven-slot GrantsNow pattern (reference)",
                  expanded=False):
     st.markdown("""
     | Slot | What it holds |
@@ -474,8 +488,10 @@ with ecol1:
 with ecol2:
     st.markdown('<div class="eyebrow">Coverage</div>',
                 unsafe_allow_html=True)
-    st.caption("Live counts of the house vocabulary in your draft. "
-               "Aim for at least two hits per group before shipping.")
+    st.caption("Live counts of the GrantsNow vocabulary in your draft "
+               "(the pain-point, manual-work, and outcome phrases the "
+               "team uses in every email). Aim for at least two hits "
+               "per group before shipping.")
 
     result = _analyse_email(email_subject or "", email_body or "")
 
@@ -562,7 +578,8 @@ for col, (key, label) in zip(cols, slot_labels):
 if result["weak_hits"]:
     st.markdown('<h3 style="margin-top:2rem">Weak phrases to swap</h3>',
                 unsafe_allow_html=True)
-    st.caption("House rule flags. Each row shows the weak phrase found "
+    st.caption("Words that dilute the message. Each row shows the weak "
+               "phrase found "
                "and the recommended replacement.")
     for weak, strong in result["weak_hits"]:
         st.markdown(

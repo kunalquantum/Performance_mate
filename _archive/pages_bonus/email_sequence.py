@@ -14,7 +14,8 @@ Two data sources:
                                   (Sent -> Delivered -> Opened -> Replied)
     data/campaigns.csv         - draft campaigns from the marketing calendar
 """
-from shared import (inject_css, load_csv, INK, INK_SOFT, MUTED, LINE,
+from shared import (core_question, inject_css, render_status_key, so_what, kpi_tile,
+                     load_csv, INK, INK_SOFT, MUTED, LINE,
                      BG, BG_SOFT, ACCENT, ACCENT_SOFT, WARN, GOLD)
 import re
 import pandas as pd
@@ -24,10 +25,35 @@ inject_css()
 
 st.markdown('<div class="eyebrow">GrantsNow &middot; Email</div>',
             unsafe_allow_html=True)
-st.markdown('<h1>Sequence matrix</h1>', unsafe_allow_html=True)
-st.caption("Base and follow-ups side by side. Each column shows the "
-            "copy, the content score, and the real funnel numbers where "
-            "we track them.")
+st.markdown('<h1>Compare sequences</h1>', unsafe_allow_html=True)
+core_question("How does a base email and its follow-ups compare on copy quality and on actual performance?")
+st.caption("Base email and its follow-ups side by side. Each column "
+            "shows the actual copy, how our system scores it, and how "
+            "the send actually performed (opened, clicked, replied). "
+            "Green means strong, gold means look closer.")
+render_status_key()
+
+with st.expander("What the score terms mean", expanded=False):
+    st.markdown("""
+- **Problem framing (0-100)** &mdash; does the email name a real problem?
+  Rewards a pain-named subject, a stakeholder-demand line, and a
+  problem-cost chain.
+- **Proof (0-100)** &mdash; does the email back the claim? Rewards named
+  customer institutions, concrete percentages, and one clear CTA.
+- **Overall copy (0-100)** &mdash; the blend of Problem framing + Proof,
+  minus a penalty for weak phrases. 66+ is the WP5 zone (the reference
+  email everything is scored against).
+- **Open rate** &mdash; share of delivered emails that were opened. SaaS
+  benchmark: 20%. Below 10% usually points to a subject-line or
+  list-quality problem.
+- **Click rate** &mdash; share of delivered emails where the reader
+  clicked a link. Industry benchmark: 2-3%.
+- **Reply rate** &mdash; share of delivered emails that got a reply.
+  Strongest pipeline signal we have.
+- **Funnel** &mdash; the drop-off from Sent &rarr; Delivered &rarr;
+  Opened &rarr; Clicked/Replied. Each bar shows the count at that stage
+  as a % of what was sent.
+""")
 
 batches_df   = load_csv("campaign_batches.csv")
 campaigns_df = load_csv("campaigns.csv")
@@ -191,6 +217,97 @@ def history_prior(batch_size):
 
 
 # ==========================================================================
+# CROSS-BATCH LEADERBOARD - every tracked batch on one row
+# ==========================================================================
+if not batches_df.empty:
+    st.markdown('<h3>All tracked batches at a glance</h3>',
+                 unsafe_allow_html=True)
+    st.caption("Every batch we&apos;ve tracked, ranked by open rate. "
+                "Green = above 20% benchmark, gold = below.")
+
+    dfb = batches_df.copy()
+    # Aggregate per batch: totals + rates
+    lead = (dfb.groupby(["batch_id", "batch_name"])
+             .agg(sent=("sent", "sum"),
+                   delivered=("delivered", "sum"),
+                   opened=("opened", "sum"),
+                   clicked=("clicked", lambda s: int(
+                       s.fillna(0).sum()) if s.notna().any() else None),
+                   replied=("replied", lambda s: int(
+                       s.fillna(0).sum()) if s.notna().any() else None),
+                   stages=("stage", "count"))
+             .reset_index())
+    lead["open_rate"] = lead["opened"] / lead["delivered"].replace(0, 1) \
+        * 100
+    lead["click_rate"] = lead.apply(
+        lambda r: (r["clicked"] / r["delivered"] * 100)
+        if pd.notna(r["clicked"]) and r["delivered"] else None, axis=1)
+    lead["reply_rate"] = lead.apply(
+        lambda r: (r["replied"] / r["delivered"] * 100)
+        if pd.notna(r["replied"]) and r["delivered"] else None, axis=1)
+    lead = lead.sort_values("open_rate", ascending=False)
+
+    # Render as a coloured HTML table (dataframe styling in Streamlit
+    # is finicky with our house CSS, so we roll our own)
+    header_html = (
+        f'<div style="display:grid;grid-template-columns:'
+        f'2fr .6fr .8fr .8fr .8fr .8fr;gap:.5rem;padding:.5rem .8rem;'
+        f'font-size:.72rem;text-transform:uppercase;'
+        f'letter-spacing:.12em;color:{MUTED};font-weight:600;'
+        f'border-bottom:1px solid {LINE}">'
+        f'<div>Batch</div><div>Emails</div><div>Sent</div>'
+        f'<div>Open rate</div><div>Click rate</div><div>Reply rate</div>'
+        f'</div>')
+    rows_html = [header_html]
+    for _, r in lead.iterrows():
+        _open_col = ACCENT if r["open_rate"] >= 20 else GOLD
+        _click = (f'<span style="color:{ACCENT}">'
+                    f'{r["click_rate"]:.0f}%</span>'
+                    if pd.notna(r["click_rate"]) else
+                    f'<span style="color:{MUTED}">-</span>')
+        _reply = (f'<span style="color:{ACCENT}">'
+                    f'{r["reply_rate"]:.0f}%</span>'
+                    if pd.notna(r["reply_rate"]) else
+                    f'<span style="color:{MUTED}">-</span>')
+        rows_html.append(
+            f'<div style="display:grid;grid-template-columns:'
+            f'2fr .6fr .8fr .8fr .8fr .8fr;gap:.5rem;padding:.55rem .8rem;'
+            f'font-size:.88rem;border-bottom:1px solid {LINE};'
+            f'align-items:center">'
+            f'<div style="color:{INK};font-weight:600">'
+            f'{r["batch_name"]}</div>'
+            f'<div style="color:{INK_SOFT}">{int(r["stages"])}</div>'
+            f'<div style="color:{INK_SOFT}">{int(r["sent"])}</div>'
+            f'<div style="color:{_open_col};font-weight:700">'
+            f'{r["open_rate"]:.0f}%</div>'
+            f'<div>{_click}</div>'
+            f'<div>{_reply}</div>'
+            f'</div>')
+    st.markdown(
+        f'<div style="border:1px solid {LINE};border-radius:6px;'
+        f'background:{BG};margin-bottom:1.5rem;overflow:hidden">'
+        + "".join(rows_html) + '</div>',
+        unsafe_allow_html=True)
+
+    # So-what summary across all batches
+    _best  = lead.iloc[0]
+    _worst = lead.iloc[-1]
+    _diff  = _best["open_rate"] - _worst["open_rate"]
+    if len(lead) >= 2 and _diff >= 20:
+        so_what(
+            f"<strong>{_best['batch_name']}</strong> opened at "
+            f"{_best['open_rate']:.0f}% while "
+            f"<strong>{_worst['batch_name']}</strong> opened at "
+            f"{_worst['open_rate']:.0f}%. That is a "
+            f"{_diff:.0f}-point spread across the same product - "
+            f"audience choice is the biggest lever here, not copy.",
+            tone="info")
+
+    st.markdown('<div style="margin:1.5rem 0"></div>',
+                 unsafe_allow_html=True)
+
+
+# ==========================================================================
 # SOURCE PICKER: tracked batch vs draft campaign
 # ==========================================================================
 source_options = []
@@ -283,9 +400,11 @@ def _slot_row(label, ok):
             f'&nbsp;{label}</div>')
 
 
-def _kpi_html(label, value, sub="", color=None):
+def _kpi_html(label, value, sub="", color=None, tooltip=""):
     color_style = f'color:{color}' if color else ''
-    return (f'<div class="kpi" style="margin-bottom:.5rem">'
+    tip = f' title="{tooltip}"' if tooltip else ''
+    cursor = ' cursor:help;' if tooltip else ''
+    return (f'<div class="kpi"{tip} style="margin-bottom:.5rem;{cursor}">'
             f'<div class="kpi-label">{label}</div>'
             f'<div class="kpi-value" style="font-size:1.4rem;{color_style}">'
             f'{value}</div>'
@@ -338,17 +457,27 @@ for col, (_, row) in zip(cols, seq.iterrows()):
         st.markdown(
             '<div class="eyebrow" style="margin-top:.5rem">'
             'Content measurement</div>', unsafe_allow_html=True)
-        st.markdown(_kpi_html("Challenge",
-                                 f"{a['challenge']}",
-                                 "pain + stakeholder + chain"),
+        st.markdown(_kpi_html(
+            "Problem framing", f"{a['challenge']}",
+            "does the email name a real problem?",
+            tooltip="0-100 score. Rewards a pain-named subject, a "
+                     "line about who wants what (leadership, funders...) "
+                     "and a chain of problem-cost sentences. Higher = "
+                     "the reader recognises their situation earlier."),
                      unsafe_allow_html=True)
-        st.markdown(_kpi_html("Result",
-                                 f"{a['result']}",
-                                 "proof + numbers + CTA"),
+        st.markdown(_kpi_html(
+            "Proof", f"{a['result']}",
+            "named customers, real numbers, one CTA",
+            tooltip="0-100 score. Rewards specific customer names "
+                     "(Institute of X, University of Y), concrete "
+                     "percentages, and one clear call to action."),
                      unsafe_allow_html=True)
-        st.markdown(_kpi_html("House",
-                                 f"{a['house']}",
-                                 "blended"),
+        st.markdown(_kpi_html(
+            "Overall copy", f"{a['house']}",
+            "blended 0-100",
+            tooltip="Blended score of Problem framing + Proof, minus "
+                     "a penalty for weak phrases (utilise, leverage, "
+                     "streamline, solution). 66+ is the WP5 zone."),
                      unsafe_allow_html=True)
 
         st.markdown(
@@ -406,7 +535,12 @@ for col, (_, row) in zip(cols, seq.iterrows()):
                 "Open rate",
                 f"{open_rate:.0f}%",
                 f"{opened} of {delivered} delivered",
-                color=_color_open), unsafe_allow_html=True)
+                color=_color_open,
+                tooltip="Share of delivered emails that were opened. "
+                         "SaaS industry benchmark: 20%. Below 10% "
+                         "usually points to a subject-line or list-"
+                         "quality problem."),
+                unsafe_allow_html=True)
 
             # Secondary tile: whichever downstream signal this batch tracks
             if replied is not None and replied > 0:
@@ -414,14 +548,21 @@ for col, (_, row) in zip(cols, seq.iterrows()):
                 st.markdown(_kpi_html(
                     "Reply rate",
                     f"{reply_rate:.0f}%",
-                    f"{replied} replied", color=ACCENT),
+                    f"{replied} replied", color=ACCENT,
+                    tooltip="Share of delivered emails that got a "
+                             "reply. This is the strongest pipeline "
+                             "signal - a reply means the copy earned "
+                             "a conversation."),
                              unsafe_allow_html=True)
             elif clicked is not None and clicked > 0:
                 click_rate = clicked / max(delivered, 1) * 100
                 st.markdown(_kpi_html(
                     "Click rate",
                     f"{click_rate:.0f}%",
-                    f"{clicked} clicked", color=ACCENT),
+                    f"{clicked} clicked", color=ACCENT,
+                    tooltip="Share of delivered emails where the "
+                             "reader clicked a link. Industry "
+                             "benchmark: 2-3%."),
                              unsafe_allow_html=True)
 
             # Funnel bars: Sent -> Delivered -> Opened -> [Clicked] -> [Replied]
@@ -466,9 +607,9 @@ for col, (_, row) in zip(cols, seq.iterrows()):
             else:
                 lo, mid, hi, n_weeks, label = prior
                 st.markdown(_kpi_html(
-                    "Expected open rate",
+                    "Likely open rate",
                     f"{lo*100:.0f}% - {hi*100:.0f}%",
-                    f"point {mid*100:.1f}%, from {n_weeks} {label}"),
+                    f"typical {mid*100:.1f}% on {n_weeks} similar sends"),
                              unsafe_allow_html=True)
                 _bench_ok = mid >= 0.20
                 _bench_color = ACCENT if _bench_ok else GOLD
@@ -554,8 +695,8 @@ if real_metrics and seq["opened"].notna().sum() >= 2:
         lines.append(
             f"Sequence funnel: **{total_sent}** sent &rarr; "
             f"**{total_opened}** opened &rarr; **{total_down}** "
-            f"{downstream_label}ed. Compound "
-            f"{downstream_label} rate: "
+            f"{downstream_label}ed. Across the whole sequence, "
+            f"{downstream_label} rate is "
             f"{total_down/max(total_sent,1)*100:.0f}%.")
     else:
         lines.append(
@@ -565,7 +706,8 @@ if real_metrics and seq["opened"].notna().sum() >= 2:
         total_opened = int(seq["opened"].sum())
         lines.append(
             f"Sequence funnel: **{total_sent}** sent &rarr; "
-            f"**{total_opened}** opened. Compound open rate: "
+            f"**{total_opened}** opened. Across the whole sequence, "
+            f"open rate is "
             f"{total_opened/max(total_sent,1)*100:.0f}%.")
 
 for line in lines:

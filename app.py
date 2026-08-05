@@ -1,9 +1,13 @@
 """
 GrantsNow Performance Matrix - multi-page Streamlit entrypoint.
 
-Two apps grouped in the sidebar navigation:
-    LinkedIn Post Performance Matrix   (Explore / Visualize / Recommend)
-    Email Performance Matrix           (Performance / Audience / Contents)
+Trimmed to Ian's spec (items 1-8). Bonus pages moved to
+_archive/pages_bonus/.
+
+Sidebar structure:
+    Persona   -> UK Persona Matrix (default) + Monthly report   [spec 1-3]
+    Email     -> This week's numbers + Rolling marketing report [spec 4, 7]
+    LinkedIn  -> What worked + See the pattern + Draft the next [spec 8]
 
 Run:
     streamlit run app.py
@@ -15,31 +19,42 @@ st.set_page_config(page_title="GrantsNow Performance Matrix",
                     layout="wide", page_icon="○")
 
 pg = st.navigation({
-    "LinkedIn": [
-        st.Page("pages/linkedin_explore.py",
-                title="Explore",
-                icon=":material/analytics:",
+    "Persona": [
+        st.Page("pages/persona_matrix.py",
+                title="UK Persona Matrix",
+                icon=":material/dashboard:",
                 default=True),
-        st.Page("pages/linkedin_visualize.py",
-                title="Visualize",
-                icon=":material/bar_chart:"),
-        st.Page("pages/linkedin_recommend.py",
-                title="Recommend",
-                icon=":material/lightbulb:"),
+        st.Page("pages/persona_monthly_report.py",
+                title="Monthly report",
+                icon=":material/calendar_view_month:"),
+        st.Page("pages/persona_content_plan.py",
+                title="Content plan",
+                icon=":material/edit_calendar:"),
+        st.Page("pages/persona_content_impact.py",
+                title="Content x Persona impact",
+                icon=":material/groups:"),
     ],
     "Email": [
         st.Page("pages/email_performance.py",
-                title="Performance",
+                title="This week's numbers",
                 icon=":material/insights:"),
-        st.Page("pages/email_audience.py",
-                title="Audience",
-                icon=":material/group:"),
-        st.Page("pages/email_contents.py",
-                title="Contents analysis",
-                icon=":material/rate_review:"),
-        st.Page("pages/email_sequence.py",
-                title="Sequence matrix",
-                icon=":material/view_column:"),
+        st.Page("pages/marketing_rolling_report.py",
+                title="Rolling marketing report",
+                icon=":material/calendar_month:"),
+        st.Page("pages/email_winners_diagnostic.py",
+                title="Winners diagnostic",
+                icon=":material/emoji_events:"),
+    ],
+    "LinkedIn": [
+        st.Page("pages/linkedin_explore.py",
+                title="What worked",
+                icon=":material/analytics:"),
+        st.Page("pages/linkedin_visualize.py",
+                title="See the pattern",
+                icon=":material/bar_chart:"),
+        st.Page("pages/linkedin_recommend.py",
+                title="Draft the next post",
+                icon=":material/lightbulb:"),
     ],
 })
 pg.run()

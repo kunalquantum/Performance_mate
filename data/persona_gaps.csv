@@ -1,0 +1,309 @@
+institution,contacts_held,research,finance,it_systems,personas_held,what_is_missing,priority,institution_key
+University of Manchester,205,156,39,8,3,complete,-,manchester university
+King's College London,177,173,2,1,3,complete,-,king s college london
+Coventry University,168,147,10,4,3,complete,-,coventry university
+University of Sussex,158,117,22,4,3,complete,-,sussex university
+University of Edinburgh,131,86,31,7,3,complete,-,edinburgh university
+University of Liverpool,124,108,12,2,3,complete,-,liverpool university
+The University of Sheffield,115,95,14,3,3,complete,-,sheffield university
+The Manchester Metropolitan University,109,76,17,14,3,complete,-,manchester metropolitan university
+University of York,92,77,10,3,3,complete,-,york university
+Cardiff University,86,52,19,7,3,complete,-,cardiff university
+University Of Exeter,95,73,13,9,3,complete,-,exeter university
+Newcastle University,87,86,0,1,2,Finance  ,1 - high,newcastle university
+The Open University,90,70,12,5,3,complete,-,open university
+Anglia Ruskin University,89,66,4,6,3,complete,-,anglia ruskin university
+University of Glasgow,77,72,1,4,3,complete,-,glasgow university
+The London School of Economics and Political Science,72,65,5,2,3,complete,-,london school of economics and political science
+Queen's University Belfast,72,57,11,2,3,complete,-,queen s university belfast
+Swansea University,70,52,8,2,3,complete,-,swansea university
+University of the Arts London,69,40,22,6,3,complete,-,the arts london university
+University of Leeds,68,58,7,3,3,complete,-,leeds university
+Queen Mary University of London,72,41,15,8,3,complete,-,queen mary university of london
+University of Nottingham,67,41,20,5,3,complete,-,nottingham university
+University of Warwick,65,42,22,1,3,complete,-,warwick university
+University of Salford,62,42,11,9,3,complete,-,salford university
+University of the West of England,58,41,10,3,3,complete,-,the west of england university
+University of Bristol,58,33,13,6,3,complete,-,bristol university
+University of East London,61,40,9,6,3,complete,-,east london university
+University of Portsmouth,58,52,5,1,3,complete,-,portsmouth university
+University of Aberdeen,52,43,7,1,3,complete,-,aberdeen university
+Birmingham City University,52,37,7,7,3,complete,-,birmingham city university
+University of Birmingham,55,44,4,4,3,complete,-,birmingham university
+National Oceanography Centre,50,14,14,6,3,complete,-,national oceanography centre
+University of Reading,49,30,7,6,3,complete,-,reading university
+University of Oxford,48,30,12,6,3,complete,-,oxford university
+Nottingham Trent University,46,38,3,4,3,complete,-,nottingham trent university
+De Montfort University,45,40,2,2,3,complete,-,de montfort university
+Durham University,45,35,8,2,3,complete,-,durham university
+University of Surrey,45,31,8,2,3,complete,-,surrey university
+Keele University,42,30,8,3,3,complete,-,keele university
+Bournemouth University,41,35,3,2,3,complete,-,bournemouth university
+University of Lincoln,42,35,6,1,3,complete,-,lincoln university
+University of Westminster,43,29,8,5,3,complete,-,westminster university
+Cranfield University,41,29,9,3,3,complete,-,cranfield university
+National Centre for Social Research,39,21,2,2,3,complete,-,national centre for social research
+University of Strathclyde,41,36,2,2,3,complete,-,strathclyde university
+Bangor University,38,25,8,2,3,complete,-,bangor university
+National Gallery,38,8,14,4,3,complete,-,national gallery
+Northumbria University,38,34,1,3,3,complete,-,northumbria university
+University of Kent,37,25,3,5,3,complete,-,kent university
+University of Leicester,37,25,8,3,3,complete,-,leicester university
+University of Southampton,38,25,10,3,3,complete,-,southampton university
+University of Bedfordshire,37,26,6,3,3,complete,-,bedfordshire university
+London School Of Hygiene And Tropical Medicine U. Of London,34,25,5,4,3,complete,-,london school of hygiene and tropical medicine u of london
+Canterbury Christ Church University,32,25,5,2,3,complete,-,canterbury christ church university
+University of Essex,33,24,6,2,3,complete,-,essex university
+St George's University Of London,33,31,0,2,2,Finance  ,1 - high,st george s university of london
+Middlesex University,32,21,6,5,3,complete,-,middlesex university
+Leeds Beckett University,31,29,0,2,2,Finance  ,1 - high,leeds beckett university
+Oxford Brookes University,31,19,8,2,3,complete,-,oxford brookes university
+Aston University,30,23,5,2,3,complete,-,aston university
+University of Bradford,30,28,1,1,3,complete,-,bradford university
+Edinburgh Napier University,30,23,3,3,3,complete,-,edinburgh napier university
+University of Hull,30,28,2,0,2,IT/Systems,1 - high,hull university
+Ulster University,30,26,2,2,3,complete,-,ulster university
+Cardiff Metropolitan University,28,24,3,0,2,IT/Systems,1 - high,cardiff metropolitan university
+Institute of Development Studies,27,22,3,0,2,IT/Systems,1 - high,institute of development studies
+Liverpool John Moores University,27,21,4,2,3,complete,-,liverpool john moores university
+University of Stirling,27,20,4,1,3,complete,-,stirling university
+UCL,27,15,11,1,3,complete,-,ucl
+"City St George's, University of London",26,14,9,1,3,complete,-,city st george s university of london
+Historic Environment Scotland,26,9,4,6,3,complete,-,historic environment scotland
+University of Roehampton London,26,12,5,6,3,complete,-,roehampton london university
+Bath Spa University,26,19,5,2,3,complete,-,bath spa university
+University of Huddersfield,28,24,2,2,3,complete,-,huddersfield university
+Kingston University,25,13,10,2,3,complete,-,kingston university
+Liverpool School Of Tropical Medicine,24,16,5,1,3,complete,-,liverpool school of tropical medicine
+Staffordshire University,25,19,4,2,3,complete,-,staffordshire university
+"Birkbeck, University of London",22,13,4,4,3,complete,-,birkbeck university of london
+London Business School,23,16,4,3,3,complete,-,london business school
+National Physical Laboratory,23,1,9,8,3,complete,-,national physical laboratory
+The Alan Turing Institute,22,8,2,3,3,complete,-,alan turing institute
+Brunel University London,22,19,1,2,3,complete,-,brunel university london
+Heriot-Watt University,23,13,8,2,3,complete,-,heriot watt university
+Imperial College London,22,20,0,2,2,Finance  ,1 - high,imperial college london
+University of West London,22,16,2,3,3,complete,-,west london university
+University of Bath,23,19,2,2,3,complete,-,bath university
+University of South Wales,21,18,1,2,3,complete,-,south wales university
+University of Central Lancashire,20,18,1,0,2,IT/Systems,1 - high,central lancashire university
+University of Dundee,20,15,3,0,2,IT/Systems,1 - high,dundee university
+Malaria Consortium (UK),20,5,4,1,3,complete,-,malaria consortium
+University Of Worcester,21,15,3,3,3,complete,-,worcester university
+National Nuclear Laboratory,19,3,6,2,3,complete,-,national nuclear laboratory
+Glasgow Caledonian University,18,15,2,1,3,complete,-,glasgow caledonian university
+University of Greenwich,18,14,2,2,3,complete,-,greenwich university
+London South Bank University,19,13,5,1,3,complete,-,london south bank university
+University of Northampton,18,13,3,2,3,complete,-,northampton university
+University Of Plymouth,18,11,4,2,3,complete,-,plymouth university
+University of East Anglia,17,10,4,3,3,complete,-,east anglia university
+"Goldsmiths, University of London",17,13,2,2,3,complete,-,goldsmiths university of london
+Niab,17,7,1,2,3,complete,-,niab
+University of St Andrews,17,10,1,4,3,complete,-,st andrews university
+University for the Creative Arts,17,10,5,2,3,complete,-,university for the creative arts
+University of Cambridge,17,9,6,2,3,complete,-,cambridge university
+The Francis Crick Institute,16,15,0,1,2,Finance  ,2 - medium,francis crick institute
+Harper Adams University,16,10,3,1,3,complete,-,harper adams university
+Loughborough University,16,14,1,1,3,complete,-,loughborough university
+"Royal Holloway, University of London",16,8,4,3,3,complete,-,royal holloway university of london
+SOAS University of London,16,9,5,1,3,complete,-,soas university of london
+Solent University (Southampton),21,14,3,4,3,complete,-,solent university
+University of the West of Scotland,16,12,1,3,3,complete,-,the west of scotland university
+University College Birmingham,17,7,2,4,3,complete,-,university college birmingham
+University College London,16,9,7,0,2,IT/Systems,2 - medium,university college london
+Aberystwyth University,15,11,1,3,3,complete,-,aberystwyth university
+City St Georges University Of London,15,6,3,6,3,complete,-,city st georges university of london
+Queen Margaret University,15,6,4,1,3,complete,-,queen margaret university
+Royal Veterinary College,15,6,4,4,3,complete,-,royal veterinary college
+School of Advanced Study (Univ of London),15,10,0,2,2,Finance  ,2 - medium,school of advanced study
+Universities UK,15,3,1,2,3,complete,-,universities uk
+EMBL-EBI (European Bioinformatics Institute),14,11,3,0,2,IT/Systems,2 - medium,embl ebi
+Jisc,14,5,1,4,3,complete,-,jisc
+London Metropolitan University,14,6,4,4,3,complete,-,london metropolitan university
+University of Sunderland,16,12,3,1,3,complete,-,sunderland university
+CABI,13,2,3,3,3,complete,-,cabi
+Royal College of Art,13,8,4,0,2,IT/Systems,2 - medium,royal college of art
+Sheffield Hallam University,13,10,2,1,3,complete,-,sheffield hallam university
+SRUC,13,12,1,0,2,IT/Systems,2 - medium,sruc
+UK Dementia Research Institute,13,9,3,1,3,complete,-,uk dementia research institute
+Brunel University Of London,12,7,4,1,3,complete,-,brunel university of london
+University of Chester,12,11,1,0,2,IT/Systems,2 - medium,chester university
+University of Cumbria,11,6,4,1,3,complete,-,cumbria university
+University Of Hertfordshire,10,6,1,2,3,complete,-,hertfordshire university
+British Museum,9,7,2,0,2,IT/Systems,2 - medium,british museum
+City University Of London,9,9,0,0,1,Finance  IT/Systems,2 - medium,city university of london
+Edge Hill University,10,7,3,0,2,IT/Systems,2 - medium,edge hill university
+International Institute for Environment and Development,9,3,2,1,3,complete,-,international institute for environment and development
+Robert Gordon University,9,8,1,0,2,IT/Systems,2 - medium,robert gordon university
+York St John University,10,8,0,2,2,Finance  ,2 - medium,york st john university
+Abertay University,8,5,1,2,3,complete,-,abertay university
+University of Derby,8,3,2,2,3,complete,-,derby university
+Falmouth University,8,6,1,1,3,complete,-,falmouth university
+University of Gloucestershire,8,7,1,0,2,IT/Systems,2 - medium,gloucestershire university
+National Foundation For Educational Research,8,8,0,0,1,Finance  IT/Systems,2 - medium,national foundation for educational research
+Royal Holloway,8,6,1,1,3,complete,-,royal holloway
+St Marys University Twickenham,8,4,3,1,3,complete,-,st marys university twickenham
+Teeside University,9,4,2,3,3,complete,-,teeside university
+Leeds Trinity University,7,4,1,2,3,complete,-,leeds trinity university
+Royal College Of Music,7,2,5,0,2,IT/Systems,2 - medium,royal college of music
+TEESSIDE UNIVERSITY,7,7,0,0,1,Finance  IT/Systems,2 - medium,teesside university
+University Of The Highlands And Islands,7,5,2,0,2,IT/Systems,2 - medium,the highlands and islands university
+University of Wales Trinity Saint David,7,7,0,0,1,Finance  IT/Systems,2 - medium,wales trinity saint david university
+Arden University,6,4,0,2,2,Finance  ,2 - medium,arden university
+Brighton and Sussex Medical School,6,5,1,0,2,IT/Systems,2 - medium,brighton and sussex medical school
+University of Brighton,6,4,1,1,3,complete,-,brighton university
+Buckinghamshire New University,6,4,0,2,2,Finance  ,2 - medium,buckinghamshire new university
+The Courtauld Institute of Art,6,2,2,1,3,complete,-,courtauld institute of art
+The Glasgow School of Art,6,3,2,1,3,complete,-,glasgow school of art
+The James Hutton Institute,6,3,2,1,3,complete,-,james hutton institute
+Norwich University of the Arts,6,5,1,0,2,IT/Systems,2 - medium,norwich university of the arts
+Ravensbourne University London,6,2,3,1,3,complete,-,ravensbourne university london
+University Of Roehampton,6,2,3,1,3,complete,-,roehampton university
+Royal Agricultural University,6,4,1,1,3,complete,-,royal agricultural university
+The Royal Central School Of Speech And Drama,6,2,3,1,3,complete,-,royal central school of speech and drama
+Wrexham University,6,2,2,1,3,complete,-,wrexham university
+BRAC University,5,3,1,1,3,complete,-,brac university
+British Antarctic Survey,5,3,0,0,1,Finance  IT/Systems,2 - medium,british antarctic survey
+University of Buckingham,5,2,2,1,3,complete,-,buckingham university
+University of Chichester,5,1,3,1,3,complete,-,chichester university
+Earlham Institute,5,2,0,1,2,Finance  ,2 - medium,earlham institute
+London School of Hygiene & Tropical Medicine,5,2,3,0,2,IT/Systems,2 - medium,london school of hygiene and tropical medicine
+University of London,5,0,2,3,2,Research  ,2 - medium,london university
+Arts University Bournemouth,4,2,1,1,3,complete,-,arts university bournemouth
+Guildhall School of Music & Drama,4,3,0,1,2,Finance  ,3 - low,guildhall school of music and drama
+Health Sciences University,4,2,1,1,3,complete,-,health sciences university
+INTO University Partnerships,4,1,3,0,2,IT/Systems,3 - low,into university partnerships
+The University of Law,4,2,0,2,2,Finance  ,3 - low,law university
+Leeds Arts University,4,1,2,1,3,complete,-,leeds arts university
+Royal Northern College of Music,4,1,3,0,2,IT/Systems,3 - low,royal northern college of music
+University of Suffolk,4,4,0,0,1,Finance  IT/Systems,3 - low,suffolk university
+TASO,4,4,0,0,1,Finance  IT/Systems,3 - low,taso
+University of Winchester,4,4,0,0,1,Finance  IT/Systems,3 - low,winchester university
+University of Wolverhampton,4,3,0,1,2,Finance  ,3 - low,wolverhampton university
+Bayes Business School,3,3,0,0,1,Finance  IT/Systems,3 - low,bayes business school
+GuildHE,3,1,1,0,2,IT/Systems,3 - low,guildhe
+IOE - UCL's Faculty Of Education And Society,3,3,0,0,1,Finance  IT/Systems,3 - low,ioe ucl s faculty of education and society
+Liverpool Hope University,5,4,0,1,2,Finance  ,2 - medium,liverpool hope university
+Medical Research Council,3,2,1,0,2,IT/Systems,3 - low,medical research council
+Metanoia Institute,3,0,3,0,1,Research  IT/Systems,3 - low,metanoia institute
+NatCen Social Research,3,3,0,0,1,Finance  IT/Systems,3 - low,natcen social research
+Paul Mellon Centre For Studies In British Art,3,2,1,0,2,IT/Systems,3 - low,paul mellon centre for studies in british art
+Plymouth Marine Laboratory (PML),3,3,0,0,1,Finance  IT/Systems,3 - low,plymouth marine laboratory
+Regent's University London,3,0,1,2,2,Research  ,3 - low,regent s university london
+UK Centre for Ecology & Hydrology (UKCEH),3,3,0,0,1,Finance  IT/Systems,3 - low,uk centre for ecology and hydrology
+Universities Scotland,3,2,0,0,1,Finance  IT/Systems,3 - low,universities scotland
+Advance HE,2,1,0,0,1,Finance  IT/Systems,3 - low,advance he
+All Nations Christian College,2,1,1,0,2,IT/Systems,3 - low,all nations christian college
+Alliance Manchester Business School,2,2,0,0,1,Finance  IT/Systems,3 - low,alliance manchester business school
+Cambridge Judge Business School,2,2,0,0,1,Finance  IT/Systems,3 - low,cambridge judge business school
+Cardiff Business School,2,2,0,0,1,Finance  IT/Systems,3 - low,cardiff business school
+Carnegie Trust For The Universities Of Scotland,2,1,1,0,2,IT/Systems,3 - low,carnegie trust for the universities of scotland
+Colchester Institute,2,0,1,1,2,Research  ,3 - low,colchester institute
+Committee of University Chairs,2,0,0,0,0,Research  Finance  IT/Systems,3 - low,committee of university chairs
+Department Of Engineering At The University Of Cambridge,2,2,0,0,1,Finance  IT/Systems,3 - low,department of engineering at the university of cambridge
+Institute For Jewish Policy Research,2,2,0,0,1,Finance  IT/Systems,3 - low,institute for jewish policy research
+The Institute Of Ismaili Studies,2,2,0,0,1,Finance  IT/Systems,3 - low,institute of ismaili studies
+John Innes Centre,2,0,0,0,0,Research  Finance  IT/Systems,3 - low,john innes centre
+LMA - Liverpool,2,0,2,0,1,Research  IT/Systems,3 - low,lma liverpool
+MEL Research,2,2,0,0,1,Finance  IT/Systems,3 - low,mel research
+National Institute Of Economic And Social Research,2,2,0,0,1,Finance  IT/Systems,3 - low,national institute of economic and social research
+National Institute Of Teaching And Education,2,1,0,1,2,Finance  ,3 - low,national institute of teaching and education
+Newbold College Of Higher Education,2,1,1,0,2,IT/Systems,3 - low,newbold college of higher education
+Qa Research,2,2,0,0,1,Finance  IT/Systems,3 - low,qa research
+RAND Europe,2,2,0,0,1,Finance  IT/Systems,3 - low,rand europe
+Rose Bruford College,2,2,0,0,1,Finance  IT/Systems,3 - low,rose bruford college
+St John's College - University of Cambridge,2,0,1,1,2,Research  ,3 - low,st john s college university of cambridge
+University of St Mark & St John,2,1,0,1,2,Finance  ,3 - low,st mark and st john university
+St Mary's University,2,2,0,0,1,Finance  IT/Systems,3 - low,st mary s university
+Trinity Laban,2,0,2,0,1,Research  IT/Systems,3 - low,trinity laban
+UCFB,2,0,2,0,1,Research  IT/Systems,3 - low,ucfb
+UHR Universities Human Resources,2,2,0,0,1,Finance  IT/Systems,3 - low,uhr universities human resources
+University College London Hospitals NHS Foundation Trust,2,1,1,0,2,IT/Systems,3 - low,university college london hospitals nhs foundation trust
+University Of Warwick - Warwick Business School,2,0,2,0,1,Research  IT/Systems,3 - low,warwick warwick business school university
+Wellcome Sanger Institute,2,2,0,0,1,Finance  IT/Systems,3 - low,wellcome sanger institute
+Wigan & Leigh College And University Centre,2,0,2,0,1,Research  IT/Systems,3 - low,wigan and leigh college and university centre
+ABI Research,1,1,0,0,1,Finance  IT/Systems,3 - low,abi research
+Academy Of Music & Sound,1,0,1,0,1,Research  IT/Systems,3 - low,academy of music and sound
+Ada Lovelace Institute,1,1,0,0,1,Finance  IT/Systems,3 - low,ada lovelace institute
+African Institute For Development Policy,1,1,0,0,1,Finance  IT/Systems,3 - low,african institute for development policy
+Arc Universities Group,1,0,0,0,0,Research  Finance  IT/Systems,3 - low,arc universities group
+Association of Heads of University Administration (AHUA),1,0,0,0,0,Research  Finance  IT/Systems,3 - low,association of heads of university administration
+The Babraham Institute,1,1,0,0,1,Finance  IT/Systems,3 - low,babraham institute
+Bayes Centre,1,1,0,0,1,Finance  IT/Systems,3 - low,bayes centre
+Bennett Institute For Applied Data Science,1,1,0,0,1,Finance  IT/Systems,3 - low,bennett institute for applied data science
+BIMM Institute,1,0,1,0,1,Research  IT/Systems,3 - low,bimm institute
+BIMM University,1,1,0,0,1,Finance  IT/Systems,3 - low,bimm university
+Blue Marble Research,1,1,0,0,1,Finance  IT/Systems,3 - low,blue marble research
+BMG Research,1,1,0,0,1,Finance  IT/Systems,3 - low,bmg research
+The Bodleian Libraries University Of Oxford,1,1,0,0,1,Finance  IT/Systems,3 - low,bodleian libraries university of oxford
+California Polytechnic State University,1,0,1,0,1,Research  IT/Systems,3 - low,california polytechnic state university
+Cardiff University Students Union,1,1,0,0,1,Finance  IT/Systems,3 - low,cardiff university students union
+Centre For Health Economics,1,1,0,0,1,Finance  IT/Systems,3 - low,centre for health economics
+The Chartered Institute Of Export & International Trade,1,0,1,0,1,Research  IT/Systems,3 - low,chartered institute of export and international trade
+CHILDWISE Research,1,1,0,0,1,Finance  IT/Systems,3 - low,childwise research
+Community And Patient Preference Research,1,1,0,0,1,Finance  IT/Systems,3 - low,community and patient preference research
+Coresight Research,1,1,0,0,1,Finance  IT/Systems,3 - low,coresight research
+CoSector - University of London,1,1,0,0,1,Finance  IT/Systems,3 - low,cosector university of london
+"Courtauld Institute of Art, U. of London",1,1,0,0,1,Finance  IT/Systems,3 - low,courtauld institute of art u of london
+Coventry University / UHCW,1,1,0,0,1,Finance  IT/Systems,3 - low,coventry university uhcw
+Discovery Research,1,1,0,0,1,Finance  IT/Systems,3 - low,discovery research
+University Of Edinburgh Business School,1,1,0,0,1,Finance  IT/Systems,3 - low,edinburgh business school university
+University Of Edinburgh Law School,1,1,0,0,1,Finance  IT/Systems,3 - low,edinburgh law school university
+Edinburgh University Studentsâ€‹ Association,1,0,1,0,1,Research  IT/Systems,3 - low,edinburgh university students association
+The European Futures Observatory,1,1,0,0,1,Finance  IT/Systems,3 - low,european futures observatory
+The Faraday Institute For Science And Religion,1,1,0,0,1,Finance  IT/Systems,3 - low,faraday institute for science and religion
+Flinders University,1,1,0,0,1,Finance  IT/Systems,3 - low,flinders university
+Future Biomanufacturing Research Hub,1,1,0,0,1,Finance  IT/Systems,3 - low,future biomanufacturing research hub
+Future Focus Research,1,1,0,0,1,Finance  IT/Systems,3 - low,future focus research
+The Gallery Trust,1,0,1,0,1,Research  IT/Systems,3 - low,gallery trust
+Global Entrepreneurship And Development Institute,1,1,0,0,1,Finance  IT/Systems,3 - low,global entrepreneurship and development institute
+Global University Systems,1,0,0,0,0,Research  Finance  IT/Systems,3 - low,global university systems
+The Griffin Institute,1,1,0,0,1,Finance  IT/Systems,3 - low,griffin institute
+Gusto Research,1,1,0,0,1,Finance  IT/Systems,3 - low,gusto research
+Harbin Institute Of Technology Shenzhen,1,1,0,0,1,Finance  IT/Systems,3 - low,harbin institute of technology shenzhen
+Hartpury University and Hartpury College,1,1,0,0,1,Finance  IT/Systems,3 - low,hartpury university and hartpury college
+Hull York Medical School,1,1,0,0,1,Finance  IT/Systems,3 - low,hull york medical school
+Humanities Research Institute University Of Buckingham,1,1,0,0,1,Finance  IT/Systems,3 - low,humanities research institute university of buckingham
+Ibn Rushd Centre Of Excellence For Islamic Research,1,1,0,0,1,Finance  IT/Systems,3 - low,ibn rushd centre of excellence for islamic research
+IFF Research,1,1,0,0,1,Finance  IT/Systems,3 - low,iff research
+IMPEL COLLEGE OF LONDON LTD,1,0,1,0,1,Research  IT/Systems,3 - low,impel college of london ltd
+Inchbald School Of Design,1,0,0,1,1,Research  Finance  ,3 - low,inchbald school of design
+Institute For Fiscal Studies,1,1,0,0,1,Finance  IT/Systems,3 - low,institute for fiscal studies
+Institute For Voluntary Action Research,1,1,0,0,1,Finance  IT/Systems,3 - low,institute for voluntary action research
+Institute For War & Peace Reporting,1,0,1,0,1,Research  IT/Systems,3 - low,institute for war and peace reporting
+Kennedy Institute Of Rheumatology,1,1,0,0,1,Finance  IT/Systems,3 - low,kennedy institute of rheumatology
+University of Lancashire,1,0,1,0,1,Research  IT/Systems,3 - low,lancashire university
+Leeds University Business School,1,1,0,0,1,Finance  IT/Systems,3 - low,leeds university business school
+London School Of Management Education,1,1,0,0,1,Finance  IT/Systems,3 - low,london school of management education
+London School Of Theology,1,1,0,0,1,Finance  IT/Systems,3 - low,london school of theology
+LSE Middle East Centre,1,1,0,0,1,Finance  IT/Systems,3 - low,lse middle east centre
+The University Of Manchester Law School,1,1,0,0,1,Finance  IT/Systems,3 - low,manchester law school university
+Medical Research Council London Institute of Medical Sciences,1,1,0,0,1,Finance  IT/Systems,3 - low,medical research council london institute of medical sciences
+Modern Slavery And Human Rights Policy And Evidence Centre,1,1,0,0,1,Finance  IT/Systems,3 - low,modern slavery and human rights policy and evidence centre
+Myriad Research,1,1,0,0,1,Finance  IT/Systems,3 - low,myriad research
+N8 Research Partnership,1,1,0,0,1,Finance  IT/Systems,3 - low,n8 research partnership
+Newman University Birmingham,1,1,0,0,1,Finance  IT/Systems,3 - low,newman university birmingham
+University Of Northampton Studentsâ€‹ Union,1,0,1,0,1,Research  IT/Systems,3 - low,northampton students union university
+Orpheus Institute,1,1,0,0,1,Finance  IT/Systems,3 - low,orpheus institute
+Oxford Centre For Hindu Studies,1,1,0,0,1,Finance  IT/Systems,3 - low,oxford centre for hindu studies
+PDR International Centre For Design And Research,1,1,0,0,1,Finance  IT/Systems,3 - low,pdr international centre for design and research
+Qatar Computing Research Institute,1,1,0,0,1,Finance  IT/Systems,3 - low,qatar computing research institute
+Quadram Institute Bioscience,1,0,0,0,0,Research  Finance  IT/Systems,3 - low,quadram institute bioscience
+Research By Design,1,1,0,0,1,Finance  IT/Systems,3 - low,research by design
+"Research England, UK Research Councils",1,0,0,0,0,Research  Finance  IT/Systems,3 - low,research england uk research councils
+Roffey Park Institute,1,0,1,0,1,Research  IT/Systems,3 - low,roffey park institute
+The Sainsbury Laboratory,1,0,0,0,0,Research  Finance  IT/Systems,3 - low,sainsbury laboratory
+SOAS,1,1,0,0,1,Finance  IT/Systems,3 - low,soas
+Southern African Social Policy Research Institute,1,1,0,0,1,Finance  IT/Systems,3 - low,southern african social policy research institute
+Southern Universities Management Services,1,0,0,0,0,Research  Finance  IT/Systems,3 - low,southern universities management services
+Stranmillis University College Belfast,1,1,0,0,1,Finance  IT/Systems,3 - low,stranmillis university college belfast
+Students Union UCL,1,1,0,0,1,Finance  IT/Systems,3 - low,students union ucl
+Telltale Research,1,1,0,0,1,Finance  IT/Systems,3 - low,telltale research
+University of the Built Environment,1,0,0,0,0,Research  Finance  IT/Systems,3 - low,the built environment university
+UCL Centre For Advanced Research Computing,1,1,0,0,1,Finance  IT/Systems,3 - low,ucl centre for advanced research computing
+UCL Faculty Of Life Sciences,1,1,0,0,1,Finance  IT/Systems,3 - low,ucl faculty of life sciences
+UCL School Of Management,1,1,0,0,1,Finance  IT/Systems,3 - low,ucl school of management
+University and Colleges Employers Association (UCEA),1,0,0,0,0,Research  Finance  IT/Systems,3 - low,university and colleges employers association
+Wiltshire College & University Centre,1,0,1,0,1,Research  IT/Systems,3 - low,wiltshire college and university centre
+Yale Law School,1,1,0,0,1,Finance  IT/Systems,3 - low,yale law school
+Yorkshire Universities,1,0,0,0,0,Research  Finance  IT/Systems,3 - low,yorkshire universities

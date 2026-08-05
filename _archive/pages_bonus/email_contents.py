@@ -1,7 +1,8 @@
 """
 Email Performance Matrix - Contents analysis screen.
 """
-from shared import (inject_css, load_csv, DATA_DIR, SOURCES_DIR, INK,
+from shared import (core_question, inject_css, render_status_key, so_what, explain_this,
+                     kpi_tile, load_csv, DATA_DIR, SOURCES_DIR, INK,
                      INK_SOFT, MUTED, LINE, BG, BG_SOFT, ACCENT,
                      ACCENT_SOFT, WARN, GOLD)
 import os, re
@@ -13,7 +14,40 @@ inject_css()
 
 st.markdown('<div class="eyebrow">GrantsNow &middot; Email</div>',
             unsafe_allow_html=True)
-st.markdown('<h1>Contents Analysis</h1>', unsafe_allow_html=True)
+st.markdown('<h1>Grade our copy</h1>', unsafe_allow_html=True)
+core_question("How well does every campaign email follow the GrantsNow drafting pattern, and where is it weakest?")
+st.caption("Every email in the marketing calendar scored against the "
+            "GrantsNow drafting pattern (based on Ian&apos;s WP5 "
+            "reference email). Pick a campaign to see what makes it "
+            "strong or weak.")
+render_status_key()
+
+with st.expander("What the score terms mean", expanded=False):
+    st.markdown("""
+- **Problem framing (0-100)** &mdash; does the email name a real problem
+  in a way the reader recognises? Rewards a pain-named subject line
+  (words like &lsquo;overcoming&rsquo;, &lsquo;manual&rsquo;,
+  &lsquo;delays&rsquo;), a stakeholder-demand opening (&ldquo;leadership
+  wants&hellip;&rdquo;), and a problem-cost chain (2+ sentences joined by
+  &lsquo;because&rsquo;, &lsquo;so&rsquo;, &lsquo;while&rsquo;).
+- **Proof (0-100)** &mdash; does the email back the claim? Rewards
+  specific customer names (Institute of X, University of Y), concrete
+  percentages (25%, 35%), and one clear call to action.
+- **Overall copy (0-100)** &mdash; the blend. Roughly *0.45 &times;
+  Problem framing + 0.45 &times; Proof + 10 for a personal greeting
+  &minus; 4 per weak phrase (up to 3)*. 66+ is the WP5 zone.
+- **Seven-slot check** &mdash; the 7 building blocks of the GrantsNow
+  drafting pattern from Ian&apos;s WP5 reference email: pain-named
+  subject, personal greeting, stakeholder line, problem-cost chain,
+  named customer proof, concrete numbers, single CTA.
+- **WP5 zone** &mdash; the top-right box on the scatter chart, where an
+  email scores 66+ on both Problem framing and Proof. WP5 is
+  Ian&apos;s reference email on grants management reporting; it is
+  the pattern we score against.
+- **Weak phrases** &mdash; corporate filler that dilutes the message.
+  The current list: *utilise, utilize, leverage, streamline, solution,
+  synergy, in order to, at the end of the day, a lot of.*
+""")
 
 emails_all = load_csv("emails.csv")
 if not emails_all.empty:
@@ -27,7 +61,7 @@ if not emails_all.empty:
 # persona fit vs the dominant blast persona (Research), readability.
 st.markdown('<h2>Contents analysis</h2>', unsafe_allow_html=True)
 st.caption("Every live campaign from the Marketing Calendar, scored "
-           "against the house pattern. Pick a campaign to see the "
+           "against the GrantsNow pattern. Pick a campaign to see the "
            "detail; scroll for gaps and next-content ideas.")
 
 campaigns_df = load_csv("campaigns.csv")
@@ -320,8 +354,8 @@ else:
         "persona_dominant", "words", "house_score",
         "challenge_score", "result_score", "weak_count"]].copy()
     inv.columns = ["Campaign", "Stage", "Type", "Reads for",
-                    "Words", "House", "Challenge", "Result",
-                    "Weak"]
+                    "Words", "Overall", "Problem framing", "Proof",
+                    "Weak phrases"]
     st.dataframe(inv, width='stretch', hide_index=True)
 
     # ---- Content-type mix chart ----
@@ -342,7 +376,10 @@ else:
     # the same way - each dot / bar is one email.
     st.markdown('<div style="margin:2.5rem 0 0;border-top:1px '
                 'solid ' + LINE + '"></div>', unsafe_allow_html=True)
-    st.markdown('<h3>Score analysis</h3>', unsafe_allow_html=True)
+    st.markdown('<h3>Portfolio scoreboard</h3>', unsafe_allow_html=True)
+    st.caption("How the whole campaign set is scoring, and which "
+                "emails are in the &lsquo;top-right&rsquo; sweet spot "
+                "of strong problem framing AND strong proof.")
 
     # KPI strip: portfolio-level averages
     avg_ch = int(scored_df["challenge_score"].mean())
@@ -354,7 +391,7 @@ else:
     with sa1:
         st.markdown(
             f'<div class="kpi"><div class="kpi-label">'
-            f'Avg challenge</div>'
+            f'Avg problem framing</div>'
             f'<div class="kpi-value" style="color:{ACCENT}">'
             f'{avg_ch}</div>'
             f'<div class="kpi-sub">across {n_emails} emails</div>'
@@ -362,7 +399,7 @@ else:
     with sa2:
         st.markdown(
             f'<div class="kpi"><div class="kpi-label">'
-            f'Avg result</div>'
+            f'Avg proof</div>'
             f'<div class="kpi-value" style="color:{ACCENT}">'
             f'{avg_re}</div>'
             f'<div class="kpi-sub">across {n_emails} emails</div>'
@@ -370,21 +407,21 @@ else:
     with sa3:
         st.markdown(
             f'<div class="kpi"><div class="kpi-label">'
-            f'Avg house</div>'
+            f'Avg overall</div>'
             f'<div class="kpi-value">{avg_ho}</div>'
             f'<div class="kpi-sub">blended</div></div>',
             unsafe_allow_html=True)
     with sa4:
         st.markdown(
             f'<div class="kpi"><div class="kpi-label">'
-            f'WP5-like emails</div>'
+            f'Full-pattern emails</div>'
             f'<div class="kpi-value">{n_wp5_like}</div>'
             f'<div class="kpi-sub">both scores &ge; 66</div>'
             f'</div>', unsafe_allow_html=True)
 
-    # ---- Challenge vs Result scatter ----
+    # ---- Problem framing vs Proof scatter ----
     st.markdown('<div class="eyebrow" style="margin-top:1.5rem">'
-                'Challenge vs Result</div>',
+                'Problem framing vs Proof</div>',
                 unsafe_allow_html=True)
     st.caption("Top-right quadrant is the WP5 zone. Bottom-left "
                "is the redraft pile. Colour = content type.")
@@ -398,18 +435,18 @@ else:
     base = alt.Chart(scatter_df).mark_circle(
         size=180, opacity=0.85, stroke="white", strokeWidth=1
     ).encode(
-        x=alt.X("c_jit:Q", title="Challenge score",
+        x=alt.X("c_jit:Q", title="Problem framing",
                   scale=alt.Scale(domain=[-10, 110])),
-        y=alt.Y("r_jit:Q", title="Result score",
+        y=alt.Y("r_jit:Q", title="Proof score",
                   scale=alt.Scale(domain=[-10, 110])),
         color=alt.Color("content_type:N",
                           scale=alt.Scale(scheme="tableau10"),
                           legend=alt.Legend(title="Content type")),
         tooltip=[
             alt.Tooltip("label:N", title="Email"),
-            alt.Tooltip("challenge_score:Q", title="Challenge"),
-            alt.Tooltip("result_score:Q", title="Result"),
-            alt.Tooltip("house_score:Q", title="House"),
+            alt.Tooltip("challenge_score:Q", title="Problem framing"),
+            alt.Tooltip("result_score:Q", title="Proof"),
+            alt.Tooltip("house_score:Q", title="Overall copy"),
         ],
     )
     # WP5 target zone shading
@@ -420,16 +457,52 @@ else:
     st.altair_chart((zone + base).properties(height=340),
                      width='stretch')
 
-    # ---- House-score ranking ----
+    # So-what for the Problem-vs-Proof scatter
+    _in_zone = int(((scored_df["challenge_score"] >= 66)
+                     & (scored_df["result_score"] >= 66)).sum())
+    _total_emails = len(scored_df)
+    if _in_zone == 0:
+        so_what(
+            f"Zero of {_total_emails} emails sit in the top-right "
+            f"WP5 zone. Every current draft is missing at least one "
+            f"of: pain-named subject, named-customer proof, or "
+            f"concrete numbers. That is the fastest area to lift the "
+            f"whole set.", tone="warn")
+    elif _in_zone / _total_emails < 0.3:
+        so_what(
+            f"Only {_in_zone} of {_total_emails} emails hit the WP5 "
+            f"zone. Study those and copy the pattern into the rest.",
+            tone="info")
+    else:
+        so_what(
+            f"{_in_zone} of {_total_emails} emails hit the WP5 zone. "
+            f"Strong portfolio - keep the pattern going.", tone="good")
+
+    explain_this(
+        shows="Each dot is one email. X = how strongly it frames a "
+                "problem (subject + stakeholder + problem chain). Y = "
+                "how much proof it carries (named customers + numbers + "
+                "clear CTA). The teal-shaded top-right box is the "
+                "WP5 zone - where the reference email sits.",
+        good_pattern="A dense cluster in the top-right. Emails there "
+                        "will earn attention AND back the claim. Bottom-"
+                        "left dots are drafts that need both a stronger "
+                        "problem hook and stronger proof.",
+        action_hint="For any bottom-left dot, open the Email detail "
+                     "below and read the evidence line - it tells you "
+                     "which specific slot is missing (subject, "
+                     "stakeholder line, named customer, or number).")
+
+    # ---- Overall copy ranking ----
     st.markdown('<div class="eyebrow" style="margin-top:1.5rem">'
-                'House-score ranking</div>',
+                'Overall copy ranking</div>',
                 unsafe_allow_html=True)
     rank_df = scored_df.copy()
     rank_df["label"] = (rank_df["campaign_name"].astype(str)
                          + " · " + rank_df["stage"].astype(str))
     rank_df = rank_df.sort_values("house_score", ascending=False)
     rank_chart = alt.Chart(rank_df).mark_bar(size=14).encode(
-        x=alt.X("house_score:Q", title="House score",
+        x=alt.X("house_score:Q", title="Overall copy score",
                   scale=alt.Scale(domain=[0, 100])),
         y=alt.Y("label:N", sort="-x", title=None),
         color=alt.condition(
@@ -437,9 +510,9 @@ else:
             alt.value(ACCENT), alt.value("#B8B8BE")),
         tooltip=[
             alt.Tooltip("label:N", title="Email"),
-            alt.Tooltip("house_score:Q", title="House"),
-            alt.Tooltip("challenge_score:Q", title="Challenge"),
-            alt.Tooltip("result_score:Q", title="Result"),
+            alt.Tooltip("house_score:Q", title="Overall copy"),
+            alt.Tooltip("challenge_score:Q", title="Problem framing"),
+            alt.Tooltip("result_score:Q", title="Proof"),
         ],
     ).properties(height=max(220, 22 * len(rank_df)))
     st.altair_chart(rank_chart, width='stretch')
@@ -475,9 +548,32 @@ else:
     ).properties(height=240)
     st.altair_chart(slot_chart, width='stretch')
 
+    # So-what for slot hit-rate: name the weakest slot
+    if slot_hit_rows:
+        _weakest = min(slot_hit_rows, key=lambda r: r["Hit rate"])
+        _strongest = max(slot_hit_rows, key=lambda r: r["Hit rate"])
+        so_what(
+            f"Weakest slot across the whole set: "
+            f"<strong>{_weakest['Slot']}</strong> - only "
+            f"{_weakest['Hit rate']:.0f}% of emails hit it. This is "
+            f"the single template change with the biggest lift. "
+            f"Strongest: <strong>{_strongest['Slot']}</strong> at "
+            f"{_strongest['Hit rate']:.0f}%.", tone="warn")
+
+    explain_this(
+        shows="How many emails across the whole set hit each of the "
+                "seven WP5 slots. Green bars are hit by 66%+ of emails, "
+                "gold bars are the systemic gaps.",
+        good_pattern="Every bar above 66%. That means the whole "
+                        "portfolio is following the WP5 pattern "
+                        "consistently.",
+        action_hint="Fix the shortest bar first. Update the email "
+                     "template so every new draft has that slot, then "
+                     "backfill the existing campaigns.")
+
     # ---- Scores by content type ----
     st.markdown('<div class="eyebrow" style="margin-top:1.5rem">'
-                'Challenge vs Result by content type</div>',
+                'Problem framing vs Proof by content type</div>',
                 unsafe_allow_html=True)
     grp = scored_df.groupby("content_type")[
         ["challenge_score", "result_score"]].mean().reset_index()
@@ -526,7 +622,7 @@ else:
 
     # ---- Word count vs house score ----
     st.markdown('<div class="eyebrow" style="margin-top:1.5rem">'
-                'Length vs house score</div>',
+                'Length vs overall copy score</div>',
                 unsafe_allow_html=True)
     st.caption("Does longer copy score higher, or does it just add "
                "words? A flat cloud means length is not the lever.")
@@ -536,12 +632,12 @@ else:
     len_chart = alt.Chart(ln_df).mark_circle(
         size=160, opacity=0.85, color=ACCENT).encode(
         x=alt.X("words:Q", title="Word count"),
-        y=alt.Y("house_score:Q", title="House score",
+        y=alt.Y("house_score:Q", title="Overall copy score",
                   scale=alt.Scale(domain=[0, 100])),
         tooltip=[
             alt.Tooltip("label:N", title="Email"),
             "words:Q",
-            alt.Tooltip("house_score:Q", title="House"),
+            alt.Tooltip("house_score:Q", title="Overall copy"),
         ],
     ).properties(height=260)
     _trend = alt.Chart(ln_df).transform_regression(
@@ -569,7 +665,7 @@ else:
     with hs1:
         st.markdown(
             f'<div class="kpi"><div class="kpi-label">'
-            f'Challenge score</div>'
+            f'Problem framing</div>'
             f'<div class="kpi-value" style="color:{ACCENT}">'
             f'{row["challenge_score"]}</div>'
             f'<div class="kpi-sub">pain subject + stakeholder + '
@@ -578,7 +674,7 @@ else:
     with hs2:
         st.markdown(
             f'<div class="kpi"><div class="kpi-label">'
-            f'Result score</div>'
+            f'Proof score</div>'
             f'<div class="kpi-value" style="color:{ACCENT}">'
             f'{row["result_score"]}</div>'
             f'<div class="kpi-sub">named proof + numbers + CTA'
@@ -586,7 +682,7 @@ else:
             unsafe_allow_html=True)
     with hs3:
         st.markdown(
-            f'<div class="kpi"><div class="kpi-label">House score'
+            f'<div class="kpi"><div class="kpi-label">Overall copy score'
             f'</div><div class="kpi-value">{row["house_score"]}</div>'
             f'<div class="kpi-sub">blended</div></div>',
             unsafe_allow_html=True)
@@ -734,7 +830,7 @@ else:
                        "every current campaign. Each is a candidate "
                        "for a new email angle.")
         else:
-            st.info("Every house phrase appears in at least one "
+            st.info("Every GrantsNow phrase appears in at least one "
                      "campaign.")
 
     # ---- Content ideas: gap-driven ----
