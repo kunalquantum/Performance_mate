@@ -255,6 +255,7 @@ def ingest(xlsx_path: str, skip_dupes: bool = False) -> dict:
         "mql_updated":           written["mql_updated"],
         "copy_added":            written["campaigns"],
         "skip_dupes":            skip_dupes,
+        "file_type":             "weekly_esp",
     }
     if log_path.exists():
         log = pd.read_csv(log_path)
