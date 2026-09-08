@@ -19,7 +19,7 @@ Why they are considering GrantsNow:
 See how GrantsNow works for universities and how it compares to existing grants systems.
 
 Best regards,
-Zoe",10,10,6,,0
+Zoe",10,10,6,,0.0
 1,GFZ Helmholtz Centre for Geosciences,Follow-up A,2026-07-16,How Universities improved their funding opportunities by 25%,"Good afternoon, [First name],
 
 I wanted to write again in case my previous message got lost in your inbox. I wanted to share with you how GrantsNow manages your end to end Grants Funding, greatly improves funding opportunities, reducing manual workload, and gives you a single view across the full cycle.
@@ -34,7 +34,7 @@ Set up a short call
 
 Best regards,
 Zoe
-GrantsNow",3,3,1,,1
+GrantsNow",3,3,1,,1.0
 1,GFZ Helmholtz Centre for Geosciences,Follow-up B,2026-07-23,A smarter way to manage grants,"Good afternoon, [First name],
 
 Circling back in case my last message slipped past you.
@@ -54,7 +54,7 @@ Set up a short call
 
 Best regards,
 Zoe
-GrantsNow",3,3,2,,2
+GrantsNow",3,3,2,,2.0
 2,University of Ulster,Base,2026-07-09,Improve Funding Opportunity Matching by 25%,"Good afternoon, [First name],
 
 The increasing volume of competitive funding opportunities makes manual tracking increasingly challenging, with relevant opportunities often missed or identified too late.
@@ -73,7 +73,7 @@ Connect with us
 
 Regards,
 Zoe
-GrantsNow",23,23,13,13,
+GrantsNow",23,23,13,13.0,
 2,University of Ulster,Follow-up A,2026-07-16,How Universities improved their funding opportunities by 25%,"Good afternoon, [First name],
 
 I wanted to write again in case my previous message got lost in your inbox. I wanted to share with you how GrantsNow manages your end to end Grants Funding, greatly improves funding opportunities, reducing manual workload, and gives you a single view across the full cycle.
@@ -88,7 +88,7 @@ Set up a short call
 
 Best regards,
 Zoe
-GrantsNow",15,15,5,5,
+GrantsNow",15,15,5,5.0,
 2,University of Ulster,Follow-up B,2026-07-23,A smarter way to manage grants,"Good afternoon, [First name],
 
 Circling back in case my last message slipped past you.
@@ -108,7 +108,7 @@ Set up a short call
 
 Best regards,
 Zoe
-GrantsNow",15,15,4,4,
+GrantsNow",15,15,4,4.0,
 3,"Yokohama University, DTU, GGGI",Base,2026-06-24,How Universities improved their funding opportunities by 25%,"Good afternoon, [First name],
 
 I wanted to write again in case my previous message got lost in your inbox. I wanted to share with you how GrantsNow manages your end to end Grants Funding, greatly improves funding opportunities, reducing manual workload, and gives you a single view across the full cycle.
@@ -214,3 +214,28 @@ Set up a short call
 Best regards,
 Zoe
 GrantsNow",37,37,0,,
+5,"GN_WP_8_Promo_Fin 2 (""The Right Handover from Pre-Award to Finance"")",Base,2026-09-03,How ICR and Queen Margaret keep every finance line traceable to approved costs,"Hello $[UD:FIRST_NAME||]$,
+Every award your team sets up in the finance system should tie back to the approved costing. When it is re-entered manually at handover, that traceability breaks before the project even starts.
+No budget visibility
+Finance cannot trace figures back to the original approved costs, so there is no clear line of sight from the award to the budget.
+Errors built into the budget
+The budget can be wrong from the start, and every revision adds another chance for figures to drift from what was approved.
+Reconciliation the team should not have to do
+Finance spends time fixing differences that were introduced at handover, not created by the project itself.
+GrantsNow supports finance teams at Institute of Cancer Research, Queen Margaret University and University of East Anglia with a budget that is correct and auditable from day one, full traceability from every finance line back to the original approved costing, and no manual re-entry or reconciliation at handover.",637,592,27,9.0,
+6,"GN_WP_8_Promo_Research 2 and 3 (""The Right Handover from Pre-Award to Finance"")",Base,2026-09-03,,"Hello $[UD:FIRST_NAME||]$,
+Significant effort goes into agreeing the project cost base. But once those figures are re-entered into finance, the approved position can be lost, creating a disconnect between the original business case and the budget used to manage delivery.
+1
+Detailed costs get flattened
+You build the budget cost by cost during the application. At handover, all that detail is squashed into a few broad finance categories, so no one can see how each figure was worked out.
+2
+The wrong number gets carried over
+Sometimes the amount you asked for is used instead of the amount you were actually given. When that happens, the budget is wrong before the project even starts.
+3
+The same work gets done twice
+Figures that were already calculated and approved during the application have to be typed in again by the research team after the award.
+4
+The problem keeps growing
+Grant applications are up 57% since 2022 (Rees and Wilsdon, Nature, 2026). More applications lead to more awards, and every award still goes through this same slow, manual handover, so the workload keeps climbing.
+GrantsNow carries your approved, contract-matched costing directly into the finance budget in one step, with each cost line already mapped to the right finance code. You enter your time inputs once, and the costing reaches finance intact.
+Researchers at Institute of Cancer Research, Queen Margaret University and University of Portsmouth already use it. Because costing rules apply staff costs, overheads and funder rates as data is entered, costing accuracy improves by around 60% against a manual baseline, on the targets we calibrate against your own baseline.",2296,2222,149,26.0,

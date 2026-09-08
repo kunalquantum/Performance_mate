@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Ideal Email — Ulster vs "Dozens of Universities" | GrantsNow</title>
+<style>
+  :root {
+    --ink:#111318; --ink-soft:#3B4046; --muted:#8A8F98;
+    --line:#E7E7EA; --bg:#FFFFFF; --bg-soft:#F7F7F8;
+    --accent:#0E6E68; --accent-soft:#B9D8D5;
+    --gold:#C99A2E; --warn:#B4462F; --purple:#7A6A9A;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Poppins,
+                Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink); background:var(--bg-soft); margin:0;
+    line-height:1.55; font-size:15px;
+  }
+  .page { max-width:1240px; margin:0 auto; padding:2.5rem 2rem; }
+
+  .eyebrow {
+    font-size:.72rem; color:var(--accent); font-weight:700;
+    text-transform:uppercase; letter-spacing:.18em; margin-bottom:.4rem;
+  }
+  h1 {
+    font-size:2.1rem; font-weight:700; margin:0 0 .5rem;
+    letter-spacing:-.01em;
+  }
+  h2 {
+    font-size:1.3rem; font-weight:700; margin:2.2rem 0 .9rem;
+    padding-bottom:.5rem; border-bottom:2px solid var(--accent);
+  }
+  h3 { font-size:1rem; font-weight:600; margin:1rem 0 .4rem; }
+  p  { margin:.55rem 0; }
+  .caption { color:var(--muted); font-size:.88rem; }
+
+  .card {
+    background:var(--bg); border:1px solid var(--line);
+    border-radius:10px; padding:1.4rem 1.6rem; margin-bottom:1rem;
+  }
+
+  .hero {
+    background:linear-gradient(135deg,#0E6E68 0%,#145a55 100%);
+    color:#FFF; border-radius:12px; padding:2rem 2.2rem;
+    margin-bottom:1.4rem;
+  }
+  .hero .eyebrow { color:#B9D8D5; }
+  .hero h1 { color:#FFF; margin-bottom:.8rem; }
+  .hero .lede { max-width:820px; font-size:.98rem; opacity:.94; }
+
+  /* Head-to-head banner */
+  .h2h {
+    display:grid; grid-template-columns:1fr auto 1fr; gap:1rem;
+    align-items:stretch; margin-top:1.4rem;
+  }
+  .h2h .side {
+    background:rgba(255,255,255,.10); padding:1rem 1.2rem;
+    border-radius:8px; border-left:4px solid #C99A2E;
+  }
+  .h2h .side.a { border-left-color:#B9D8D5; }
+  .h2h .side.b { border-left-color:#C99A2E; }
+  .h2h .side .tag {
+    font-size:.7rem; text-transform:uppercase; letter-spacing:.16em;
+    opacity:.8;
+  }
+  .h2h .side .name {
+    font-size:1rem; font-weight:700; margin:.2rem 0 .7rem;
+  }
+  .h2h .side .row {
+    display:flex; justify-content:space-between;
+    font-size:.85rem; padding:.15rem 0;
+  }
+  .h2h .side .row .k { opacity:.75; }
+  .h2h .side .row .v { font-weight:700; }
+  .h2h .vs {
+    display:flex; align-items:center; justify-content:center;
+    font-size:1.8rem; font-weight:800; letter-spacing:.15em;
+    color:#FFF; opacity:.75;
+  }
+
+  /* Two-email side-by-side */
+  .emails { display:grid; grid-template-columns:1fr 1fr; gap:1.2rem; }
+  .email-frame {
+    background:#FDFDFC; border:1px solid var(--line);
+    border-radius:8px; padding:1.4rem 1.6rem;
+    font-family:Georgia,"Times New Roman",serif;
+    box-shadow:0 1px 3px rgba(0,0,0,.05);
+  }
+  .email-frame .subj {
+    font-family:-apple-system,"Segoe UI",sans-serif;
+    font-size:.72rem; color:var(--muted);
+    text-transform:uppercase; letter-spacing:.14em; margin-bottom:.2rem;
+  }
+  .email-frame .subj-line {
+    font-family:-apple-system,"Segoe UI",sans-serif;
+    font-size:1rem; font-weight:600; color:var(--ink);
+    margin-bottom:1rem; padding-bottom:.9rem;
+    border-bottom:1px dashed var(--line);
+  }
+  .email-frame p {
+    font-size:.92rem; color:var(--ink); line-height:1.65;
+  }
+  .email-frame ul {
+    padding-left:1.2rem; font-size:.9rem; color:var(--ink);
+  }
+  .email-frame ul li { margin:.35rem 0; line-height:1.55; }
+  .highlight-stat {
+    background:#FFF7E4; border-left:4px solid var(--gold);
+    padding:.45rem .75rem; font-weight:700; margin:.9rem 0;
+    font-size:.98rem;
+  }
+  .cta-line { color:var(--accent); font-weight:600;
+              text-decoration:underline; }
+
+  /* Compare table */
+  table.cmp {
+    width:100%; border-collapse:collapse; background:var(--bg);
+  }
+  table.cmp th, table.cmp td {
+    text-align:left; padding:.6rem .85rem;
+    border-bottom:1px solid var(--line); vertical-align:top;
+    font-size:.9rem;
+  }
+  table.cmp th {
+    background:var(--bg-soft); color:var(--muted);
+    text-transform:uppercase; letter-spacing:.1em; font-size:.68rem;
+    font-weight:700;
+  }
+  table.cmp td.a { color:var(--accent); font-weight:600; }
+  table.cmp td.b { color:#8f6c14; font-weight:600; }
+  table.cmp td.win { background:#DDEEEC; }
+  .winmark {
+    display:inline-block; margin-left:.4rem; padding:.05rem .4rem;
+    background:var(--accent); color:#FFF; border-radius:3px;
+    font-size:.62rem; font-weight:700; text-transform:uppercase;
+    letter-spacing:.1em;
+  }
+
+  /* Grids */
+  .grid-4 { display:grid; grid-template-columns:repeat(4,1fr); gap:.7rem; }
+  .stat-tile {
+    background:var(--bg); border:1px solid var(--line);
+    border-radius:8px; padding:.75rem .95rem;
+  }
+  .stat-tile .k {
+    font-size:.66rem; color:var(--muted);
+    text-transform:uppercase; letter-spacing:.12em;
+  }
+  .stat-tile .v {
+    font-size:1.4rem; font-weight:700; color:var(--ink);
+    margin-top:.15rem;
+  }
+  .stat-tile .s { font-size:.75rem; color:var(--ink-soft); }
+
+  /* Pills */
+  .pill {
+    display:inline-block; padding:.1rem .5rem;
+    border-radius:3px; font-size:.72rem; font-weight:600;
+    margin:.1rem .15rem .1rem 0;
+  }
+  .pill.research  { background:#DDEEEC; color:#0E6E68; }
+  .pill.finance   { background:#FBEDD8; color:#7A5F1E; }
+  .pill.it        { background:#E5E1EE; color:#4E4270; }
+  .pill.warn      { background:#FBEDED; color:var(--warn); }
+  .pill.good      { background:#DDEEEC; color:#0E6E68; }
+  .pill.neutral   { background:var(--bg-soft); color:var(--ink); }
+
+  ul.rules { padding-left:1.2rem; margin:.3rem 0; }
+  ul.rules li { margin:.35rem 0; line-height:1.5; }
+  ul.rules li strong { color:var(--accent); }
+
+  .verdict {
+    background:linear-gradient(135deg,#F7F7F8 0%,#EBF3F2 100%);
+    border:1px solid var(--accent-soft); border-left:5px solid var(--accent);
+    padding:1.3rem 1.5rem; border-radius:8px; margin:1rem 0;
+  }
+  .verdict h3 { margin-top:0; color:var(--accent); font-size:1.1rem; }
+
+  @media (max-width:900px) {
+    .emails { grid-template-columns:1fr; }
+    .h2h { grid-template-columns:1fr; }
+    .h2h .vs { padding:.4rem 0; }
+    .grid-4 { grid-template-columns:1fr 1fr; }
+  }
+  @media print { body { background:white; } .page { padding:.8rem; }
+    .card,.hero,.verdict { break-inside:avoid; } }
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- ================================================================= -->
+<!-- Hero + head-to-head banner -->
+<!-- ================================================================= -->
+<div class="hero">
+  <div class="eyebrow">GrantsNow · Performance Matrix</div>
+  <h1>Ideal email — head to head</h1>
+  <div class="lede">
+    A second high-performing email surfaced: Ian's "dozens of
+    Universities" send, delivered to 149 recipients. This report
+    compares it directly against the previous winner (Ulster Base)
+    across every measurable attribute and concludes which pattern to
+    use, and when.
+  </div>
+
+  <div class="h2h">
+    <div class="side a">
+      <div class="tag">Email A · previous best</div>
+      <div class="name">Ulster · "Improve Funding Opportunity Matching by 25%"</div>
+      <div class="row"><span class="k">Sent</span><span class="v">23</span></div>
+      <div class="row"><span class="k">Delivered</span><span class="v">23 · 100%</span></div>
+      <div class="row"><span class="k">Open rate</span><span class="v">56.5%</span></div>
+      <div class="row"><span class="k">Clicks</span><span class="v">13 · CTOR 100%</span></div>
+      <div class="row"><span class="k">Bounces</span><span class="v">0 · 0.0%</span></div>
+      <div class="row"><span class="k">Sender</span><span class="v">Zoe</span></div>
+    </div>
+    <div class="vs">VS</div>
+    <div class="side b">
+      <div class="tag">Email B · new contender</div>
+      <div class="name">"Dozens of Universities" — Pre/Post-Awards pain</div>
+      <div class="row"><span class="k">Sent</span><span class="v">156</span></div>
+      <div class="row"><span class="k">Delivered</span><span class="v">149 · 95.5%</span></div>
+      <div class="row"><span class="k">Open rate (reliable)</span><span class="v">22%</span></div>
+      <div class="row"><span class="k">Clicks</span><span class="v">9 · CTOR 27%</span></div>
+      <div class="row"><span class="k">Bounces</span><span class="v">7 · 4.5%</span></div>
+      <div class="row"><span class="k">Sender</span><span class="v">Ian</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ================================================================= -->
+<!-- Both emails side by side -->
+<!-- ================================================================= -->
+<h2>The two emails, side by side</h2>
+<div class="emails">
+  <!-- Email A -->
+  <div>
+    <div style="display:flex;align-items:center;gap:.5rem;margin-bottom:.5rem">
+      <span class="pill good">Email A</span>
+      <span class="caption">Ulster · Zoe · 9 Jul 2026</span>
+    </div>
+    <div class="email-frame">
+      <div class="subj">Subject</div>
+      <div class="subj-line">Improve Funding Opportunity Matching by 25%</div>
+      <p>Good afternoon, [First name],</p>
+      <p>The increasing volume of competitive funding opportunities makes manual tracking increasingly challenging, with relevant opportunities often missed or identified too late.</p>
+      <p>AI-driven automation is beginning to change this by helping universities identify and align targeted funding opportunities with strategic research themes and institutional priorities, improving funding visibility and supporting research income growth.</p>
+      <p>In conversations with several universities, we have heard that existing systems do not always provide the level of intelligent and effective opportunity matching they require.</p>
+      <p>GrantsNow's AI Driven Funder Opportunity Scanner was designed specifically to address this challenge, with institutions reporting improvements in funding opportunity matching of <strong>over 25%</strong>.</p>
+      <div class="highlight-stat">Improvement in funding opportunity matching: over 25%.</div>
+      <p>We would be happy to share a high-level overview if you feel our platform would provide you with additional funding opportunities. You can connect with us here:</p>
+      <p><span class="cta-line">Connect with us</span></p>
+      <p style="margin-top:1rem;color:#3B4046">Regards,<br>Zoe<br>GrantsNow</p>
+    </div>
+  </div>
+
+  <!-- Email B -->
+  <div>
+    <div style="display:flex;align-items:center;gap:.5rem;margin-bottom:.5rem">
+      <span class="pill" style="background:#FBEDD8;color:#8f6c14">Email B</span>
+      <span class="caption">Broadcast · Ian · 149 delivered</span>
+    </div>
+    <div class="email-frame">
+      <div class="subj">Subject</div>
+      <div class="subj-line" style="color:#8A8F98;font-style:italic">
+        (not supplied — treat as untested)</div>
+      <p>Hi $[UD:FIRST_NAME||]$,</p>
+      <p>From speaking to dozens of Universities in the UK, we are fully aware of the challenges in keeping up with the increasingly competitive landscape for Research Funding. In addition, internal management of the complex Pre-Awards &amp; Post-Awards submissions and reporting is often an administration headache. These include:</p>
+      <ul>
+        <li>A lack of real-time data for Grant Proposal costings</li>
+        <li>Difficulty in creating &amp; building accurate and viable Research Funding proposals</li>
+        <li>Extensive manual processing severely impacting the number of proposals you can submit</li>
+        <li>Limited bandwidth to apply for the full scope of funding opportunities that are available</li>
+        <li>Lack of accurate Post-Awards reporting which results in some projects losing money and causing a budget deficit</li>
+      </ul>
+      <p>Many institutions rely on multiple system feeds at different intervals, which often fail to meet the needs of the research office due to the constant change in industry policy regulation.</p>
+      <p>This causes even more capacity and bandwidth pressures, by having to continuously manually access data from Finance &amp; HR Systems.</p>
+      <p>Thankfully there are modern Cloud SaaS platforms out there to prevent these issues and maximise outcomes for finding Grants funding.</p>
+      <p>If you would like to learn more about how to get real time data feeds and a seamless integration with your Finance &amp; HR Systems, see: <span class="cta-line">www.grantsnow.co.uk</span></p>
+      <p style="margin-top:1rem;color:#3B4046">Thanks,<br>Ian</p>
+    </div>
+  </div>
+</div>
+
+<!-- ================================================================= -->
+<!-- Funnel comparison -->
+<!-- ================================================================= -->
+<h2>Funnel — every number, side by side</h2>
+<div class="card">
+<table class="cmp">
+  <tr>
+    <th style="width:26%">Metric</th>
+    <th>Email A · Ulster</th>
+    <th>Email B · "Dozens of Universities"</th>
+    <th>Winner &amp; why</th>
+  </tr>
+  <tr>
+    <td><strong>Sent</strong></td>
+    <td class="a">23</td>
+    <td class="b">156</td>
+    <td>Email B <span class="winmark">volume</span> — 6.8× larger reach</td>
+  </tr>
+  <tr>
+    <td><strong>Delivered</strong></td>
+    <td class="a win">23 · 100%</td>
+    <td class="b">149 · 95.5%</td>
+    <td>Email A <span class="winmark">hygiene</span></td>
+  </tr>
+  <tr>
+    <td><strong>Bounces</strong></td>
+    <td class="a win">0 · 0.0%</td>
+    <td class="b">7 · 4.5%</td>
+    <td>Email A <span class="winmark">list</span> — B breaches the 3% threshold</td>
+  </tr>
+  <tr>
+    <td><strong>Open rate (reliable)</strong></td>
+    <td class="a win">56.5% (13 opens)</td>
+    <td class="b">22% (33 reliable opens)</td>
+    <td>Email A <span class="winmark">2.6× rate</span></td>
+  </tr>
+  <tr>
+    <td><strong>Absolute opens</strong></td>
+    <td class="a">13</td>
+    <td class="b win">33 reliable · 75 total (incl. bots)</td>
+    <td>Email B <span class="winmark">volume</span></td>
+  </tr>
+  <tr>
+    <td><strong>Click rate</strong></td>
+    <td class="a win">56.5% (13/23)</td>
+    <td class="b">6% (9/149)</td>
+    <td>Email A <span class="winmark">9.4×</span></td>
+  </tr>
+  <tr>
+    <td><strong>Click-to-open (CTOR)</strong></td>
+    <td class="a win">100%</td>
+    <td class="b">27%</td>
+    <td>Email A — every opener clicked</td>
+  </tr>
+  <tr>
+    <td><strong>Absolute clicks</strong></td>
+    <td class="a win">13</td>
+    <td class="b">9 reliable</td>
+    <td>Email A wins even on raw count despite 6.8× smaller list</td>
+  </tr>
+  <tr>
+    <td><strong>Unsubscribes / spam</strong></td>
+    <td class="a">0 / 0</td>
+    <td class="b">0 / 0</td>
+    <td>Tie — neither hurt reputation</td>
+  </tr>
+</table>
+</div>
+
+<!-- ================================================================= -->
+<!-- Anatomy comparison -->
+<!-- ================================================================= -->
+<h2>Anatomy — where the two emails diverge</h2>
+<div class="card">
+<table class="cmp">
+  <tr>
+    <th style="width:26%">Attribute</th>
+    <th>Email A · Ulster</th>
+    <th>Email B · "Dozens of Universities"</th>
+    <th style="width:28%">Why it matters</th>
+  </tr>
+  <tr>
+    <td><strong>Subject line</strong></td>
+    <td class="a">"Improve Funding Opportunity Matching by 25%" · 43 chars · verb-led · contains %</td>
+    <td class="b">Not supplied for review</td>
+    <td>Subject is the single biggest open-rate lever. B may be strong or weak — untested.</td>
+  </tr>
+  <tr>
+    <td><strong>Personalisation token</strong></td>
+    <td class="a">[First name] — rendered clean</td>
+    <td class="b warn">$[UD:FIRST_NAME||]$ — raw ESP syntax. If the merge fails, the reader sees the code.</td>
+    <td>Raw merge tags leak on missing fields. B risks "Hi $[UD:FIRST_NAME||]$,"</td>
+  </tr>
+  <tr>
+    <td><strong>Greeting</strong></td>
+    <td class="a">"Good afternoon"</td>
+    <td class="b">"Hi"</td>
+    <td>Both work; A is more consultative</td>
+  </tr>
+  <tr>
+    <td><strong>Word count</strong></td>
+    <td class="a">~180</td>
+    <td class="b">~230</td>
+    <td>A is 22% shorter — easier to finish</td>
+  </tr>
+  <tr>
+    <td><strong>Structure</strong></td>
+    <td class="a">6 paragraphs, one job each: Pain → Trend → Proof → Product → Number → CTA</td>
+    <td class="b">Long intro paragraph + 5-item bullet list + 3 pain paragraphs + CTA. Pain-heavy.</td>
+    <td>A tells a story; B enumerates problems. Bullets scan well but can feel like a list of complaints.</td>
+  </tr>
+  <tr>
+    <td><strong>Opening line</strong></td>
+    <td class="a">Reader's pain first</td>
+    <td class="b">Self-authority — "from speaking to dozens of Universities"</td>
+    <td>A puts the reader first, B puts us first. A's approach converts higher in this dataset.</td>
+  </tr>
+  <tr>
+    <td><strong>Hard number in copy</strong></td>
+    <td class="a">"over 25%" — mentioned twice, once as standalone anchor</td>
+    <td class="b warn">Zero hard numbers</td>
+    <td>Numbers ground claims. B relies on adjectives ("dozens", "extensive", "severely", "modern").</td>
+  </tr>
+  <tr>
+    <td><strong>Named product</strong></td>
+    <td class="a">"AI Driven Funder Opportunity Scanner" — named in paragraph 5</td>
+    <td class="b">Product not named — just "modern Cloud SaaS platforms" (category)</td>
+    <td>A gives the reader a thing to remember. B leaves them with an abstract category.</td>
+  </tr>
+  <tr>
+    <td><strong>Social proof style</strong></td>
+    <td class="a">"we have heard" — soft, no logos</td>
+    <td class="b">"speaking to dozens of Universities" — quantified assertion, no logos</td>
+    <td>B's is slightly stronger in wording; A's fits the consultative tone.</td>
+  </tr>
+  <tr>
+    <td><strong>Call to action</strong></td>
+    <td class="a">"Connect with us" — one text link, low friction</td>
+    <td class="b">"see: www.grantsnow.co.uk" — a homepage URL, not a landing page</td>
+    <td>A points the reader to a conversation. B points to a homepage they have to explore. Cost of that difference: 27% CTOR vs 100%.</td>
+  </tr>
+  <tr>
+    <td><strong>Sender</strong></td>
+    <td class="a">"Zoe" + GrantsNow</td>
+    <td class="b">"Ian"</td>
+    <td>Both single-name. A pairs with brand.</td>
+  </tr>
+  <tr>
+    <td><strong>Exclamation / urgency</strong></td>
+    <td class="a">None</td>
+    <td class="b">None</td>
+    <td>Tie — both maintain register</td>
+  </tr>
+  <tr>
+    <td><strong>Personas covered by vocabulary</strong></td>
+    <td class="a">Research primary (11 hits), IT secondary (4), Finance 0</td>
+    <td class="b">Research (heavy) + Finance ("costings", "budget deficit", "losing money") + IT ("system feeds", "Cloud SaaS", "integration") + HR</td>
+    <td>B is broader on purpose — it was sent to a mixed 156-person list. A is tighter — sent to an 87% Research list.</td>
+  </tr>
+</table>
+</div>
+
+<!-- ================================================================= -->
+<!-- Persona vocabulary panel -->
+<!-- ================================================================= -->
+<h2>Persona vocabulary — who is each email actually speaking to?</h2>
+<div class="grid-4">
+  <div class="stat-tile" style="border-left:4px solid #0E6E68">
+    <div class="k">Email A · Research hits</div>
+    <div class="v" style="color:#0E6E68">11</div>
+    <div class="s">funding, research, income, universities, grants…</div>
+  </div>
+  <div class="stat-tile" style="border-left:4px solid #C99A2E">
+    <div class="k">Email A · Finance hits</div>
+    <div class="v" style="color:#C99A2E">0</div>
+    <div class="s">no cost / audit / budget language</div>
+  </div>
+  <div class="stat-tile" style="border-left:4px solid #7A6A9A">
+    <div class="k">Email A · IT hits</div>
+    <div class="v" style="color:#7A6A9A">4</div>
+    <div class="s">AI-driven, automation, systems, platform</div>
+  </div>
+  <div class="stat-tile" style="border-left:4px solid #0E6E68">
+    <div class="k">Email A verdict</div>
+    <div class="v" style="font-size:.95rem;color:#0E6E68">Research-tight</div>
+    <div class="s">matches 87% Research audience</div>
+  </div>
+
+  <div class="stat-tile" style="border-left:4px solid #0E6E68">
+    <div class="k">Email B · Research hits</div>
+    <div class="v" style="color:#0E6E68">15</div>
+    <div class="s">Research Funding, Pre/Post-Awards, Grant Proposals, research office…</div>
+  </div>
+  <div class="stat-tile" style="border-left:4px solid #C99A2E">
+    <div class="k">Email B · Finance hits</div>
+    <div class="v" style="color:#C99A2E">5</div>
+    <div class="s">costings, budget deficit, losing money, Finance Systems</div>
+  </div>
+  <div class="stat-tile" style="border-left:4px solid #7A6A9A">
+    <div class="k">Email B · IT hits</div>
+    <div class="v" style="color:#7A6A9A">7</div>
+    <div class="s">real-time data, system feeds, integration, Cloud SaaS, platforms</div>
+  </div>
+  <div class="stat-tile" style="border-left:4px solid #C99A2E">
+    <div class="k">Email B verdict</div>
+    <div class="v" style="font-size:.95rem;color:#C99A2E">Multi-persona</div>
+    <div class="s">designed to reach mixed audience — pays a rate penalty for it</div>
+  </div>
+</div>
+
+<!-- ================================================================= -->
+<!-- What each email is best at -->
+<!-- ================================================================= -->
+<h2>What each email is best at</h2>
+<div class="emails">
+  <div class="card" style="border-top:4px solid #0E6E68">
+    <h3 style="margin-top:0;color:#0E6E68">
+      Email A is the <strong>tight-list, single-persona</strong> template
+    </h3>
+    <ul class="rules">
+      <li><strong>Best when:</strong> targeting one institution, or a
+        persona-tight slice within one, where you can name the
+        dominant persona confidently.</li>
+      <li><strong>Wins:</strong> 56.5% open · 100% CTOR · 0 bounces ·
+        more absolute clicks than B despite a 6.8× smaller list.</li>
+      <li><strong>Uses:</strong> a hard number as anchor, product
+        named mid-body, low-friction "connect with us" CTA.</li>
+      <li><strong>Costs:</strong> per-institution effort — you have
+        to know the persona mix before you send.</li>
+    </ul>
+  </div>
+  <div class="card" style="border-top:4px solid #C99A2E">
+    <h3 style="margin-top:0;color:#8f6c14">
+      Email B is the <strong>broadcast, multi-persona</strong> template
+    </h3>
+    <ul class="rules">
+      <li><strong>Best when:</strong> you have volume and a mixed
+        list — cross-institution blast where you cannot pre-know
+        the persona.</li>
+      <li><strong>Wins:</strong> 22% open on 149 delivered is still
+        above the 20% SaaS benchmark — genuinely respectable at
+        scale. Reaches Research + Finance + IT in one message.</li>
+      <li><strong>Uses:</strong> bulleted pain list scans well,
+        multi-persona vocabulary widens the trigger surface.</li>
+      <li><strong>Costs:</strong> 4.5% bounce rate is <span class="pill warn">above the 3% deliverability threshold</span>,
+        no hard number in body, product unnamed, CTA points to
+        homepage not a conversation — hence 27% CTOR vs 100%.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ================================================================= -->
+<!-- Verdict -->
+<!-- ================================================================= -->
+<div class="verdict">
+  <h3>Verdict — which is the "ideal email"?</h3>
+  <p><strong>Per-send effectiveness</strong>: Email A wins on every
+    ratio (open · click · CTOR · deliverability). If the goal is the
+    highest-converting pattern, copy Email A.</p>
+  <p><strong>Reach at volume</strong>: Email B proves the pattern
+    scales — 22% open on 149 delivered is genuinely good in the
+    broadcast world. If the goal is Monday-morning volume, Email B
+    is the working template — with three fixes.</p>
+  <p><strong>Recommendation:</strong> keep both templates. Use A
+    for named-institution outreach. Use B for cross-institution
+    blasts <em>after</em> the three fixes below.</p>
+</div>
+
+<!-- ================================================================= -->
+<!-- Three fixes for Email B -->
+<!-- ================================================================= -->
+<h2>Three fixes to bring Email B closer to Email A</h2>
+<div class="card">
+  <ul class="rules">
+    <li><strong>1 · Fix the merge tag.</strong> Change
+      <code>$[UD:FIRST_NAME||]$</code> to a merge that has a
+      fallback ("Hi there," when the field is blank). Raw tokens on
+      failed merges kill open credibility and are almost certainly
+      part of the 4.5% bounce impression.</li>
+    <li><strong>2 · Add one hard number to the body.</strong> Email
+      A anchors on "over 25%". Email B has none — the reader has
+      nothing to weigh. Try "over 25% more proposals submitted" or
+      "recover XX% of admin time". Repeat it as a standalone
+      highlighted line, like A does.</li>
+    <li><strong>3 · Replace the homepage URL with a conversation
+      CTA.</strong> "see: www.grantsnow.co.uk" points the reader to
+      a homepage they have to explore. Change to "We'd be happy to
+      share a short overview — <em>Connect with us</em>." That
+      single change is the difference between A's 100% CTOR and B's
+      27%.</li>
+  </ul>
+  <p class="caption">Sub-3% bounce rate next time round is a list-hygiene
+    issue, not a copy issue — run the target list through Snov
+    verification before send.</p>
+</div>
+
+<!-- ================================================================= -->
+<!-- Combined ideal recipe -->
+<!-- ================================================================= -->
+<h2>The combined "ideal email" recipe</h2>
+<div class="card">
+  <p style="margin-top:0">Best-of-both-worlds template pulled from
+    both winners:</p>
+
+  <h3>Subject</h3>
+  <ul class="rules">
+    <li>Verb-led, under 45 characters, contains one hard number, no
+      emoji or ALL-CAPS. <em>(Email A pattern)</em></li>
+  </ul>
+
+  <h3>Opening</h3>
+  <ul class="rules">
+    <li>Start with the reader's problem <em>(A)</em> — but if the
+      list is broad, prefix with quantified authority
+      <em>(B, adapted)</em>: <em>"From working with 40+ UK
+      universities, we know…"</em> then the pain.</li>
+    <li>Use a clean merge with fallback: "Hi {{first_name|there}},".
+      Never expose raw merge syntax.</li>
+  </ul>
+
+  <h3>Body</h3>
+  <ul class="rules">
+    <li>150–200 words maximum. Under a 45-second read.</li>
+    <li>Bulleted pain list is fine <em>(B)</em> — cap at 3 bullets,
+      not 5. Long lists read as complaint sheets.</li>
+    <li>Layer vocabulary by intended persona mix: Research primary,
+      Finance/IT secondary if the list is mixed <em>(B strategy)</em>.
+      Single-persona if the list is one institution
+      <em>(A strategy)</em>.</li>
+    <li>Name the product — actual name, not "modern Cloud SaaS
+      platforms" <em>(A)</em>.</li>
+    <li>Attach a hard number to the promise. Repeat it once as a
+      standalone highlighted line <em>(A)</em>.</li>
+  </ul>
+
+  <h3>CTA</h3>
+  <ul class="rules">
+    <li>One text link. Low-friction ask — "share a short overview",
+      not "book a 30-minute demo".</li>
+    <li>Never a homepage URL <em>(fix B)</em>. Always a conversation
+      link.</li>
+  </ul>
+
+  <h3>Send</h3>
+  <ul class="rules">
+    <li>Verify the list before send — target under 2% bounce.
+      <em>(B breached; A did not)</em></li>
+    <li>Tight lists outperform broadcasts on rate. Broadcasts win
+      on volume. Run both — score them differently.</li>
+  </ul>
+</div>
+
+<!-- ================================================================= -->
+<!-- Honest limits -->
+<!-- ================================================================= -->
+<h2>Honest limits</h2>
+<div class="card">
+  <ul class="rules">
+    <li>Email B's subject line was not supplied for review — a poor
+      subject can drag a strong body down, and vice versa.</li>
+    <li>Reply / enquiry data is not in this dataset for either
+      email. Everything above is a proxy — clicks, not booked
+      calls.</li>
+    <li>Sample of two winners is enough to spot a pattern, not to
+      claim statistical proof. Keep tearing down each new
+      high-performer to widen the evidence base.</li>
+  </ul>
+</div>
+
+<div style="color:#8A8F98;font-size:.78rem;text-align:center;
+            margin-top:2rem;padding-top:1rem;
+            border-top:1px solid #E7E7EA">
+  GrantsNow Performance Matrix · Ideal email comparison ·
+  Ulster Base vs "Dozens of Universities"
+</div>
+
+</div>
+</body>
+</html>

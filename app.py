@@ -19,6 +19,11 @@ st.set_page_config(page_title="GrantsNow Performance Matrix",
                     layout="wide", page_icon="○")
 
 pg = st.navigation({
+    "Data": [
+        st.Page("pages/data_upload.py",
+                title="Weekly upload",
+                icon=":material/upload_file:"),
+    ],
     "Persona": [
         st.Page("pages/persona_matrix.py",
                 title="UK Persona Matrix",

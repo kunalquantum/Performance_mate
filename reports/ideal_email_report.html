@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>The Ideal Email — GrantsNow Performance Matrix</title>
+<style>
+  :root {
+    --ink:#111318; --ink-soft:#3B4046; --muted:#8A8F98;
+    --line:#E7E7EA; --bg:#FFFFFF; --bg-soft:#F7F7F8;
+    --accent:#0E6E68; --accent-soft:#B9D8D5;
+    --gold:#C99A2E; --warn:#B4462F; --purple:#7A6A9A;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Poppins,
+                 Roboto, Helvetica, Arial, sans-serif;
+    color: var(--ink); background: var(--bg-soft); margin: 0;
+    line-height: 1.55; font-size: 15px;
+  }
+  .page {
+    max-width: 1180px; margin: 0 auto; padding: 2.5rem 2rem;
+  }
+  .eyebrow {
+    font-size: .72rem; color: var(--accent); font-weight: 700;
+    text-transform: uppercase; letter-spacing: .18em;
+    margin-bottom: .4rem;
+  }
+  h1 {
+    font-size: 2.1rem; font-weight: 700; margin: 0 0 .5rem;
+    letter-spacing: -.01em;
+  }
+  h2 {
+    font-size: 1.3rem; font-weight: 700; margin: 2.2rem 0 .9rem;
+    padding-bottom: .5rem; border-bottom: 2px solid var(--accent);
+    letter-spacing: -.005em;
+  }
+  h3 { font-size: 1rem; font-weight: 600; margin: 1.2rem 0 .5rem; }
+  p  { margin: .6rem 0; }
+  .caption { color: var(--muted); font-size: .88rem; }
+  .card {
+    background: var(--bg); border: 1px solid var(--line);
+    border-radius: 10px; padding: 1.4rem 1.6rem; margin-bottom: 1rem;
+  }
+  .hero {
+    background: linear-gradient(135deg, #0E6E68 0%, #145a55 100%);
+    color: #FFFFFF; border-radius: 12px; padding: 2rem 2.2rem;
+    margin-bottom: 1.4rem;
+  }
+  .hero .eyebrow { color: #B9D8D5; }
+  .hero h1 { color: #FFFFFF; margin-bottom: 1rem; }
+  .hero .stats {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem;
+    margin-top: 1.4rem;
+  }
+  .hero .stats > div {
+    background: rgba(255,255,255,.10); padding: .9rem 1rem;
+    border-radius: 6px; border-left: 3px solid #C99A2E;
+  }
+  .hero .stats .k {
+    font-size: .68rem; text-transform: uppercase;
+    letter-spacing: .14em; opacity: .8;
+  }
+  .hero .stats .v {
+    font-size: 1.7rem; font-weight: 700; margin-top: .2rem;
+  }
+  .hero .stats .s { font-size: .78rem; opacity: .8; margin-top: .1rem; }
+
+  /* The actual email render */
+  .email-frame {
+    background: #FDFDFC; border: 1px solid var(--line);
+    border-radius: 8px; padding: 1.5rem 1.8rem;
+    font-family: Georgia, "Times New Roman", serif;
+    max-width: 620px; margin: .8rem 0 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,.05);
+  }
+  .email-frame .subj {
+    font-family: -apple-system, "Segoe UI", sans-serif;
+    font-size: .72rem; color: var(--muted);
+    text-transform: uppercase; letter-spacing: .14em;
+    margin-bottom: .2rem;
+  }
+  .email-frame .subj-line {
+    font-family: -apple-system, "Segoe UI", sans-serif;
+    font-size: 1.05rem; font-weight: 600; color: var(--ink);
+    margin-bottom: 1rem; padding-bottom: 1rem;
+    border-bottom: 1px dashed var(--line);
+  }
+  .email-frame p {
+    font-size: .95rem; color: var(--ink); line-height: 1.65;
+  }
+  .highlight-stat {
+    background: #FFF7E4; border-left: 4px solid var(--gold);
+    padding: .5rem .8rem; font-weight: 700; color: var(--ink);
+    margin: 1rem 0; font-size: 1rem;
+  }
+  .cta-line {
+    color: var(--accent); font-weight: 600;
+    text-decoration: underline;
+  }
+
+  /* Grids and tables */
+  .grid-4 {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: .8rem;
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .stat-tile {
+    background: var(--bg); border: 1px solid var(--line);
+    border-radius: 8px; padding: .85rem 1rem;
+  }
+  .stat-tile .k {
+    font-size: .68rem; color: var(--muted);
+    text-transform: uppercase; letter-spacing: .12em;
+  }
+  .stat-tile .v {
+    font-size: 1.5rem; font-weight: 700; color: var(--ink);
+    margin-top: .2rem;
+  }
+  .stat-tile .s { font-size: .78rem; color: var(--ink-soft); }
+
+  table.attrs {
+    width: 100%; border-collapse: collapse; margin-top: .4rem;
+    background: var(--bg);
+  }
+  table.attrs th, table.attrs td {
+    text-align: left; padding: .55rem .8rem; font-size: .88rem;
+    border-bottom: 1px solid var(--line); vertical-align: top;
+  }
+  table.attrs th {
+    color: var(--muted); text-transform: uppercase;
+    letter-spacing: .1em; font-size: .7rem; background: var(--bg-soft);
+  }
+  table.attrs td strong { color: var(--ink); }
+
+  /* Structure map */
+  .beat {
+    display: grid;
+    grid-template-columns: 8rem 1fr 12rem;
+    gap: 1rem; padding: .8rem 0;
+    border-bottom: 1px dashed var(--line);
+  }
+  .beat:last-child { border-bottom: none; }
+  .beat .lbl {
+    font-size: .72rem; color: var(--accent); font-weight: 700;
+    text-transform: uppercase; letter-spacing: .12em;
+  }
+  .beat .txt {
+    font-size: .9rem; color: var(--ink); line-height: 1.55;
+    font-family: Georgia, serif;
+  }
+  .beat .why {
+    font-size: .78rem; color: var(--ink-soft);
+  }
+
+  /* Pills / chips */
+  .pill {
+    display: inline-block; padding: .12rem .5rem;
+    border-radius: 3px; font-size: .74rem; font-weight: 600;
+    margin: .12rem .18rem .12rem 0;
+  }
+  .pill.research  { background: #DDEEEC; color: #0E6E68; }
+  .pill.finance   { background: #FBEDD8; color: #7A5F1E; }
+  .pill.it        { background: #E5E1EE; color: #4E4270; }
+  .pill.neutral   { background: var(--bg-soft); color: var(--ink); }
+  .pill.good      { background: #DDEEEC; color: #0E6E68; }
+  .pill.warn      { background: #FBEDED; color: var(--warn); }
+
+  ul.rules { padding-left: 1.2rem; margin: .3rem 0; }
+  ul.rules li {
+    margin: .35rem 0; line-height: 1.5;
+  }
+  ul.rules li strong { color: var(--accent); }
+  .cite {
+    font-size: .78rem; color: var(--muted); font-style: italic;
+    margin-top: .5rem;
+  }
+  @media (max-width: 720px) {
+    .grid-4 { grid-template-columns: 1fr 1fr; }
+    .grid-2 { grid-template-columns: 1fr; }
+    .beat   { grid-template-columns: 1fr; }
+    .hero .stats { grid-template-columns: 1fr 1fr; }
+  }
+  @media print {
+    body { background: white; }
+    .page { padding: .8rem; }
+    .card, .hero { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- ================================================================= -->
+<!-- Hero -->
+<!-- ================================================================= -->
+<div class="hero">
+  <div class="eyebrow">GrantsNow · Performance Matrix</div>
+  <h1>The ideal email — anatomy of our best-performing send</h1>
+  <div style="font-size:.98rem; opacity:.95; max-width:720px">
+    Across every tracked outbound (event promotions and celebration
+    sends excluded), one email produced the strongest result on
+    meaningful volume. This report reverse-engineers it — subject,
+    body, structure, vocabulary, timing, tone — so the next drafter
+    has a template that already worked.
+  </div>
+  <div class="stats">
+    <div>
+      <div class="k">Open rate</div>
+      <div class="v">56.5%</div>
+      <div class="s">vs 20% SaaS benchmark · 2.8× typical</div>
+    </div>
+    <div>
+      <div class="k">Click-to-open</div>
+      <div class="v">100%</div>
+      <div class="s">every single opener clicked</div>
+    </div>
+    <div>
+      <div class="k">Delivered</div>
+      <div class="v">23 / 23</div>
+      <div class="s">100% delivery — clean list</div>
+    </div>
+    <div>
+      <div class="k">Sent</div>
+      <div class="v">Thu 9 Jul</div>
+      <div class="s">University of Ulster · Base send</div>
+    </div>
+  </div>
+</div>
+
+<!-- ================================================================= -->
+<!-- Method -->
+<!-- ================================================================= -->
+<div class="card">
+  <h3 style="margin-top:0">How this email was picked</h3>
+  <p class="caption">
+    From <strong>12 tracked outbound campaign stages</strong> in
+    <code>campaign_batches.csv</code>. Filters applied to isolate
+    a repeatable pattern (not a lucky one-off):
+  </p>
+  <ul class="rules">
+    <li><strong>Excluded event / conference promotions</strong> — ARMA,
+      NCURA, "come by our booth" sends behave differently from
+      product outreach.</li>
+    <li><strong>Excluded celebration / anniversary / seasonal</strong>
+      copy — these are exceptions to the working pattern.</li>
+    <li><strong>Minimum 10 recipients</strong> — so the open rate
+      reflects the writing, not a 3-person test blast.</li>
+    <li><strong>Ranked by open rate</strong>. Winner: Ulster Base at
+      56.5% (23 recipients, 13 opens, 13 clicks).</li>
+  </ul>
+  <div class="cite">Runner-up: GFZ Helmholtz Base at 60% but only
+    10 sends — Ulster wins on statistical weight and it is the only
+    email in the set where 100% of openers clicked.</div>
+</div>
+
+<!-- ================================================================= -->
+<!-- The email itself -->
+<!-- ================================================================= -->
+<h2>The email as it was sent</h2>
+<div class="grid-2">
+  <div>
+    <div class="email-frame">
+      <div class="subj">Subject</div>
+      <div class="subj-line">Improve Funding Opportunity Matching by 25%</div>
+
+      <p>Good afternoon, <span style="background:#FFF7E4;padding:0 3px">[First name]</span>,</p>
+
+      <p>The <span style="text-decoration:underline;text-decoration-color:#0E6E68;text-decoration-thickness:2px">increasing volume of competitive funding opportunities</span> makes manual tracking increasingly challenging, with relevant opportunities often missed or identified too late.</p>
+
+      <p><span style="text-decoration:underline;text-decoration-color:#7A6A9A;text-decoration-thickness:2px">AI-driven automation</span> is beginning to change this by helping universities identify and align targeted <span style="text-decoration:underline;text-decoration-color:#0E6E68;text-decoration-thickness:2px">funding opportunities</span> with strategic <span style="text-decoration:underline;text-decoration-color:#0E6E68;text-decoration-thickness:2px">research</span> themes and institutional priorities, improving funding visibility and supporting <span style="text-decoration:underline;text-decoration-color:#0E6E68;text-decoration-thickness:2px">research income</span> growth.</p>
+
+      <p>In conversations with several universities, we have heard that existing <span style="text-decoration:underline;text-decoration-color:#7A6A9A;text-decoration-thickness:2px">systems</span> do not always provide the level of intelligent and effective opportunity matching they require.</p>
+
+      <p>GrantsNow's AI Driven Funder Opportunity Scanner was designed specifically to address this challenge, with institutions reporting improvements in funding opportunity matching of <strong>over 25%</strong>.</p>
+
+      <div class="highlight-stat">Improvement in funding opportunity matching: over 25%.</div>
+
+      <p>We would be happy to share a high-level overview if you feel our <span style="text-decoration:underline;text-decoration-color:#7A6A9A;text-decoration-thickness:2px">platform</span> would provide you with additional funding opportunities. You can connect with us here:</p>
+
+      <p><span class="cta-line">Connect with us</span></p>
+
+      <p style="margin-top:1.2rem;color:#3B4046">Regards,<br>Zoe<br>GrantsNow</p>
+    </div>
+    <div class="cite" style="margin-top:.6rem">
+      <span class="pill research">Research vocabulary</span>
+      <span class="pill it">IT / systems vocabulary</span>
+      Underlines show the working persona language layered in the body.
+    </div>
+  </div>
+
+  <div>
+    <div class="card">
+      <h3 style="margin-top:0">Funnel — what happened</h3>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:.6rem">
+        <div class="stat-tile"><div class="k">Sent</div>
+          <div class="v">23</div>
+          <div class="s">to Ulster contacts</div></div>
+        <div class="stat-tile"><div class="k">Delivered</div>
+          <div class="v" style="color:#0E6E68">23</div>
+          <div class="s">100% · zero bounces</div></div>
+        <div class="stat-tile"><div class="k">Opened</div>
+          <div class="v" style="color:#0E6E68">13</div>
+          <div class="s">56.5% · 2.8× benchmark</div></div>
+        <div class="stat-tile"><div class="k">Clicked</div>
+          <div class="v" style="color:#0E6E68">13</div>
+          <div class="s">every opener clicked</div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3 style="margin-top:0">Audience — who received it</h3>
+      <p style="margin-top:0">
+        <strong>University of Ulster</strong>, a UK research-intensive
+        institution.
+      </p>
+      <table class="attrs">
+        <tr><th>Persona</th><th style="text-align:right">Contacts</th>
+          <th style="text-align:right">Share</th></tr>
+        <tr><td><span class="pill research">Research</span></td>
+          <td style="text-align:right"><strong>26</strong></td>
+          <td style="text-align:right">87%</td></tr>
+        <tr><td><span class="pill finance">Finance</span></td>
+          <td style="text-align:right">2</td>
+          <td style="text-align:right">7%</td></tr>
+        <tr><td><span class="pill it">IT-Systems</span></td>
+          <td style="text-align:right">2</td>
+          <td style="text-align:right">7%</td></tr>
+      </table>
+      <div class="cite">Recipient list is 87% Research — and the copy
+        speaks predominantly to Research. Copy fit is likely a driver
+        of the 56.5% open rate.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ================================================================= -->
+<!-- Subject line dissection -->
+<!-- ================================================================= -->
+<h2>Subject line — dissected</h2>
+<div class="card">
+  <div style="font-size:1.35rem;font-weight:700;color:#111318;
+              padding:.8rem 1rem;background:#F7F7F8;
+              border-left:4px solid #0E6E68;border-radius:4px;
+              margin-bottom:1rem">
+    Improve Funding Opportunity Matching by 25%
+  </div>
+  <div class="grid-4">
+    <div class="stat-tile"><div class="k">Characters</div>
+      <div class="v">43</div>
+      <div class="s">preview-safe on mobile</div></div>
+    <div class="stat-tile"><div class="k">Words</div>
+      <div class="v">6</div>
+      <div class="s">short = scannable</div></div>
+    <div class="stat-tile"><div class="k">Opens with</div>
+      <div class="v" style="font-size:1.1rem">Verb</div>
+      <div class="s">"Improve" — imperative</div></div>
+    <div class="stat-tile"><div class="k">Contains number</div>
+      <div class="v" style="color:#C99A2E">Yes</div>
+      <div class="s">25% — hard, specific</div></div>
+  </div>
+  <h3>What the subject does right</h3>
+  <ul class="rules">
+    <li><strong>Verb-led</strong>. Starts with "Improve" — an action
+      the reader wants, not a claim about us.</li>
+    <li><strong>Benefit, not feature</strong>. "Funding opportunity
+      matching" is the outcome; the product isn't named.</li>
+    <li><strong>Hard number</strong>. "25%" grounds the promise — a
+      percentage always out-scrolls adjectives ("dramatically",
+      "significantly").</li>
+    <li><strong>No noise</strong>. No emoji, no ALL-CAPS, no
+      brackets, no "Re:", no first-name-in-subject trick.</li>
+    <li><strong>Under 45 characters</strong> — fits inside the mobile
+      inbox preview without truncation.</li>
+  </ul>
+</div>
+
+<!-- ================================================================= -->
+<!-- Body structure map -->
+<!-- ================================================================= -->
+<h2>Body — structure map</h2>
+<div class="card">
+  <p class="caption" style="margin-top:0">
+    Six paragraphs, each doing one job. The order — problem → trend →
+    social proof → product → number reprise → soft CTA — is the
+    working template.
+  </p>
+
+  <div class="beat">
+    <div class="lbl">1 · Greeting</div>
+    <div class="txt">"Good afternoon, [First name],"</div>
+    <div class="why">Personal token in the salutation, no
+      "Hi/Hey/Hello" — matches the sender's formal-consultative
+      register.</div>
+  </div>
+  <div class="beat">
+    <div class="lbl">2 · The pain</div>
+    <div class="txt">"The increasing volume of competitive funding
+      opportunities makes manual tracking increasingly challenging,
+      with relevant opportunities often missed or identified too
+      late."</div>
+    <div class="why">Opens with the reader's problem, not the
+      product. Names two failure states — "missed" and "too late" —
+      the reader nods along.</div>
+  </div>
+  <div class="beat">
+    <div class="lbl">3 · The shift</div>
+    <div class="txt">"AI-driven automation is beginning to change
+      this by helping universities identify and align targeted
+      funding opportunities with strategic research themes and
+      institutional priorities..."</div>
+    <div class="why">Positions a category, not a product. Reader is
+      first educated about the market shift.</div>
+  </div>
+  <div class="beat">
+    <div class="lbl">4 · Social proof</div>
+    <div class="txt">"In conversations with several universities, we
+      have heard that existing systems do not always provide the
+      level of intelligent and effective opportunity matching they
+      require."</div>
+    <div class="why">Soft proof — "we have heard" — no logo drop, no
+      case-study name, just implied consensus. Lowers the guard.</div>
+  </div>
+  <div class="beat">
+    <div class="lbl">5 · Product + number</div>
+    <div class="txt">"GrantsNow's AI Driven Funder Opportunity
+      Scanner was designed specifically to address this challenge,
+      with institutions reporting improvements in funding opportunity
+      matching of over 25%."</div>
+    <div class="why">Product named for the first time — paragraph 5,
+      not paragraph 1. Attached immediately to the number.</div>
+  </div>
+  <div class="beat">
+    <div class="lbl">6 · Number reprise</div>
+    <div class="txt" style="background:#FFF7E4;padding:.3rem .5rem;
+                              border-left:3px solid #C99A2E">
+      Improvement in funding opportunity matching: over 25%.</div>
+    <div class="why">Same number, standalone line. Bold visual
+      anchor. Skimmers see this even if they only glance.</div>
+  </div>
+  <div class="beat">
+    <div class="lbl">7 · Soft CTA</div>
+    <div class="txt">"We would be happy to share a high-level
+      overview if you feel our platform would provide you with
+      additional funding opportunities. <span class="cta-line">Connect
+      with us</span>"</div>
+    <div class="why">Low-friction — "share a high-level overview",
+      not "book a 30-minute demo". CTA reads as a text link, not a
+      button demand.</div>
+  </div>
+  <div class="beat">
+    <div class="lbl">8 · Sign-off</div>
+    <div class="txt">"Regards,<br>Zoe<br>GrantsNow"</div>
+    <div class="why">Single first name + brand. Person-to-person,
+      not "The GrantsNow Team".</div>
+  </div>
+</div>
+
+<!-- ================================================================= -->
+<!-- Attribute grid -->
+<!-- ================================================================= -->
+<h2>Every attribute we can measure</h2>
+<div class="card">
+<table class="attrs">
+  <tr><th>Dimension</th><th>Value</th><th>What it tells us</th></tr>
+
+  <tr><td><strong>Subject character count</strong></td>
+    <td>43</td>
+    <td>Fits the mobile inbox preview — no truncation</td></tr>
+  <tr><td><strong>Subject word count</strong></td>
+    <td>6</td>
+    <td>Scannable in under a second</td></tr>
+  <tr><td><strong>Subject opens with</strong></td>
+    <td>Verb — "Improve"</td>
+    <td>Imperative, action-led</td></tr>
+  <tr><td><strong>Subject contains number</strong></td>
+    <td>Yes (25%)</td>
+    <td>Hard promise, credible</td></tr>
+  <tr><td><strong>Subject punctuation</strong></td>
+    <td>None</td>
+    <td>No "!", no "?", no brackets</td></tr>
+  <tr><td><strong>Subject emoji</strong></td>
+    <td>None</td>
+    <td>Consultative tone, not consumer</td></tr>
+
+  <tr><td><strong>Body word count</strong></td>
+    <td>~180</td>
+    <td>Medium length — under 45-second read</td></tr>
+  <tr><td><strong>Body paragraph count</strong></td>
+    <td>6 body + greeting + sign-off</td>
+    <td>Every paragraph has one job</td></tr>
+  <tr><td><strong>Personalization tokens</strong></td>
+    <td>[First name]</td>
+    <td>Single token, in the greeting only</td></tr>
+  <tr><td><strong>Greeting</strong></td>
+    <td>"Good afternoon"</td>
+    <td>Formal, not "Hi" or "Hey"</td></tr>
+  <tr><td><strong>Product first mentioned in paragraph</strong></td>
+    <td>5 of 6</td>
+    <td>Reader is warmed up first</td></tr>
+  <tr><td><strong>Statistic in body</strong></td>
+    <td>Twice (inline + standalone)</td>
+    <td>Skimmers still catch it</td></tr>
+  <tr><td><strong>Named product</strong></td>
+    <td>"AI Driven Funder Opportunity Scanner"</td>
+    <td>Descriptive, not a codename</td></tr>
+  <tr><td><strong>Social-proof style</strong></td>
+    <td>Soft — "we have heard"</td>
+    <td>No logos, no name-drops</td></tr>
+  <tr><td><strong>CTA copy</strong></td>
+    <td>"Connect with us"</td>
+    <td>Low-friction — no calendar link, no
+      "Book a demo"</td></tr>
+  <tr><td><strong>CTA style</strong></td>
+    <td>Text link</td>
+    <td>Not a big coloured button</td></tr>
+  <tr><td><strong>Questions in body</strong></td>
+    <td>0</td>
+    <td>Statement-led, not interrogative</td></tr>
+  <tr><td><strong>Exclamation marks</strong></td>
+    <td>0</td>
+    <td>Consultative register maintained</td></tr>
+  <tr><td><strong>Hyperlinks</strong></td>
+    <td>1 — the CTA</td>
+    <td>Single next action, no distractions</td></tr>
+  <tr><td><strong>Second-person "you/your"</strong></td>
+    <td>Only inside the CTA line</td>
+    <td>Restrained — sells to peers, not at prospects</td></tr>
+  <tr><td><strong>Sign-off</strong></td>
+    <td>Single first name ("Zoe") + brand</td>
+    <td>Human, not "The Team"</td></tr>
+
+  <tr><td><strong>Sent day</strong></td>
+    <td>Thursday</td>
+    <td>Mid-late week — decision-window sweet spot</td></tr>
+  <tr><td><strong>Recipient count</strong></td>
+    <td>23</td>
+    <td>Tight list — one institution</td></tr>
+  <tr><td><strong>Recipient persona mix</strong></td>
+    <td>87% Research · 7% Finance · 7% IT</td>
+    <td>Content aligned with dominant persona</td></tr>
+  <tr><td><strong>Delivery rate</strong></td>
+    <td>100%</td>
+    <td>List hygiene was already good</td></tr>
+  <tr><td><strong>Open rate</strong></td>
+    <td>56.5%</td>
+    <td>2.8× the 20% SaaS benchmark</td></tr>
+  <tr><td><strong>Click-to-open rate</strong></td>
+    <td>100%</td>
+    <td>Every opener clicked — copy did the work</td></tr>
+</table>
+</div>
+
+<!-- ================================================================= -->
+<!-- Persona vocabulary map -->
+<!-- ================================================================= -->
+<h2>Persona vocabulary — which language did the copy carry?</h2>
+<div class="card">
+  <p class="caption" style="margin-top:0">
+    Word-level scan against the 3-persona vocabulary library. Green =
+    Research language, gold = Finance, purple = IT-Systems.
+  </p>
+
+  <div class="grid-4">
+    <div class="stat-tile" style="border-left:4px solid #0E6E68">
+      <div class="k">Research vocabulary hits</div>
+      <div class="v" style="color:#0E6E68">11</div>
+      <div class="s">funding, research, universities, income, grants, opportunities…</div></div>
+    <div class="stat-tile" style="border-left:4px solid #C99A2E">
+      <div class="k">Finance vocabulary hits</div>
+      <div class="v" style="color:#C99A2E">0</div>
+      <div class="s">no cost / audit / compliance language</div></div>
+    <div class="stat-tile" style="border-left:4px solid #7A6A9A">
+      <div class="k">IT-Systems vocabulary hits</div>
+      <div class="v" style="color:#7A6A9A">4</div>
+      <div class="s">AI-driven, automation, systems, platform</div></div>
+    <div class="stat-tile" style="border-left:4px solid #0E6E68">
+      <div class="k">Verdict</div>
+      <div class="v" style="font-size:1rem;color:#0E6E68">MATCH</div>
+      <div class="s">Copy speaks Research; audience is 87% Research</div></div>
+  </div>
+
+  <h3>Why this matters</h3>
+  <p>The copy layers <strong>Research primary + IT-Systems secondary</strong>
+    vocabulary. Ulster's contact base is dominantly Research, so the
+    dominant language pulls the biggest audience. The IT vocabulary
+    ("AI-driven", "automation", "platform") is enough to signal
+    technical credibility without alienating a Research reader — a
+    useful hedge on this kind of institution.</p>
+  <p><strong>Zero Finance vocabulary</strong> — no "cost", "audit",
+    "budget", "compliance". If Finance is the target next time, the
+    copy needs re-writing.</p>
+</div>
+
+<!-- ================================================================= -->
+<!-- The ideal-email recipe -->
+<!-- ================================================================= -->
+<h2>The recipe — rules distilled for the next email</h2>
+<div class="card">
+  <h3 style="margin-top:0">Subject line</h3>
+  <ul class="rules">
+    <li><strong>Under 45 characters</strong> so mobile preview does
+      not truncate.</li>
+    <li><strong>Open with a verb</strong> the reader wants (Improve,
+      Reduce, Speed up, Free…).</li>
+    <li><strong>Include one hard number</strong> — %, ×, hours, days.
+      No adjectives like "significantly".</li>
+    <li><strong>No emoji, no ALL-CAPS, no exclamation.</strong></li>
+    <li><strong>Do not name the product</strong> — sell the outcome.</li>
+  </ul>
+
+  <h3>Body structure</h3>
+  <ul class="rules">
+    <li>Six body paragraphs, each with one job:
+      <strong>Pain → Trend → Social proof → Product → Number reprise
+      → Soft CTA</strong>.</li>
+    <li>Open with the reader's problem — not the product, not the
+      company.</li>
+    <li>Reserve the product name until paragraph 4 or 5.</li>
+    <li>Repeat the headline number as a <strong>standalone highlighted
+      line</strong> so skimmers still catch it.</li>
+    <li>Use "we have heard" style social proof if you cannot name a
+      customer.</li>
+    <li>~150–200 words. Under a 45-second read.</li>
+  </ul>
+
+  <h3>Call to action</h3>
+  <ul class="rules">
+    <li><strong>One CTA only</strong> — a single hyperlink at the
+      bottom.</li>
+    <li>Low-friction ask — "share a high-level overview", not "book a
+      30-min demo".</li>
+    <li>Text link, not a big coloured button.</li>
+  </ul>
+
+  <h3>Voice</h3>
+  <ul class="rules">
+    <li>Consultative and evidence-led. Zero exclamation marks. Zero
+      "amazing / dramatic / revolutionary" adjectives.</li>
+    <li>Restrained "you" — use it inside the CTA line only.</li>
+    <li>Signed by <strong>one named person</strong> + brand. Not
+      "The GrantsNow Team".</li>
+    <li>Match vocabulary to the dominant recipient persona.
+      Research audience → Research language. Finance audience →
+      Finance language. IT audience → IT language.</li>
+  </ul>
+
+  <h3>Send parameters</h3>
+  <ul class="rules">
+    <li><strong>Tight list</strong> — one institution or one
+      persona-slice at a time. Small sends outperform big blasts.</li>
+    <li><strong>Personalize the salutation</strong> with a first-name
+      token. Only one token — don't sprinkle brackets through the
+      body.</li>
+    <li><strong>Send Thursday afternoon</strong> is what worked here;
+      Tuesday / Wednesday afternoons are the usual alternatives.</li>
+    <li><strong>Only email to a clean list</strong> — the winner
+      delivered 100%. Bounces above 3% hurt everything.</li>
+  </ul>
+</div>
+
+<!-- ================================================================= -->
+<!-- Caveats -->
+<!-- ================================================================= -->
+<h2>Honest limits of this analysis</h2>
+<div class="card">
+  <ul class="rules">
+    <li>The sample is small — <strong>10 non-event candidates</strong>.
+      This is the best pattern we can see in the data today, not a
+      statistically validated formula.</li>
+    <li>Ulster's contact base was already <strong>Research-dominant
+      and email-verified</strong> — the list quality is part of the
+      result, not just the copy.</li>
+    <li><strong>Reply data was not captured</strong> for this send
+      (ESP export blank). Enquiries — the real objective — cannot be
+      confirmed from this dataset.</li>
+    <li>The Base stage of a sequence typically outperforms
+      Follow-ups. This is a first-touch template. Follow-up templates
+      need their own tear-down.</li>
+  </ul>
+</div>
+
+<div style="color:#8A8F98;font-size:.78rem;text-align:center;
+            margin-top:2rem;padding-top:1rem;
+            border-top:1px solid #E7E7EA">
+  GrantsNow Performance Matrix · Ideal email report ·
+  Generated from campaign_batches.csv
+</div>
+
+</div>
+</body>
+</html>

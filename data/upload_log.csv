@@ -1,0 +1,2 @@
+timestamp,filename,backup_path,week_ending,campaigns_added,campaigns_overwritten,campaigns_skipped,emails_row_added,mql_added,mql_updated,copy_added,skip_dupes
+2026-09-08 11:26:20,30Aug-4Sept.xlsx,20260908_112620_30Aug-4Sept.xlsx,2026-09-03,2,0,0,1,22,16,2,False
